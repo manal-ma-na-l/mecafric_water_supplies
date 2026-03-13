@@ -6,7 +6,10 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet">
-<title>À propos – Mecafric Water</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<title> Mecafric Water</title>
 </head>
 <body>
 
@@ -18,22 +21,22 @@
     <a href="#"><i class="fab fa-instagram"></i></a>
   </div>
   <div class="right-contact">
-    <a href="mailto:contact@example.com"><i class="fas fa-envelope"></i> contact@example.com</a>
+    <a href="mailto:mecafric.water@gmail.com"><i class="fas fa-envelope"></i> mecafric.water@gmail.com</a>
     <b>   |</b>
-    <a href="tel:+212600000000"><i class="fas fa-phone"></i> +212 600 000 000</a>
+    <a href="tel:++212 661-236088"><i class="fas fa-phone"></i> +212 661-236088</a>
   </div>
 </header>
 
 <!-- ===== NAVIGATION ===== -->
 <nav class="header-gradient">
   <div class="logo"></div>
-  <img id="logo" src="./visuel/MECAFRIC WATER-BLANC.png" alt="logo de Mecafric" class="logo-image">
+  <img id="logo" src="./visuel/mecafric_.png" alt="logo de Mecafric" class="logo-image">
   <ul>
-    <li><a href="./index1.html">Accueil</a></li>
-    <li><a href="./index1.html#services">Services</a></li>
-    <li><a href="./index1.html#gammes">Produits</a></li>
+    <li><a href="./index.html">Accueil</a></li>
+    <li><a href="./index.html#services">Services</a></li>
+    <li><a href="./index.html#gammes_une">Produits</a></li>
     <li><a href="./index.html">À propos</a></li>
-    <li><a href="./index1.html#contact">Contact</a></li>
+    <li><a href="./formulaire.html">Contact</a></li>
   </ul>
 </nav>
 <!-- Carousel Section -->
@@ -45,15 +48,123 @@
         <div class="dots" id="dots"></div>
     </div>
 </section>
+<!---->
+<div class="scene" id="scene">
+  <svg class="wave-svg" id="waveSvg" viewBox="0 0 1400 380" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%"   stop-color="#1D4361"/>
+        <stop offset="30%"  stop-color="#3A88C4"/>
+        <stop offset="60%"  stop-color="#88B7DC"/>
+        <stop offset="100%" stop-color="#3A88C4"/>
+        <animateTransform attributeName="gradientTransform" type="translate"
+          from="-1" to="1" dur="3s" repeatCount="indefinite" additive="sum"/>
+      </linearGradient>
+      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="3" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <path class="wave-path" id="wavePath" filter="url(#glow)"/>
+  </svg>
+  <div class="nodes" id="nodes"></div>
+</div>
+<section class="temoignage-section">
+     <h2 class="temoignage-title">L’expertise au service de <em>la performance industrielle.</em> </h2>
 
 
+  <div class="temoignage-container">
 
+    <!-- contenu centre -->
+  <a href="./apropos.html" class="temoignage-container">
+  <div class="temoignage-scene">
 
+    <!-- GAUCHE : image -->
+    <div class="panel-img">
+      <span class="panel-year">Depuis 2010</span>
+      <img src="./visuel/Proposition 2.png" alt="Mecafric Water">
+      <div class="badge-wrap">
+        <svg class="badge-ring" viewBox="0 0 80 80" fill="none">
+          <path id="circlePath" d="M 40,40 m -28,0 a 28,28 0 1,1 56,0 a 28,28 0 1,1 -56,0" fill="none"/>
+          <text font-size="8.5" font-family="Outfit,sans-serif" font-weight="500" letter-spacing="3.2" fill="rgba(255,255,255,0.7)">
+            <textPath href="#circlePath">MECAFRIC WATER · MAROC ·</textPath>
+          </text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- DROITE : contenu -->
+    <div class="panel-content">
+      <div class="label-top">Mot du dirigeant</div>
+      <div class="tw-name">Hicham<br>Toumir</div>
+      <div class="tw-role">Fondateur &amp; Directeur — Mecafric Water</div>
+      <div class="divider"></div>
+      <div class="tw-quote">
+        <p class="tw-quote-text">
+          Depuis sa création, Mecafric Water place au cœur de sa mission la fourniture de solutions industrielles fiables et de haute qualité. Notre expertise nous a permis de devenir un acteur de référence dans le domaine des vannes industrielles au Maroc.
+        </p>
+      </div>
+      <div class="tw-footer">
+        <div class="tw-avatar-row">
+          <div class="tw-avatar-ring">
+            <img src="./visuel/Photo Hicham Toumir.jpg" alt="Hicham Toumir">
+          </div>
+          <div>
+            <div class="tw-avatar-name">Hicham Toumir</div>
+            <div class="tw-avatar-sub">Casablanca, Maroc</div>
+          </div>
+        </div>
+        <img src="./visuel/Signature Hicham Toumir-01.png" alt="Signature">
+      </div>
+    </div>
+
+  </div>
+</a>
+    </div>
+</section>
+
+<!-- ===== STATISTIQUES ===== -->
+<section class="statistiques">
+  <div class="stats-inner">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div class="stat-body">
+        <!-- Exemple HTML -->
+        <h2 class="counter" data-target="15">0</h2>
+        <span class="stat-unit">ans</span>
+      </div>
+      <p class="stat-label">Années d'expérience</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="stat-body">
+        <h2 class="counter" data-target="200">0</h2>
+        <span class="stat-unit">+</span>
+      </div>
+      <p class="stat-label">Clients satisfaits</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div class="stat-body">
+        <h2 class="counter" data-target="50">0</h2>
+        <span class="stat-unit">+</span>
+      </div>
+      <p class="stat-label">Produits référencés</p>
+    </div>
+  </div>
+</section>
 <!-- ═══════════════════════════════
-     SECTION GAMMES  (à coller dans votre HTML)
+     SECTION GAMMES 
 ═══════════════════════════════ -->
 <section id="gammes_une">
-
   <div class="gammes__header">
     <div class="gammes__eyebrow">
       <span></span>
@@ -65,79 +176,73 @@
     </h2>
     <div class="gammes__divider"></div>
   </div>
-
   <div class="gammes__grid" id="gammes-grid">
-
     <!-- Carte 1 -->
     <div class="gamme-card">
       <span class="gamme-card__num">01</span>
       <div class="gamme-card__icon-wrap">
         <!-- Robinet / vanne -->
-<img src="./svg/Icone-Vanne_-_De_grade__navy.png" alt="" width="60px" height="60px">
+        <img src="./svg//vanne.png" alt="" width="60px" height="60px">
       </div>
-      <h3 class="gamme-card__title">Vannes Industrielles</h3>
-      <p class="gamme-card__desc">Robinetterie haute performance pour réseaux d'eau et fluides industriels. Certifiées aux normes les plus exigeantes.</p>
-      <a class="gamme-card__link" href="#">
+      <h3 class="gamme-card__title">Robinetterie</h3>
+      <p class="gamme-card__desc">Notre gamme de robinetterie offre des solutions fiables et performantes pour tous types d’applications industrielles.</p>
+      <a class="gamme-card__link" href="./produit.html?cat=robinetterie">
         Voir les produits
         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
-
     <!-- Carte 2 -->
     <div class="gamme-card">
       <span class="gamme-card__num">02</span>
       <div class="gamme-card__icon-wrap">
         <!-- Pompe / eau -->
-       <img src="./svg/Icone_Clapets_-_De_grade__navy.png" alt="" width="60px" height="60px">
+       <img src="./svg/clapet.png" alt="" width="60px" height="60px">
       </div>
-      <h3 class="gamme-card__title">Pompes & Surpresseurs</h3>
-      <p class="gamme-card__desc">Équipements de pompage conçus pour les installations hydrauliques exigeantes, résidentielles et industrielles.</p>
-      <a class="gamme-card__link" href="#">
+      <h3 class="gamme-card__title">Equipement de robinetterie</h3>
+      <p class="gamme-card__desc">Des solutions complètes pour un réseau d’eau sûr et durable : clapets, filtres et ventouses de haute qualité.</p>
+      <a class="gamme-card__link" href="./produit.html?cat=equipements">
         Voir les produits
         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
-
     <!-- Carte 3 -->
     <div class="gamme-card">
       <span class="gamme-card__num">03</span>
       <div class="gamme-card__icon-wrap">
         <!-- Filtre -->
-     <img src="./svg/Icone_boulon-2_navy.png" alt="" width="150%" height="40px">
+     <img src="./svg/boulon.png" alt="" width="150%" height="40px">
       </div>
-      <h3 class="gamme-card__title">Filtration & Traitement</h3>
-      <p class="gamme-card__desc">Systèmes de filtration avancés garantissant la pureté de l'eau pour tous types d'applications industrielles.</p>
-      <a class="gamme-card__link" href="#">
+      <h3 class="gamme-card__title">Raccordements</h3>
+      <p class="gamme-card__desc">Nos raccordements garantissent une liaison sûre et étanche entre les différents éléments du réseau.</p>
+      <a class="gamme-card__link" href="./produit.html?cat=raccordements">
         Voir les produits
         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
-
     <!-- Carte 4 -->
     <div class="gamme-card">
       <span class="gamme-card__num">04</span>
       <div class="gamme-card__icon-wrap">
         <!-- Tuyaux / raccords -->
-<img src="./svg/Icone_coude-2_navy.png" alt="" width="60px" height="60px">
+        <img src="./svg/coude.png" alt="" width="60px" height="60px">
       </div>
-      <h3 class="gamme-card__title">Raccords & Tuyauterie</h3>
-      <p class="gamme-card__desc">Large gamme de raccords, coudes, tés et manchons en acier inox et fonte pour réseaux sous pression.</p>
-      <a class="gamme-card__link" href="#">
+      <h3 class="gamme-card__title">Branchements</h3>
+      <p class="gamme-card__desc">Nos branchements assurent une connexion fiable et sécurisée entre le réseau principal et les installations secondaires.</p>
+      <a class="gamme-card__link" href="./produit.html?cat=branchements">
         Voir les produits
         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
-
     <!-- Carte 5 -->
     <div class="gamme-card">
       <span class="gamme-card__num">05</span>
       <div class="gamme-card__icon-wrap">
         <!-- Compteur / mesure -->
-        <img src="./svg/icone_voiries-2_navy.png" alt="" width="60px" height="60px">
+        <img src="./svg/voiries.png" alt="" width="60px" height="60px">
       </div>
-      <h3 class="gamme-card__title">Instrumentation</h3>
-      <p class="gamme-card__desc">Capteurs, débitmètres et appareils de mesure pour la surveillance et le contrôle de vos installations.</p>
-      <a class="gamme-card__link" href="#">
+      <h3 class="gamme-card__title">Tuyautrie et accessoires</h3>
+      <p class="gamme-card__desc">Des solutions de tuyauterie et accessoires robustes pour des réseaux efficaces et fiables.</p>
+      <a class="gamme-card__link" href="./produit.html?cat=tuyauterie">
         Voir les produits
         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
@@ -148,163 +253,159 @@
       <span class="gamme-card__num">06</span>
       <div class="gamme-card__icon-wrap">
         <!-- Protection / sécurité -->
-       <img src="./svg/Icone_Branchement-2_navy.png" alt="" width="50px" height="50px">
+       <img src="./svg/branchement.png" alt="" width="50px" height="50px">
       </div>
-      <h3 class="gamme-card__title">Sécurité & Protection</h3>
-      <p class="gamme-card__desc">Clapets anti-retour, soupapes de sécurité et dispositifs de protection pour la fiabilité de vos réseaux.</p>
-      <a class="gamme-card__link" href="#">
+      <h3 class="gamme-card__title">Voiries</h3>
+      <p class="gamme-card__desc">Produits divers et accessoires spécialisés assurant la flexibilité et la performance de vos installations.</p>
+      <a class="gamme-card__link" href="./produit.html?cat=voiries">
         Voir les produits
         <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
     </div>
-
   </div>
 </section>
-<!-- ===== SECTION À PROPOS ===== -->
-<section class="apropos">
-  <!-- ① PHOTO -->
-   
-  <div class="apropos__photo">
-    <img src="./visuel/Photo Hicham Toumir.jpg" alt="Hicham Toumir – Mecafric Water" />
-    <div class="apropos__photo-name">
-      <strong>Hicham Toumir</strong>
-      <span>Fondateur &amp; Directeur</span>
-    </div>
-  </div>
-  <!-- ② TEXTE CENTRÉ -->
-  <div class="apropos__content">
-
-    <div class="apropos__eyebrow">
-      <span></span>
-      <p>Notre histoire</p>
-      <span></span>
-    </div>
-
-    <h2 class="apropos__title">
-      L'excellence industrielle,<br>
-      <em>au service du Maroc</em>
-    </h2>
-
-    <div class="apropos__divider"></div>
-
-    <div class="apropos__text">
-       
-      <p>
-        Depuis sa création, <strong>Mecafric Water</strong> place au cœur de sa mission
-        la fourniture de solutions industrielles fiables et de haute qualité.
-      </p>
-      <p>
-        Notre expertise technique, associée à un engagement constant pour l'excellence,
-        nous a permis de devenir un acteur de référence dans le domaine des
-        <strong>vannes industrielles</strong> au Maroc.
-      </p>
-      <p>
-        Chaque jour, nous mettons tout en œuvre pour comprendre les besoins spécifiques
-        de nos clients et y répondre avec des produits performants et des services
-        sur mesure, adaptés aux exigences des secteurs industriels les plus exigeants.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-</section> <!-- fin section apropos -->
-
-<!-- ③ STATISTIQUES -->
-  <section class="statistiques">
-
-  <div class="stats-container">
-
-  <div class="stat-card">
-
-  <div class="stat-icon">
-
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1D4361" stroke-width="2">
-  <circle cx="12" cy="12" r="10"/>
-  <path d="M12 6v6l4 2"/>
-  </svg>
-
-  </div>
-
-  <h2 class="counter" data-target="15">0</h2>
-  <p>Années d'expérience</p>
-
-  </div>
-
-
-
-  <div class="stat-card">
-
-  <div class="stat-icon">
-
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1D4361" stroke-width="2">
-  <path d="M20 7l-8 8-4-4-4 4"/>
-  </svg>
-  </div>
-  <h2 class="counter" data-target="200">0</h2>
-  <p>Clients satisfaits</p>
-  </div>
-  <div class="stat-card">
-  <div class="stat-icon">
-  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1D4361" stroke-width="2">
-  <rect x="3" y="10" width="18" height="4"/>
-  <circle cx="8" cy="12" r="2"/>
-  <circle cx="16" cy="12" r="2"/>
-  </svg>
-  </div>
-  <h2 class="counter" data-target="50">0</h2>
-  <p>Produits référencés</p>
-  </div>
-  </div>
-  </section>
+<!--  fin section apropos -->
 <!-- solutions -->
- 
-  <div class="cards">
 
-    <!-- Card 1 -->
-    <div class="card">
-      <img src="./visuel/1. Fourniture de composants.png" alt="">
-      <div class="num-badge">01</div>
-      <div class="card-body">
-        <h3 class="card-title">Fourniture de composants</h3>
-        <p class="card-desc">Une gamme complète d'équipements hydrauliques conçus pour les réseaux d'eau potable, d'eaux usées et d'eau de process.</p>
-        <div class="features">
-          <div class="feature">Vannes industrielles : papillon, opercule, guillotine</div>
-          <div class="feature">Clapets anti-retour, à battant, à ressort</div>
-          <div class="feature">Filtres, ventouses, soupapes de sécurité</div>
-          <div class="feature">Raccords, brides, adaptateurs, compensateurs</div>
-        </div>
+<div class="cards">
+
+<!-- Card 1 -->
+<div class="card">
+<img src="./visuel/1. Fourniture de composants.png" alt="">
+
+<div class="num-badge">01</div>
+
+<div class="card-body">
+
+<h3 class="card-title">Fourniture de composants</h3>
+
+<p class="card-desc">
+Une gamme complète d'équipements hydrauliques conçus pour les réseaux d'eau potable, d'eaux usées et d'eau de process.
+</p>
+
+<div class="features">
+<div class="feature">Vannes industrielles : papillon, opercule, guillotine</div>
+<div class="feature">Clapets anti-retour, à battant, à ressort</div>
+<div class="feature">Filtres, ventouses, soupapes de sécurité</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- Card 2 -->
+<div class="card">
+
+<img src="./visuel/2. Conseil technique.png" alt="">
+
+<div class="num-badge">02</div>
+
+<div class="card-body">
+
+<h3 class="card-title">Conseil technique</h3>
+
+<p class="card-desc">
+Notre équipe vous accompagne dans toutes les étapes de votre projet hydraulique.
+</p>
+
+<div class="features">
+<div class="feature">Analyse des besoins et contraintes techniques</div>
+<div class="feature">Assistance à l’installation et au démarrage des équipements</div>
+</div>
+
+</div>
+</div>
+
+
+<!-- Card 3 -->
+<div class="card">
+
+<img src="./visuel/3. Conception de solutions .png" alt="">
+
+<div class="num-badge">03</div>
+
+<div class="card-body">
+
+<h3 class="card-title">Conception sur-mesure</h3>
+
+<p class="card-desc">
+Parce que chaque installation industrielle est unique, nous développons des solutions personnalisées adaptées à vos exigences.
+</p>
+
+<div class="features">
+<div class="feature">Postes de régulation et de comptage</div>
+<div class="feature">Stations compactes pré-équipées</div>
+<div class="feature">Solutions adaptées à chaque projet</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    <!-- <br>
+    <br>
+    <h2>Notre Catalogue</h2>
+<a href="./catalogue/mecafricwaterlogo.pdf" download>
+  Télécharger le catalogue PDF
+</a>-->
+<!-- <a href="https://wa.me/2120680828931" target="_blank" class="btn-whatsapp">
+  <img src="./svg/whatsapp_1_.svg" alt="">
+  <main><strong>Mecafric <br> water</strong></main>
+</a>  -->
+<!-- </div> -->
+  <footer class="footer">
+  <div class="footer-main">
+
+    <!-- Logo + description -->
+    <div class="footer-brand">
+    
+        <img src="./visuel/MECAFRIC WATER-BLANC.png" alt="" width="180px" height="90px">
+   
+      <p>Mecafric Water est une entreprise spécialisée dans la fourniture d’équipements et de solutions pour les réseaux d’eau,
+         l’hydraulique et la robinetterie industrielle.</p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
 
-    <!-- Card 2 (elevated) -->
-    <div class="card">
-      <img src="./visuel/2. Conseil technique.png" alt="">
-      <div class="num-badge">02</div>
-      <div class="card-body">
-        <h3 class="card-title">Conseil technique</h3>
-        <p class="card-desc">Notre équipe accompagne chaque étape de votre projet hydraulique pour garantir performance et fiabilité sur le terrain.</p>
-        <div class="features">
-          <div class="feature">Analyse des besoins et contraintes techniques</div>
-          <div class="feature">Assistance à l'installation et au démarrage</div>
-        </div>
-      </div>
+    <!-- Produits -->
+    <div class="footer-col">
+      <h4> Nos Produits</h4>
+      <a href="./produit.html?cat=robinetterie">Robinnetrie</a>
+      <a href="./produit.html?cat=equipements">Equipement</a>
+      <a href="./produit.html?cat=raccordements">Raccordements</a>
+      <a href="./produit.html?cat=branchements">Branchements</a>
+      <a href="./produit.html?cat=tuyauterie">Tyauterie</a>
+      <a href="./produit.html?cat=voiries">Voiries</a>
     </div>
 
-    <!-- Card 3 -->
-    <div class="card">
-      <img src="./visuel/3. Conception de solutions .png" alt="">
-      <div class="num-badge">03</div>
-      <div class="card-body">
-        <h3 class="card-title">Conception sur-mesure</h3>
-        <p class="card-desc">Parce que chaque installation industrielle est unique, nous développons des solutions personnalisées adaptées à vos exigences.</p>
-        <div class="features">
-          <div class="feature">Postes de régulation et de comptage</div>
-          <div class="feature">Stations compactes pré-équipées</div>
-          <div class="feature">Solutions adaptées à chaque projet</div>
-        </div>
-      </div>
+    <!-- Entreprise -->
+    <div class="footer-col">
+      <h4>Entreprise</h4>
+      <a href="./apropos.html">À propos</a>
+      <a href="./produit.html">Produit</a>
+      <a href="./index.html">Services</a>
+      <a href="./formulaire.html">Contact</a>
     </div>
- <script src="./script.js"></script>
+        <div class="footer-col">
+      <h4>Contact</h4>
+      <a >+212 661-236088</a>
+      <a>mecafric.water@gmail.com</a>
+    </div>
+  <!-- Badges + Newsletter -->
+  <div class="footer-middle">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.1645097892206!2d-7.5105271!3d33.6010358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cb515b98c6dd%3A0x6d0f55e077c97ef4!2sMecafric%20water%20supplies!5e0!3m2!1sfr!2sma!4v1773153495017!5m2!1sfr!2sma" 
+         width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"></iframe> 
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="footer-bottom">
+    <span>© 2026 MecAfric water supplies. à Casablanca</span>
+  </div>
+</footer>
 </body>
+ <script src="./script.js"></script>
 </html>

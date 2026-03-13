@@ -1,17 +1,93 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.counter');
+
+  // Fonction pour vérifier si un élément est visible à l'écran
+  function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom >= 0;
+  }
+
+  // Fonction pour animer un compteur
+  function animateCounter(counter) {
+    const target = +counter.getAttribute('data-target');
+    const duration = 2000; // durée en ms
+    let start = null;
+
+    const easeOutQuad = t => t * (2 - t); // easing
+
+    const step = timestamp => {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const percentage = Math.min(progress / duration, 1);
+      const value = Math.ceil(target * easeOutQuad(percentage));
+
+      // Formatage avec milliers séparateurs
+      counter.innerText = value.toLocaleString();
+
+      if (progress < duration) {
+        requestAnimationFrame(step);
+      } else {
+        counter.innerText = target.toLocaleString();
+      }
+    };
+
+    requestAnimationFrame(step);
+  }
+
+  // On vérifie au scroll si les compteurs sont visibles
+  function checkCounters() {
+    counters.forEach(counter => {
+      if (!counter.dataset.animated && isInViewport(counter)) {
+        counter.dataset.animated = true; // marque comme animé
+        animateCounter(counter);
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkCounters);
+  checkCounters(); // vérifie aussi au chargement
+});
+// Animation au scroll
+const observerequipe = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, entry.target.dataset.delay);
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.card-employe').forEach((card, i) => {
+  card.dataset.delay = i % 3 * 150; // délai décalé par colonne
+  observerequipe.observe(card);
+});
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.3  // déclenche quand 30% visible
+});
+
+document.querySelectorAll('.img-left, .img-right')
+  .forEach(img => observer.observe(img));
 // Protection : le carousel n'existe que sur index1.html
 if (document.getElementById('carousel')) {
 
     const slides = [
         {
-            image: "./visuel/Proposition 1.png",
+            image: "./visuel/slide01.webp",
             slogan: "Précision industrielle"
         },
         {
-            image: "./visuel/Proposition 2.png",
+            image: "./visuel/slide02.jpg",
             slogan: "Maîtrise de l’eau"
         },
         {
-            image: "./visuel/Proposition 3.png",
+            image: "./visuel/slide03.jpg",
             slogan: "Custom solutions"
         }
     ];
@@ -195,66 +271,179 @@ if (document.getElementById('carousel')) {
     window.addEventListener('beforeunload', () => clearInterval(autoplayInterval));
 
 } // fin if carousel
-/*pour les gammes*/
-const container3 = document.getElementById("gammes-container");
+const AMP   = 130;
+const TOTAL = 6;
 
-// Protection : seulement si l'élément existe sur la page
-if (container3) {
-  fetch('./gammes.json')
-    .then(response => {
-      if (!response.ok) throw new Error('Erreur réseau');
-      return response.json();
-    })
-    .then(data => {
-      const gammes = data.gammes || data;
-      gammes.forEach(gamme => {
-        const div = document.createElement("div");
-        div.classList.add("col-12", "col-md-6", "col-lg-4");
-        div.innerHTML = `
-          <div class="card h-100 shadow-sm bg-light border-0">
-            <div class="card-body">
-              ${gamme.icone ? `<img src="${gamme.icone}" alt="${gamme.nom}" class="img-fluid mb-2">` : ""}
-              <h5 class="card-title bg-primary text-white p-2 rounded">${gamme.nom}</h5>
-              <p class="card-text">${gamme.description || ''}</p>
-              <button class="btn btn-primary" onclick="window.location.href='produits.html?gamme=${gamme.nom}'">Voir les produits</button>
-            </div>
-          </div>
-        `;
-        container3.appendChild(div);
-      });
-    })
-    .catch(error => {
-      console.error('Erreur de chargement:', error);
-      container3.innerHTML = '<p class="text-danger">Impossible de charger les projets.</p>';
-    });
-};
+const cats = [
+  {
+    img:  './svg/vanne2.png',
+    name: 'Robinetterie',
+        desc: 'Solutions fiables pour tous types d\'applications industrielles.',
+    href: './produit.html?cat=robinetterie'
+  },
+  {
+    img:  './svg/clapets2.png',
+    name: 'Équipement',
+    desc: 'Clapets, filtres et ventouses de haute qualité pour un réseau sûr.',
+    href: './produit.html?cat=equipements'
+  },
+  {
+    img:  './svg/boulon2.png',
+    name: 'Raccordements',
+    desc: 'Liaison sûre et étanche entre les éléments du réseau.',
+    href: './produit.html?cat=raccordements'
+  },
+  {
+    img:  './svg/coude2.png',
+    name: 'Branchements',
+    desc: 'Connexion fiable entre réseau principal et installations.',
+    href: './produit.html?cat=branchements'
+  },
+  {
+    img:  './svg/branchement2.png',
+    
+    name: 'Tuyauterie',
+    desc: 'Tuyauterie robuste pour des réseaux efficaces et durables.',
+    href: './produit.html?cat=tuyauterie'
+  },
+  {
+    img:  './svg/voiries2.png',
+    name: 'Voiries',
+    desc: 'Équipements spécialisés pour vos installations de voirie.',
+    href: './produit.html?cat=voiries'
+  },
+];
 
-const counters = document.querySelectorAll('.counter');
-
-counters.forEach(counter => {
-
-const updateCounter = () => {
-
-const target = +counter.getAttribute('data-target');
-const count = +counter.innerText;
-
-const speed = 50;
-
-const increment = target / speed;
-
-if(count < target){
-
-counter.innerText = Math.ceil(count + increment);
-setTimeout(updateCounter,40);
-
-}else{
-
-counter.innerText = target;
-
+function buildPath(w, h) {
+  let d = '';
+  for (let i = 0; i <= 300; i++) {
+    const t = i / 300;
+    const x = t * w;
+    const y = h/2 - Math.sin(t * Math.PI * 2) * AMP;
+    d += (i === 0 ? 'M' : 'L') + `${x.toFixed(2)},${y.toFixed(2)} `;
+  }
+  return d;
 }
 
-};
+const svgEl   = document.getElementById('waveSvg');
+const pathEl  = document.getElementById('wavePath');
+const nodesEl = document.getElementById('nodes');
+const sceneEl = document.getElementById('scene');
+function render() {
+  const sw = sceneEl.offsetWidth || window.innerWidth;
+  const sh = sceneEl.offsetHeight || 380;
+  svgEl.setAttribute('viewBox', `0 0 ${sw} ${sh}`);
+  pathEl.setAttribute('d', buildPath(sw, sh));
 
-updateCounter();
+  const len = pathEl.getTotalLength ? pathEl.getTotalLength() : 3000;
+  pathEl.style.strokeDasharray  = len;
+  pathEl.style.strokeDashoffset = len;
+  pathEl.style.animation = 'none';
+  pathEl.offsetHeight; // reflow
+  pathEl.style.animation = 'drawWave 1.8s cubic-bezier(.4,0,.2,1) .3s forwards';
 
-});
+  nodesEl.innerHTML = '';
+  cats.forEach((cat, i) => {
+    const t     = (2 * i + 1) / (2 * TOTAL);
+    const x     = t * sw;
+    const y     = sh/2 - Math.sin(t * Math.PI * 2) * AMP;
+    const isTop = y < sh / 2;
+
+    const node = document.createElement('div');
+    node.className = `node ${isTop ? 'top' : 'bottom'}`;
+    node.style.left = x + 'px';
+    node.style.top  = y + 'px';
+
+    node.innerHTML = `
+
+      <a class="node-circle" href="${cat.href}">
+        <img src="${cat.img}" alt="${cat.name}" with="60px" height="60px">
+      </a>
+      <div class="node-label">
+        <div class="node-line"></div>
+        <div class="node-name">${cat.name}</div>
+      </div>
+    `;
+    nodesEl.appendChild(node);
+  });
+}
+
+  // Écoute le scroll et vérifie aussi au chargement
+  window.addEventListener('scroll', render);
+  render();
+  
+  /*apropos*/
+  // ── Floating particles ──────────────────────────────────────────────
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 22; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 14 + 4;
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random()*100}%;
+      animation-duration:${Math.random()*12+8}s;
+      animation-delay:${Math.random()*10}s;
+    `;
+    container.appendChild(p);
+  }
+
+  // ── 3-D tilt on mouse move ──────────────────────────────────────────
+  const scene = document.getElementById('scene');
+  const card  = document.getElementById('card');
+
+  document.addEventListener('mousemove', e => {
+    const cx = window.innerWidth  / 2;
+    const cy = window.innerHeight / 2;
+    const dx = (e.clientX - cx) / cx; // -1 … 1
+    const dy = (e.clientY - cy) / cy;
+    card.style.transform = `rotateY(${dx * 12}deg) rotateX(${-dy * 10}deg)`;
+    card.style.boxShadow = `
+      ${-dx*20}px ${dy*20}px 80px rgba(92,61,143,0.55),
+      0 10px 30px rgba(0,0,0,0.4)
+    `;
+  });
+
+  document.addEventListener('mouseleave', () => {
+    card.style.transform = 'rotateY(0) rotateX(0)';
+    card.style.boxShadow = '';
+  });
+
+  // ── Typewriter effect on quote (preserves HTML) ─────────────────────
+  const el = document.getElementById('quote-text');
+  const fullHTML = el.innerHTML;
+
+  // Strip to plain text for typing, but keep <br> as newlines
+  const plainText = fullHTML
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g,' ')
+    .trim()
+    // Normalize multiple spaces/newlines into single newlines between sentences
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n[ \t]+/g, '\n')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n');
+
+  el.textContent = '';
+  let i = 0;
+  setTimeout(() => {
+    const interval = setInterval(() => {
+      const ch = plainText[i];
+      if (ch === '\n') {
+        el.appendChild(document.createElement('br'));
+        // Double newline = paragraph gap
+        if (plainText[i+1] === '\n') {
+          el.appendChild(document.createElement('br'));
+          i++; // skip the second \n
+        }
+      } else {
+        el.appendChild(document.createTextNode(ch));
+      }
+      i++;
+      if (i >= plainText.length) clearInterval(interval);
+    }, 5);
+  }, 1100);
+/*pour les gammes*/
+
+
