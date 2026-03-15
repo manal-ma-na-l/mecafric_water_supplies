@@ -3213,7 +3213,170 @@ width:28px;
 .prev, .next {
     z-index: 100;
 }
+/* =========================================================
+   RESPONSIVE TABLET
+   ========================================================= */
+@media (max-width: 1024px) {
 
+  nav.header-gradient ul {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .partner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gm-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gammes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .equipe {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .modal-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-img {
+    width: 100%;
+    min-height: 300px;
+  }
+
+  .panel-content {
+    padding: 40px 30px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+   ========================================================= */
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  nav.header-gradient {
+    height: auto;
+    padding: 10px 5%;
+  }
+
+  #logo {
+    width: 120px;
+    height: auto;
+  }
+
+  .carousel-section {
+    height: 70vh;
+  }
+
+  .scene {
+    height: 300px;
+  }
+
+  .stats-inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .gm-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .gammes__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .equipe {
+    grid-template-columns: 1fr !important;
+  }
+
+  .panel-img {
+    display: none;
+  }
+
+  .panel-content {
+    padding: 30px 20px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .tab-btn {
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card img {
+    height: 160px;
+  }
+
+  .node-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+  }
+
+}
 
 
 
