@@ -1,3 +1,4 @@
+ 
 document.addEventListener('DOMContentLoaded', () => {
   const counters = document.querySelectorAll('.counter');
 
@@ -205,10 +206,7 @@ if (document.getElementById('carousel')) {
                 <div class="overlay"></div>
                 <div class="blob-container ${index === 0 ? 'show' : ''}">
                     ${createBlobSVG(index, gradId)}
-                    <div class="blob-shimmer"></div>
-                    <div class="blob-slogan-text">
-                        <h2>${slide.slogan}</h2>
-                    </div>
+
                 </div>
                 <div class="water-waves">
                     <div class="wave wave-1"></div>
