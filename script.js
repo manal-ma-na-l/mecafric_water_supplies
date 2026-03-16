@@ -8,31 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Fonction pour animer un compteur
-  function animateCounter(counter) {
-    const target = +counter.getAttribute('data-target');
-    const duration = 2000; // durée en ms
-    let start = null;
 
-    const easeOutQuad = t => t * (2 - t); // easing
-
-    const step = timestamp => {
-      if (!start) start = timestamp;
-      const progress = timestamp - start;
-      const percentage = Math.min(progress / duration, 1);
-      const value = Math.ceil(target * easeOutQuad(percentage));
-
-      // Formatage avec milliers séparateurs
-      counter.innerText = value.toLocaleString();
-
-      if (progress < duration) {
-        requestAnimationFrame(step);
-      } else {
-        counter.innerText = target.toLocaleString();
-      }
-    };
-
-    requestAnimationFrame(step);
-  }
 
   // On vérifie au scroll si les compteurs sont visibles
   function checkCounters() {
@@ -46,6 +22,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', checkCounters);
   checkCounters(); // vérifie aussi au chargement
+});
+const counters = document.querySelectorAll('.counter');
+
+const observer1 = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+const counter = entry.target;
+const target = +counter.getAttribute('data-target');
+
+let count = 0;
+
+const update = () => {
+
+if(count < target){
+count += target / 100;
+counter.innerText = Math.ceil(count);
+setTimeout(update,70);
+}
+
+};
+
+update();
+
+}
+
+});
+
+},{threshold:0.8});
+
+counters.forEach(counter=>{
+observer1.observe(counter);
 });
 // Animation au scroll
 const observerequipe = new IntersectionObserver((entries) => {
@@ -69,7 +79,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.3  // déclenche quand 30% visible
+  threshold: 0.4 // déclenche quand 30% visible
 });
 
 document.querySelectorAll('.img-left, .img-right')

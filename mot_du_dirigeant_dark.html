@@ -1,0 +1,238 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap');
+
+  .card-wrap {
+    font-family: 'Outfit', sans-serif;
+    border-radius: 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+    position: relative;
+  }
+  .left-panel {
+ background:
+      linear-gradient(160deg, rgba(12, 20, 39, 0.82) 0%, rgba(19, 60, 112, 0.65) 50%, rgba(23, 44, 87, 0.88) 100%),
+      url('./visuel/Proposition\ 2.png') center/cover no-repeat fixed;
+          padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 0.5px solid #1e2d42;
+    position: relative;
+    overflow: hidden;
+  }
+  .left-panel::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #1a4a7a33, transparent 70%);
+  }
+  .left-panel::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #0e3a5a22, transparent 70%);
+  }
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: #3a7bd5;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .company-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: #e8edf5;
+    line-height: 1.1;
+    margin: 8px 0 4px;
+  }
+  .company-name span {
+    color: #3a7bd5;
+  }
+  .since-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #4a6a8a;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+  .since-badge::before {
+    content: '';
+    display: block;
+    width: 20px; height: 0.5px;
+    background: #3a7bd5;
+  }
+  .divider {
+    width: 40px; height: 1px;
+    background: linear-gradient(90deg, #3a7bd5, transparent);
+    margin: 24px 0;
+  }
+  .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #6a8aaa;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .stat-row {
+    display: flex;
+    gap: 24px;
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #e8edf5;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 10px;
+    color: #37628d;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .right-panel {
+    background: #e3ecf9;
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: #3a7bd5;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .director-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 300;
+    color: #011330;
+    margin: 12px 0 4px;
+    line-height: 1.1;
+  }
+  .director-title {
+    font-size: 11px;
+    color: #4a6a8a;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .quote-block {
+    border-left: 2px solid #3a7bd5;
+    padding: 16px 0 16px 20px;
+    margin: 24px 0;
+    flex: 1;
+  }
+  .quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: #3a7bd5;
+    line-height: 0.6;
+    margin-bottom: 12px;
+    display: block;
+    opacity: 0.6;
+  }
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #001328;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .profile-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 0.5px solid #1e2d42;
+  }
+  .avatar {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a3a5c, #2a5a8c);
+    border: 1.5px solid #3a7bd5;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #3a9bd5;
+    flex-shrink: 0;
+  }
+  .profile-info p {
+    margin: 0;
+  }
+  .profile-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #c8d8e8;
+  }
+  .profile-loc {
+    font-size: 12px;
+    color: #4a6a8a;
+    margin-top: 2px !important;
+  }
+  .sig {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: #3a7bd5;
+    opacity: 0.7;
+    margin-left: auto;
+    line-height: 1;
+  }
+</style>
+
+<div class="card-wrap">
+  <div class="left-panel">
+    <div>
+      <p class="eyebrow">Industrie de l'eau</p>
+      <h1 class="company-name">Mecafric<br><span>Water</span></h1>
+      <p class="since-badge">Depuis 2010</p>
+      <div class="divider"></div>
+      <p class="tagline">Solutions industrielles fiables<br>et de haute qualité au Maroc</p>
+    </div>
+    <div>
+    </div>
+  </div>
+
+  <div class="right-panel">
+    <div>
+      <p class="section-label">Mot du dirigeant</p>
+      <h2 class="director-name">Hicham<br>Toumir</h2>
+      <p class="director-title">Fondateur &amp; Directeur</p>
+    </div>
+
+    <div class="quote-block">
+      <span class="quote-mark">"</span>
+      <p class="quote-text">Depuis sa création, Mecafric Water place au cœur de sa mission la fourniture de solutions industrielles fiables et de haute qualité. Notre expertise nous a permis de devenir un acteur de référence dans le domaine des vannes industrielles au Maroc.</p>
+    </div>
+
+    <div class="profile-row">
+      <div class="avatar"><img src="./Photos/Hicham Toumir.jpg" alt="" width="40px" height="40px"></div>
+      <div class="profile-info">
+        <p class="profile-name">Hicham Toumir</p>
+        <p class="profile-loc">Casablanca, Maroc</p>
+      </div>
+      <span class="sig">Hicham Toumir</span>
+    </div>
+  </div>
+</div>
