@@ -1,0 +1,557 @@
+<!-- ```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gammes</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Segoe UI", sans-serif;
+}
+
+body{
+background:#f5f9ff;
+padding:80px 6%;
+}
+
+/* TITLE */
+
+.title{
+text-align:center;
+font-size:38px;
+color:#0747a1;
+margin-bottom:70px;
+}
+
+.title span{
+color:#1e97f3;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+/* CARD */
+
+.card{
+
+display:flex;
+gap:18px;
+
+background:white;
+padding:30px;
+
+border-radius:14px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+position:relative;
+
+transition:.35s;
+overflow:hidden;
+}
+
+/* accent bar */
+
+.card::before{
+content:"";
+position:absolute;
+left:0;
+top:0;
+height:100%;
+width:6px;
+
+background:linear-gradient(
+180deg,
+#0747a1,
+#1e97f3,
+#41a7f5
+);
+
+transition:.4s;
+}
+
+/* hover */
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 45px rgba(0,0,0,0.15);
+}
+
+.card:hover::before{
+width:10px;
+}
+
+/* ICON */
+
+.icon{
+min-width:60px;
+height:60px;
+
+background:#eaf3ff;
+
+border-radius:12px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:28px;
+
+color:#0747a1;
+}
+
+/* CONTENT */
+
+.content h3{
+font-size:20px;
+color:#0747a1;
+margin-bottom:6px;
+}
+
+.content p{
+font-size:14px;
+color:#5c6c82;
+line-height:1.5;
+margin-bottom:12px;
+}
+
+/* LINK */
+
+.content a{
+font-size:14px;
+font-weight:600;
+
+text-decoration:none;
+
+color:#1e97f3;
+
+transition:.3s;
+}
+
+.content a:hover{
+color:#0747a1;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:600px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.title{
+font-size:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h2 class="title">Nos <span>Gammes</span></h2>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">⚙️</div>
+<div class="content">
+<h3>Robinetterie</h3>
+<p>Solutions fiables pour les installations industrielles.</p>
+<a href="#">Voir les produits →</a>
+</div>
+</div>
+
+<div class="card">
+<div class="icon">🔧</div>
+<div class="content">
+<h3>Équipement</h3>
+<p>Équipements robustes pour réseaux hydrauliques.</p>
+<a href="#">Voir les produits →</a>
+</div>
+</div>
+
+<div class="card">
+<div class="icon">🔩</div>
+<div class="content">
+<h3>Raccordements</h3>
+<p>Connexions sécurisées pour systèmes industriels.</p>
+<a href="#">Voir les produits →</a>
+</div>
+</div>
+
+<div class="card">
+<div class="icon">💧</div>
+<div class="content">
+<h3>Branchements</h3>
+<p>Solutions fiables pour réseaux d'eau et installations.</p>
+<a href="#">Voir les produits →</a>
+</div>
+</div>
+
+<div class="card">
+<div class="icon">📦</div>
+<div class="content">
+<h3>Tuyauterie</h3>
+<p>Produits de tuyauterie et accessoires techniques.</p>
+<a href="#">Voir les produits →</a>
+</div>
+</div>
+
+<div class="card">
+<div class="icon">🛠</div>
+<div class="content">
+<h3>Voiries</h3>
+<p>Accessoires spécialisés pour infrastructures.</p>
+<a href="#">Voir les produits →</a>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
+``` -->
+ ```html id="7r1p8b"
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bento Gammes</title>
+
+<style>
+
+/* RESET */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Segoe UI", sans-serif;
+}
+
+body{
+background:#f5f9ff;
+padding:90px 6%;
+}
+
+/* TITLE */
+
+.title{
+text-align:center;
+font-size:42px;
+color:#0747a1;
+margin-bottom:70px;
+}
+
+.title span{
+color:#1e97f3;
+}
+
+/* ===== BENTO GRID ===== */
+
+.bento{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+grid-auto-rows:200px;
+
+gap:25px;
+
+}
+
+/* CARD */
+
+.card{
+
+background:white;
+
+border-radius:20px;
+
+padding:30px;
+
+box-shadow:0 12px 35px rgba(0,0,0,0.08);
+
+position:relative;
+
+overflow:hidden;
+
+transition:.4s;
+}
+
+/* hover */
+
+.card:hover{
+
+transform:translateY(-10px) scale(1.02);
+
+box-shadow:0 25px 60px rgba(0,0,0,0.15);
+
+}
+
+/* gradient glow */
+
+.card::after{
+
+content:"";
+
+position:absolute;
+
+width:200px;
+height:200px;
+
+background:radial-gradient(circle,#1e97f3,transparent);
+
+top:-80px;
+right:-80px;
+
+opacity:.2;
+
+}
+
+/* ICON */
+
+.icon{
+
+font-size:40px;
+
+margin-bottom:15px;
+
+}
+
+/* TITLE */
+
+.card h3{
+
+font-size:22px;
+
+color:#0747a1;
+
+margin-bottom:8px;
+
+}
+
+/* TEXT */
+
+.card p{
+
+font-size:14px;
+
+color:#5a6d85;
+
+line-height:1.5;
+
+margin-bottom:14px;
+
+}
+
+/* BUTTON */
+
+.card a{
+
+font-size:14px;
+
+text-decoration:none;
+
+font-weight:600;
+
+color:#1e97f3;
+
+}
+
+/* DIFFERENT SIZES */
+
+.big{
+
+grid-row:span 2;
+
+}
+
+.wide{
+
+grid-column:span 2;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.bento{
+grid-template-columns:repeat(2,1fr);
+}
+
+.wide{
+grid-column:span 2;
+}
+
+}
+
+@media(max-width:600px){
+
+.bento{
+grid-template-columns:1fr;
+grid-auto-rows:auto;
+}
+
+.big,
+.wide{
+grid-column:span 1;
+grid-row:span 1;
+}
+
+.title{
+font-size:30px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body> -->
+
+<h2 class="title">Nos <span>Gammes</span></h2>
+
+<div class="bento">
+
+<div class="card big">
+<div class="icon">⚙️</div>
+<h3>Robinetterie</h3>
+<p>Notre gamme de robinetterie offre des solutions fiables pour les installations industrielles et réseaux hydrauliques.</p>
+<a href="#">Voir les produits →</a>
+</div>
+
+<div class="card">
+<div class="icon">🔧</div>
+<h3>Équipement</h3>
+<p>Clapets, filtres et ventouses pour réseaux d'eau.</p>
+<a href="#">Voir les produits →</a>
+</div>
+
+<div class="card">
+<div class="icon">🔩</div>
+<h3>Raccordements</h3>
+<p>Connexions sûres et étanches.</p>
+<a href="#">Voir les produits →</a>
+</div>
+
+<div class="card wide">
+<div class="icon">💧</div>
+<h3>Branchements</h3>
+<p>Solutions pour connecter efficacement le réseau principal aux installations secondaires.</p>
+<a href="#">Voir les produits →</a>
+</div>
+
+<div class="card">
+<div class="icon">📦</div>
+<h3>Tuyauterie</h3>
+<p>Accessoires et tuyaux robustes.</p>
+<a href="#">Voir les produits →</a>
+</div>
+
+<div class="card">
+<div class="icon">🛠</div>
+<h3>Voiries</h3>
+<p>Produits spécialisés pour infrastructures.</p>
+<a href="#">Voir les produits →</a>
+</div>
+
+</div>
+
+</body>
+</html>
+
+<section id="gammes_une">
+  <h2 class="title">Nos <span>Gammes</span></h2>
+  <div class="gammes__grid">
+
+    <div class="gamme-card big">
+      <span class="gamme-card__num">01</span>
+      <div class="icon-wrap">
+        <img src="./svg/vanne.png" alt="Robinetterie" width="60" height="60">
+      </div>
+      <h3>Robinetterie</h3>
+      <p>Notre gamme de robinetterie offre des solutions fiables et performantes pour tous types d’applications industrielles.</p>
+      <a href="./produit.html?cat=robinetterie">Voir les produits →</a>
+    </div>
+
+    <div class="gamme-card">
+      <span class="gamme-card__num">02</span>
+      <div class="icon-wrap">
+        <img src="./svg/clapet.png" alt="Équipement" width="60" height="60">
+      </div>
+      <h3>Équipement de robinetterie</h3>
+      <p>Des solutions complètes pour un réseau d’eau sûr et durable : clapets, filtres et ventouses de haute qualité.</p>
+      <a href="./produit.html?cat=equipements">Voir les produits →</a>
+    </div>
+
+    <div class="gamme-card">
+      <span class="gamme-card__num">03</span>
+      <div class="icon-wrap">
+        <img src="./svg/boulon.png" alt="Raccordements" width="60" height="60">
+      </div>
+      <h3>Raccordements</h3>
+      <p>Nos raccordements garantissent une liaison sûre et étanche entre les différents éléments du réseau.</p>
+      <a href="./produit.html?cat=raccordements">Voir les produits →</a>
+    </div>
+
+    <div class="gamme-card wide">
+      <span class="gamme-card__num">04</span>
+      <div class="icon-wrap">
+        <img src="./svg/coude.png" alt="Branchements" width="60" height="60">
+      </div>
+      <h3>Branchements</h3>
+      <p>Nos branchements assurent une connexion fiable et sécurisée entre le réseau principal et les installations secondaires.</p>
+      <a href="./produit.html?cat=branchements">Voir les produits →</a>
+    </div>
+
+    <div class="gamme-card">
+      <span class="gamme-card__num">05</span>
+      <div class="icon-wrap">
+        <img src="./svg/voiries.png" alt="Tuyauterie" width="60" height="60">
+      </div>
+      <h3>Tuyautrie et accessoires</h3>
+      <p>Des solutions de tuyauterie et accessoires robustes pour des réseaux efficaces et fiables.</p>
+      <a href="./produit.html?cat=tuyauterie">Voir les produits →</a>
+    </div>
+
+    <div class="gamme-card">
+      <span class="gamme-card__num">06</span>
+      <div class="icon-wrap">
+        <img src="./svg/branchement.png" alt="Voiries" width="60" height="60">
+      </div>
+      <h3>Voiries</h3>
+      <p>Produits divers et accessoires spécialisés assurant la flexibilité et la performance de vos installations.</p>
+      <a href="./produit.html?cat=voiries">Voir les produits →</a>
+    </div>
+
+  </div>
+</section> 
