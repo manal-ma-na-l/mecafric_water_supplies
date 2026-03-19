@@ -34,20 +34,21 @@
     <li><a href="#">Contact</a></li>
     <li><a href="#">Demander votre devis</a></li>
   </ul>
-
 </nav>
 
 <!-- Carousel Section -->
 <section class="hero-slider">
-
+   
+    <div class="hero-slide" style="background-image: url('./visuel/slidef_2.jpeg');">
+  </div>
+  
   <div class="hero-slide active" style="background-image: url('./visuel/slidef_1.jpeg');">
         <div class="hero-text glass">
       <h1>Custom solutions for every installation</h1>
     </div>
   </div>
 
-  <div class="hero-slide" style="background-image: url('./visuel/slidef_2.jpeg');">
-  </div>
+
 
   <div class="hero-slide" style="background-image: url('./visuel/slidef_4.jpeg');">
     <div class="hero-text glass">
@@ -61,15 +62,26 @@
   </div>
 
   <!-- Wave divider -->
-  <div class="wave-divider">
-    <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
-      <path d="M0,55 C180,20 360,80 540,50 C720,20 900,70 1080,45 C1260,20 1350,60 1440,55 L1440,90 L0,90 Z" fill="#ffff"/>
-    </svg>
-  </div>
+<div class="wave-divider">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+    
+    <defs>
+      <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>  <!-- Blanc en haut -->
+        <stop offset="100%" stop-color="#d3d3d3" stop-opacity="0.8"/>  <!-- Gris clair en bas -->
+      </linearGradient>
+    </defs>
 
+    <path 
+      d="M0,55 C180,20 360,80 540,50 C720,20 900,70 1080,45 C1260,20 1350,60 1440,55 L1440,90 L0,90 Z" 
+      fill="url(#waveGradient)"
+    />
+    
+  </svg>
+</div>
 </section>
 
-
+<!--scene-->
 <div class="scene" id="scene">
   <svg class="wave-svg" id="waveSvg" viewBox="0 0 1400 380" preserveAspectRatio="none">
     <defs>
@@ -90,6 +102,7 @@
   </svg>
   <div class="nodes" id="nodes"></div>
 </div> 
+
 <!--temoignage-->
 <section class="temoignage-section">
   <div class="temoignage-container">
@@ -153,109 +166,72 @@
     </div>
   </div>
 </section>
-<!-- ═══════════════════════════════
-     SECTION GAMMES 
-═══════════════════════════════ -->
-<section id="gammes_une">
-  <div class="gammes__header">
-    <div class="gammes__eyebrow">
-      <span></span>
-      <p>Nos gammes</p>
-      <span></span>
-    </div>
-    <h2 class="gammes__title">
-      Des solutions pour <em>chaque besoin</em>
-    </h2>
-    <div class="gammes__divider"></div>
-  </div>
-  <div class="gammes__grid" id="gammes-grid">
-    <!-- Carte 1 -->
-    <div class="gamme-card">
-      <span class="gamme-card__num">01</span>
-      <div class="gamme-card__icon-wrap">
-        <!-- Robinet / vanne -->
-        <img src="./svg//vanne.png" alt="" width="60px" height="60px">
+
+<div class="gammes-section">
+  <div class="gammes-bg"></div>
+  <div class="gammes-title">NOS GAMMES</div>
+
+  <div class="gammes-grid">
+
+    <!-- Rangée 1 : grand · petit · grand -->
+    <div class="gamme-item">
+      <div class="gamme-circle photo large">
+        <a href="./produit.html?cat=robinetterie">
+          <img src="./produit_image/Robinetterie/vanne_a_opercule.jpg" alt="">
+        </a>
       </div>
-      <h3 class="gamme-card__title">Robinetterie</h3>
-      <p class="gamme-card__desc">Notre gamme de robinetterie offre des solutions fiables et performantes pour tous types d’applications industrielles.</p>
-      <a class="gamme-card__link" href="./produit.html?cat=robinetterie">
-        Voir les produits
-        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-    </div>
-    <!-- Carte 2 -->
-    <div class="gamme-card">
-      <span class="gamme-card__num">02</span>
-      <div class="gamme-card__icon-wrap">
-        <!-- Pompe / eau -->
-       <img src="./svg/clapet.png" alt="" width="60px" height="60px">
-      </div>
-      <h3 class="gamme-card__title">Equipement de robinetterie</h3>
-      <p class="gamme-card__desc">Des solutions complètes pour un réseau d’eau sûr et durable : clapets, filtres et ventouses de haute qualité.</p>
-      <a class="gamme-card__link" href="./produit.html?cat=equipements">
-        Voir les produits
-        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-    </div>
-    <!-- Carte 3 -->
-    <div class="gamme-card">
-      <span class="gamme-card__num">03</span>
-      <div class="gamme-card__icon-wrap">
-        <!-- Filtre -->
-     <img src="./svg/boulon.png" alt="" width="150%" height="40px">
-      </div>
-      <h3 class="gamme-card__title">Raccordements</h3>
-      <p class="gamme-card__desc">Nos raccordements garantissent une liaison sûre et étanche entre les différents éléments du réseau.</p>
-      <a class="gamme-card__link" href="./produit.html?cat=raccordements">
-        Voir les produits
-        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-    </div>
-    <!-- Carte 4 -->
-    <div class="gamme-card">
-      <span class="gamme-card__num">04</span>
-      <div class="gamme-card__icon-wrap">
-        <!-- Tuyaux / raccords -->
-        <img src="./svg/coude.png" alt="" width="60px" height="60px">
-      </div>
-      <h3 class="gamme-card__title">Branchements</h3>
-      <p class="gamme-card__desc">Nos branchements assurent une connexion fiable et sécurisée entre le réseau principal et les installations secondaires.</p>
-      <a class="gamme-card__link" href="./produit.html?cat=branchements">
-        Voir les produits
-        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-    </div>
-    <!-- Carte 5 -->
-    <div class="gamme-card">
-      <span class="gamme-card__num">05</span>
-      <div class="gamme-card__icon-wrap">
-        <!-- Compteur / mesure -->
-        <img src="./svg/voiries.png" alt="" width="60px" height="60px">
-      </div>
-      <h3 class="gamme-card__title">Tuyautrie et accessoires</h3>
-      <p class="gamme-card__desc">Des solutions de tuyauterie et accessoires robustes pour des réseaux efficaces et fiables.</p>
-      <a class="gamme-card__link" href="./produit.html?cat=tuyauterie">
-        Voir les produits
-        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
+      <div class="gamme-label">ROBINETTERIE</div>
     </div>
 
-    <!-- Carte 6 -->
-    <div class="gamme-card">
-      <span class="gamme-card__num">06</span>
-      <div class="gamme-card__icon-wrap">
-        <!-- Protection / sécurité -->
-       <img src="./svg/branchement.png" alt="" width="50px" height="50px">
+    <div class="gamme-item">
+      <div class="gamme-circle photo small">
+        <a href="./produit.html?cat=equipements">
+          <img src="./produit_image/Robinetterie/vanne_a_opercule.jpg" alt="">
+        </a>
       </div>
-      <h3 class="gamme-card__title">Voiries</h3>
-      <p class="gamme-card__desc">Produits divers et accessoires spécialisés assurant la flexibilité et la performance de vos installations.</p>
-      <a class="gamme-card__link" href="./produit.html?cat=voiries">
-        Voir les produits
-        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
+      <div class="gamme-label">Equipement</div>
     </div>
+
+    <div class="gamme-item">
+      <div class="gamme-circle photo large">
+        <a href="./produit.html?cat=branchements">
+          <img src="./produit_image/Robinetterie/vanne_a_opercule.jpg" alt="">
+        </a>
+      </div>
+      <div class="gamme-label">Branchement</div>
+    </div>
+
+    <!-- Rangée 2 : petit · grand · petit -->
+    <div class="gamme-item">
+      <div class="gamme-circle photo small">
+        <a href="./produit.html?cat=raccordements">
+          <img src="./produit_image/Robinetterie/vanne_a_opercule.jpg" alt="">
+        </a>
+      </div>
+      <div class="gamme-label">Raccordement</div>
+    </div>
+
+    <div class="gamme-item">
+      <div class="gamme-circle photo large">
+        <a href="./produit.html?cat=tuyauterie">
+          <img src="./produit_image/Robinetterie/vanne_a_opercule.jpg" alt="">
+        </a>
+      </div>
+      <div class="gamme-label">Tyuautreie</div>
+    </div>
+
+    <div class="gamme-item">
+      <div class="gamme-circle photo small">
+        <a href="./produit.html?cat=voiries">
+          <img src="./produit_image/Robinetterie/vanne_a_opercule.jpg" alt="">
+        </a>
+      </div>
+      <div class="gamme-label">Voiries</div>
+    </div>
+
   </div>
-</section>
+</div>
+
   <!-- services -->
 <section class="services-section">
   <h2 class="section-title">Nos Services</h2>
@@ -324,7 +300,6 @@
             alt="Conception sur-mesure"
             onerror="this.classList.add('error')"
           >
-       
         </div>
         <div class="num-badge-circle">03</div>
         <div class="pulse-dot"></div>
@@ -342,29 +317,18 @@
 
   </div>
 </section>
-
-    <!-- <br>
-    <br>
-    <h2>Notre Catalogue</h2>
-<a href="./catalogue/mecafricwaterlogo.pdf" download>
-  Télécharger le catalogue PDF
-</a>-->
-<!-- <a href="https://wa.me/2120680828931" target="_blank" class="btn-whatsapp">
-  <img src="./svg/whatsapp_1_.svg" alt="">
-  <main><strong>Mecafric <br> water</strong></main>
-</a>  -->
-<!-- </div> -->
- <!--footer-->
-  <footer class="footer">
-      <div class="circle">
-    <img src="./visuel/pomp3.JPG" alt="valve">
+<div class="top-section">
   </div>
-  <div class="footer-main">
 
-
-    <!-- Logo + description -->
-    <div class="footer-brand">
-    
+<footer class="custom-footer">
+  <div class="logo-container">
+    <div class="circle-border">
+      <img src="./visuel/3. Conception de solutions .png" alt="Vannes industrielles">
+    </div>
+  </div>
+  
+  <div class="footer-content">
+        <div class="footer-brand">
         <img src="./visuel/MECAFRIC WATER-BLANC.png" alt="" width="180px" height="90px">
    
       <p>Mecafric Water est une entreprise spécialisée dans la fourniture d’équipements et de solutions pour les réseaux d’eau,
@@ -374,10 +338,10 @@
         <a href="#"><i class="fab fa-linkedin-in"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
-    </div>
+    </div> 
 
     <!-- Produits -->
-    <div class="footer-col">
+     <div class="footer-col">
       <h4> Nos Produits</h4>
       <a href="./produit.html?cat=robinetterie">Robinnetrie</a>
       <a href="./produit.html?cat=equipements">Equipement</a>
@@ -385,7 +349,7 @@
       <a href="./produit.html?cat=branchements">Branchements</a>
       <a href="./produit.html?cat=tuyauterie">Tyauterie</a>
       <a href="./produit.html?cat=voiries">Voiries</a>
-    </div>
+    </div> 
 
     <!-- Entreprise -->
     <div class="footer-col">
@@ -399,19 +363,88 @@
       <h4>Contact</h4>
       <a >+212 661-236088</a>
       <a>mecafric.water@gmail.com</a>
-    </div>
+    </div> 
   <!-- Badges + Newsletter -->
   <div class="footer-middle">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.1645097892206!2d-7.5105271!3d33.6010358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cb515b98c6dd%3A0x6d0f55e077c97ef4!2sMecafric%20water%20supplies!5e0!3m2!1sfr!2sma!4v1773153495017!5m2!1sfr!2sma" 
          width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"></iframe> 
-  </div>
+  </div> 
 
   <!-- Bottom bar -->
-  <div class="footer-bottom">
+ <div class="footer-bottom">
     <span>© 2026 MecAfric water supplies. à Casablanca</span>
   </div>
+    </div>
 </footer>
+    <!-- <br>
+    <br>
+    <h2>Notre Catalogue</h2>
+<a href="./catalogue/mecafricwaterlogo.pdf" download>
+  Télécharger le catalogue PDF
+</a>-->
+<!-- <a href="https://wa.me/2120680828931" target="_blank" class="btn-whatsapp">
+  <img src="./svg/whatsapp_1_.svg" alt="">
+  <main><strong>Mecafric <br> water</strong></main>
+</a>  -->
+<!-- </div> -->
+ <!-- footer
+  <footer class="footer">
+      <div class="circle">
+    <img src="./visuel/pomp3.JPG" alt="valve">
+  </div>
+  <div class="footer-main">
+ -->
+
+    <!-- Logo + description -->
+    <!-- <div class="footer-brand">
+        <img src="./visuel/MECAFRIC WATER-BLANC.png" alt="" width="180px" height="90px">
+   
+      <p>Mecafric Water est une entreprise spécialisée dans la fourniture d’équipements et de solutions pour les réseaux d’eau,
+         l’hydraulique et la robinetterie industrielle.</p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div> -->
+
+    <!-- Produits -->
+    <!-- <div class="footer-col">
+      <h4> Nos Produits</h4>
+      <a href="./produit.html?cat=robinetterie">Robinnetrie</a>
+      <a href="./produit.html?cat=equipements">Equipement</a>
+      <a href="./produit.html?cat=raccordements">Raccordements</a>
+      <a href="./produit.html?cat=branchements">Branchements</a>
+      <a href="./produit.html?cat=tuyauterie">Tyauterie</a>
+      <a href="./produit.html?cat=voiries">Voiries</a>
+    </div> -->
+
+    <!-- Entreprise
+    <div class="footer-col">
+      <h4>Entreprise</h4>
+      <a href="./apropos.html">À propos</a>
+      <a href="./produit.html">Produit</a>
+      <a href="./index.html">Services</a>
+      <a href="./formulaire.html">Contact</a>
+    </div>
+        <div class="footer-col">
+      <h4>Contact</h4>
+      <a >+212 661-236088</a>
+      <a>mecafric.water@gmail.com</a>
+    </div> -->
+  <!-- Badges + Newsletter -->
+  <!-- <div class="footer-middle">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.1645097892206!2d-7.5105271!3d33.6010358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cb515b98c6dd%3A0x6d0f55e077c97ef4!2sMecafric%20water%20supplies!5e0!3m2!1sfr!2sma!4v1773153495017!5m2!1sfr!2sma" 
+         width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"></iframe> 
+  </div> -->
+
+  <!-- Bottom bar -->
+  <!-- <div class="footer-bottom">
+    <span>© 2026 MecAfric water supplies. à Casablanca</span>
+  </div>
+</footer> -->
 </body>
  <script src="./script.js"></script>
 </html>
