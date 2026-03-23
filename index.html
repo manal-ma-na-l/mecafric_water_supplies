@@ -30,8 +30,8 @@
     <li><a href="./index.html">Accueil</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="./produit.html">Produits</a></li>
-    <li><a href="./index.html#apropos">À propos</a></li>
-    <li><a href="#footer">Contact</a></li>
+    <li><a href="./apropos.html">À propos</a></li>
+    <li><a href="./contact.html">Contact</a></li>
     <li><a href="./formulaire.html">Demander votre devis</a></li>
   </ul>
 </nav>
@@ -41,7 +41,12 @@
     </div>
   <div class="hero-slide active" style="background-image: url('./visuel/slidef_1.jpeg');">
         <div class="hero-text glass">
-      <h1>Custom solutions for every installation</h1>
+      <h1 style="  background: linear-gradient(to right, #29B6E8 0%, #1A5FB4 40%, #2D2E83 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Oswald';
+  font-weight: bold;
+  font-size: 3.2rem;">Custom solutions for every installation</h1>
     </div>
   </div>
   <div class="hero-slide" style="background-image: url('./visuel/slidef_4.jpeg');">
@@ -117,11 +122,10 @@
       <span class="sig"><img src="./visuel/Signature Hicham Toumir-01.png" alt=""></span>
     </div>
     <div class="image-droite">
-      <img src="./visuel/Temoin.svgz" alt="Produit Mecafric">
+       <img class="img-anim" src="./visuel/Temoin.svgz" alt="Produit Mecafric">   
     </div>
   </div>
 </section>
-
 <!-- ===== STATISTIQUES ===== -->
 <section class="statistiques">
   <div class="stats-inner">
@@ -225,97 +229,11 @@
 
   </div>
 </div>
-
-  <!-- services -->
-<!-- <section class="services-section">
-  <h2 class="section-title">Nos Services</h2>
-  <div class="team-wrap">
-  Service 1 -->
-    <!-- <div class="team-member">
-      <div class="circle-outer">
-        <div class="circle-ring-2"></div>
-        <div class="circle-ring"></div>
-        <div class="circle-inner">
-          <img
-            src="./visuel/1. Fourniture de composants.png"
-            alt="Fourniture de composants"
-            onerror="this.classList.add('error')"
-          >
-        </div>
-        <div class="num-badge-circle">01</div>
-        <div class="pulse-dot"></div>
-      </div>
-      <div class="member-info">
-        <div class="name-badge">Fourniture de composants</div>
-        <p class="member-desc">Équipements hydrauliques pour réseaux d'eau potable, eaux usées et eau de process.</p>
-        <div class="features-list">
-          <div class="feature-item">Vannes industrielles : papillon, opercule, guillotine</div>
-          <div class="feature-item">Clapets anti-retour, à battant, à ressort</div>
-          <div class="feature-item">Filtres, ventouses, soupapes de sécurité</div>
-        </div>
-      </div>
-    </div> -->
-
-
-    <!-- Service 2 -->
-    <!-- <div class="team-member">
-      <div class="circle-outer">
-        <div class="circle-ring-2"></div>
-        <div class="circle-ring"></div>
-        <div class="circle-inner">
-          <img
-            src="./visuel/2. Conseil technique.png"
-            alt="Conseil technique"
-            onerror="this.classList.add('error')"
-          >
-        
-        </div>
-        <div class="num-badge-circle">02</div>
-        <div class="pulse-dot"></div>
-      </div>
-      <div class="member-info">
-        <div class="name-badge">Conseil technique</div>
-        <p class="member-desc">Notre équipe vous accompagne dans toutes les étapes de votre projet hydraulique.</p>
-        <div class="features-list">
-          <div class="feature-item">Analyse des besoins et contraintes techniques</div>
-          <div class="feature-item">Assistance à l'installation et au démarrage des équipements</div>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- Service 3 -->
-    <!-- <div class="team-member">
-      <div class="circle-outer">
-        <div class="circle-ring-2"></div>
-        <div class="circle-ring"></div>
-        <div class="circle-inner">
-          <img
-            src="./visuel/3. Conception de solutions .png"
-            alt="Conception sur-mesure"
-            onerror="this.classList.add('error')"
-          >
-        </div>
-        <div class="num-badge-circle">03</div>
-        <div class="pulse-dot"></div>
-      </div>
-      <div class="member-info">
-        <div class="name-badge">Conception sur-mesure</div>
-        <p class="member-desc">Solutions personnalisées adaptées à chaque installation industrielle unique.</p>
-        <div class="features-list">
-          <div class="feature-item">Postes de régulation et de comptage</div>
-          <div class="feature-item">Stations compactes pré-équipées</div>
-          <div class="feature-item">Solutions adaptées à chaque projet</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section> --> 
 <section class="services-section" id="services">
     <div class="gammes-title">NOS SERVICES</div>
 
   <div class="services-header">
-    <h2>Des services pensés pour chaque besoin industriel</h2>
+    <h2>Des services prêts pour tous vos besoins. </h2>
   </div>
 
   <div class="services-container">
@@ -333,7 +251,7 @@
     <div class="service-card">
      <img src="./visuel/2. Conseil technique.png" alt="" class="icon">
       <h3>Conseil technique</h3>
-      <p>INotre équipe vous accompagne dans toutes les étapes de votre projet hydraulique.</p>
+      <p>Notre équipe vous accompagne dans toutes les étapes de votre projet hydraulique.</p>
               <div class="features-list">
           <div class="feature-item">Analyse des besoins et contraintes techniques</div>
           <div class="feature-item">Assistance à l'installation et au démarrage des équipements</div>
@@ -352,6 +270,7 @@
     </div>
   </div>
 </section>
+
 <div class="top-section">
   </div>
 
@@ -361,7 +280,6 @@
       <img src="./visuel/3. Conception de solutions .png" alt="Vannes industrielles">
     </div>
   </div>
-  
   <div class="footer-content">
         <div class="footer-brand">
         <img src="./visuel/MECAFRIC WATER-BLANC.png" alt="" width="180px" height="90px">
@@ -374,7 +292,6 @@
         <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
     </div> 
-
     <!-- Produits -->
      <div class="footer-col">
       <h4> Nos Produits</h4>
@@ -412,74 +329,16 @@
   </div>
     </div>
 </footer>
-    <!-- <br>
-    <br>
-    <h2>Notre Catalogue</h2>
-<a href="./catalogue/mecafricwaterlogo.pdf" download>
-  Télécharger le catalogue PDF
-</a>-->
-<!-- <a href="https://wa.me/2120680828931" target="_blank" class="btn-whatsapp">
-  <img src="./svg/whatsapp_1_.svg" alt="">
+
+<a href="https://wa.me/2120680828931" target="_blank" class="btn-whatsapp">
+
+  <!-- SVG WhatsApp intégré (icône blanche) -->
+  <svg width="28" height="28" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="white">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.474 2.031 7.775L0 32l8.468-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.773-1.854l-.487-.29-5.027 1.19 1.213-4.903-.317-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.198-2.347-1.158-2.711-1.289-.364-.132-.629-.198-.893.198-.265.397-1.026 1.289-1.257 1.554-.231.265-.463.298-.861.099-.397-.198-1.676-.617-3.192-1.97-1.18-1.052-1.977-2.35-2.208-2.747-.231-.397-.025-.611.174-.809.178-.177.397-.463.595-.694.198-.231.265-.397.397-.662.132-.265.066-.497-.033-.695-.099-.198-.893-2.152-1.224-2.946-.322-.774-.65-.669-.893-.681l-.762-.013c-.264 0-.694.099-1.058.497-.364.397-1.39 1.358-1.39 3.312 0 1.953 1.423 3.84 1.621 4.105.198.265 2.8 4.276 6.784 5.995.948.41 1.688.655 2.265.838.952.302 1.818.26 2.503.158.764-.114 2.347-.959 2.678-1.885.33-.926.33-1.72.231-1.885-.099-.165-.364-.264-.762-.463z"/>
+  </svg>
+
   <main><strong>Mecafric <br> water</strong></main>
-</a>  -->
-<!-- </div> -->
- <!-- footer
-  <footer class="footer">
-      <div class="circle">
-    <img src="./visuel/pomp3.JPG" alt="valve">
-  </div>
-  <div class="footer-main">
- -->
-
-    <!-- Logo + description -->
-    <!-- <div class="footer-brand">
-        <img src="./visuel/MECAFRIC WATER-BLANC.png" alt="" width="180px" height="90px">
-   
-      <p>Mecafric Water est une entreprise spécialisée dans la fourniture d’équipements et de solutions pour les réseaux d’eau,
-         l’hydraulique et la robinetterie industrielle.</p>
-      <div class="footer-socials">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div> -->
-
-    <!-- Produits -->
-    <!-- <div class="footer-col">
-      <h4> Nos Produits</h4>
-      <a href="./produit.html?cat=robinetterie">Robinnetrie</a>
-      <a href="./produit.html?cat=equipements">Equipement</a>
-      <a href="./produit.html?cat=raccordements">Raccordements</a>
-      <a href="./produit.html?cat=branchements">Branchements</a>
-      <a href="./produit.html?cat=tuyauterie">Tyauterie</a>
-      <a href="./produit.html?cat=voiries">Voiries</a>
-    </div> -->
-
-    <!-- Entreprise
-    <div class="footer-col">
-      <h4>Entreprise</h4>
-      <a href="./apropos.html">À propos</a>
-      <a href="./produit.html">Produit</a>
-      <a href="./index.html">Services</a>
-      <a href="./formulaire.html">Contact</a>
-    </div>
-        <div class="footer-col">
-      <h4>Contact</h4>
-      <a >+212 661-236088</a>
-      <a>mecafric.water@gmail.com</a>
-    </div> -->
-  <!-- Badges + Newsletter -->
-  <!-- <div class="footer-middle">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.1645097892206!2d-7.5105271!3d33.6010358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cb515b98c6dd%3A0x6d0f55e077c97ef4!2sMecafric%20water%20supplies!5e0!3m2!1sfr!2sma!4v1773153495017!5m2!1sfr!2sma" 
-         width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"></iframe> 
-  </div> -->
-
-  <!-- Bottom bar -->
-  <!-- <div class="footer-bottom">
-    <span>© 2026 MecAfric water supplies. à Casablanca</span>
-  </div>
-</footer> -->
+</a>
 </body>
  <script src="./script.js"></script>
 </html>
