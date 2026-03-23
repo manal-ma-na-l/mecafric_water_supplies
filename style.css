@@ -19,7 +19,7 @@ margin: 0;}
   font-weight: 800;
   letter-spacing: 3px;
   background: linear-gradient(to right, #29B6E8 0%, #1A5FB4 40%, #2D2E83 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Oswald';
   font-weight: bold;
@@ -109,7 +109,7 @@ margin: 0;}
 .gamme-label {
 
     background: linear-gradient(to right, #29B6E8 0%, #1A5FB4 40%, #2D2E83 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Oswald';
   font-weight: bold;
@@ -630,7 +630,7 @@ nav.header-gradient ul li:last-child a:hover {
   order: 1; }
 .node-name {
   background: linear-gradient(to right, #29B6E8 0%, #1A5FB4 40%, #2D2E83 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Oswald';
   font-weight: bold;
