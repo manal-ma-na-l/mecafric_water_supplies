@@ -221,3 +221,53 @@ document.addEventListener('DOMContentLoaded', () => {
   observer.observe(section);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const servicesSection = document.querySelector('.services-section');
+  const serviceCards = servicesSection?.querySelectorAll('.service-card');
+  if (!servicesSection || !serviceCards?.length) return;
+
+  let currentIndex = 1;
+  let sliderTimer = null;
+  let hasStarted = false;
+
+  function applyServicesState(activeIndex) {
+    serviceCards.forEach((card, index) => {
+      card.classList.remove('is-front', 'is-left', 'is-right');
+
+      if (index === activeIndex) {
+        card.classList.add('is-front');
+      } else if (index === (activeIndex + serviceCards.length - 1) % serviceCards.length) {
+        card.classList.add('is-left');
+      } else {
+        card.classList.add('is-right');
+      }
+    });
+  }
+
+  function startServicesSlider() {
+    if (hasStarted) return;
+    hasStarted = true;
+    servicesSection.classList.add('is-active');
+    applyServicesState(currentIndex);
+
+    sliderTimer = window.setInterval(() => {
+      currentIndex = (currentIndex + 1) % serviceCards.length;
+      applyServicesState(currentIndex);
+
+      if (currentIndex === 1) {
+        window.clearInterval(sliderTimer);
+      }
+    }, 2200);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        startServicesSlider();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(servicesSection);
+});
+
