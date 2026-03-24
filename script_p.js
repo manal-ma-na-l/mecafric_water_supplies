@@ -213,7 +213,6 @@ const selectedCat = params.get("cat");
     const grid = sec.querySelector('.product-grid');
 
     cat.produits.forEach((p, pi) => {
-      const specEntries = Object.entries(p.specs || {}).slice(0,3);
       const card = document.createElement('div');
       card.className = 'product-card';
       card.style.animationDelay = (pi*0.06)+'s';
@@ -221,35 +220,27 @@ const selectedCat = params.get("cat");
       card.innerHTML = `
         <div class="card-img-wrap">
           ${p.image
-            
             ? `<img class="card-product-img" src="${p.image}" alt="${p.nom}"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
                <div class="img-placeholder" style="display:none">${iconSvg}</div>`
             : `<div class="img-placeholder">${iconSvg}</div>`}
         </div>
-
         <div class="card-body">
-                  <button class="savoir-plus-btn">
-                <div class="card-name">${p.nom}</div>
+          <button class="savoir-plus-btn" type="button" aria-label="Voir les details de ${p.nom}">
+            <div class="card-name">${p.nom}</div>
           </button>
-       
-          </div>
         </div>
       `;
 
       card.querySelector('.savoir-plus-btn')
           .addEventListener('click', () => openModal(p, cat.nom));
-       card.querySelector('.card-product-img')
-       .addEventListener('click',() => openModal(p, cat.nom))   ;
 
       grid.appendChild(card);
 
     });
-
   });
 
   tabBar.addEventListener('click', e => {
-
     const btn = e.target.closest('.tab-btn');
     if (!btn) return;
 
@@ -265,7 +256,25 @@ const selectedCat = params.get("cat");
       .classList.add('active');
 
   });
-
+  
 }
+document.addEventListener("DOMContentLoaded", buildUI);
 
-buildUI();
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector(".nav-links");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const opened = menu.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", opened ? "true" : "false");
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+});

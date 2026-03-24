@@ -20,12 +20,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Gelasio:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&display=swap" rel="stylesheet"><body>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Gelasio:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
 <!-- ===== NAVIGATION ===== -->
 <nav class="header-gradient">
   <div class="logo">
     <img id="logo" src="./visuel/mecafric_.png" alt="logo">
   </div>
+  <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
   <ul class="nav-links">
     <li><a href="./index.html">Accueil</a></li>
     <li><a href="#services">Services</a></li>
@@ -103,7 +108,6 @@
 
 <!--temoignage-->
 <section class="temoignage-section" id="apropos">
-    <div class="gammes-title">NOTRE CARRIERE</div>
 
   <div class="temoignage-container">
     <div class="left-panel">
@@ -119,7 +123,10 @@
         <p class="quote-text">Notre expertise technique, associée à un engagement constant pour l’excellence,nous a permis de devenir un acteur de référence dans le domaine des vannes industrielles, aussi bien au Maroc.</p>
           <p class="quote-text">Chaque jour, nous mettons tout en œuvre pour comprendre les besoins spécifiques de nos clients et répondre avec des produits performants et des services sur mesure, adaptés aux exigences  des secteurs industriels les plus exigeants.</p>
       </div>
-      <span class="sig"><img src="./visuel/Signature Hicham Toumir-01.png" alt=""></span>
+      <span class="sig">
+        <img src="./visuel/Signature Hicham Toumir-01.png" alt="">
+        <img src="./svg/Signature Hicham Toumir-02.svg" alt="">
+      </span>
     </div>
     <div class="image-droite">
        <img class="img-anim" src="./visuel/Temoin.svgz" alt="Produit Mecafric">   
@@ -135,7 +142,9 @@
       </div>
       <div class="stat-body">
         <!-- Exemple HTML -->
-        <h2 class="counter" data-target="15">0</h2>
+         <section class="counters-section">
+
+  <h3 class="counter" data-target="15">0</h3>
         <span class="stat-unit">ans</span>
       </div>
       <p class="stat-label">Années d'expérience</p>
@@ -146,7 +155,7 @@
         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ffff" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
       <div class="stat-body">
-        <h2 class="counter" data-target="200">0</h2>
+  <h3 class="counter" data-target="50">0</h3>
         <span class="stat-unit">+</span>
       </div>
       <p class="stat-label">Clients satisfaits</p>
@@ -157,7 +166,7 @@
         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ffff" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
       </div>
       <div class="stat-body">
-        <h2 class="counter" data-target="50">0</h2>
+        <h2 class="counter" data-target="70">0</h2>
         <span class="stat-unit">+</span>
       </div>
       <p class="stat-label">Produits référencés</p>
@@ -187,7 +196,7 @@
           <img src="./produit_image/Equipements de robinetterie/clapet_anti_retour_battant_sandwich.jpg" alt="">
         </a>
       </div>
-      <div class="gamme-label">Equipement</div>
+      <div class="gamme-label"> ÉQUIPEMENT</div>
     </div>
 
     <div class="gamme-item">
@@ -196,7 +205,7 @@
           <img src="./produit_image/Branchements/robinet_de_compteure_equere.jpg" alt="">
         </a>
       </div>
-      <div class="gamme-label">Branchement</div>
+      <div class="gamme-label"> BRANCHEMENT</div>
     </div>
 
     <!-- Rangée 2 : petit · grand · petit -->
@@ -206,7 +215,7 @@
           <img src="./produit_image/Raccordements/COUDE A EMBOITEMENT EN FD POUR T-PVC.jpg" alt="">
         </a>
       </div>
-      <div class="gamme-label">Raccordement</div>
+      <div class="gamme-label"> RACCORDEMENT</div>
     </div>
 
     <div class="gamme-item">
@@ -215,7 +224,7 @@
           <img src="./produit_image/Tuyauterie et accessoires/boulon cadmie.jpg" alt="">
         </a>
       </div>
-      <div class="gamme-label">Tyuautreie</div>
+      <div class="gamme-label"> TYUAUTERIE</div>
     </div>
 
     <div class="gamme-item">
@@ -224,9 +233,8 @@
           <img src="./produit_image/Voiries/GRILLE DE CANIVEAU.jpg" alt="">
         </a>
       </div>
-      <div class="gamme-label">Voiries</div>
+      <div class="gamme-label"> VOIRIES</div>
     </div>
-
   </div>
 </div>
 <section class="services-section" id="services">
@@ -270,7 +278,6 @@
     </div>
   </div>
 </section>
-
 <div class="top-section">
   </div>
 
@@ -330,7 +337,7 @@
     </div>
 </footer>
 
-<a href="https://wa.me/2120661-236088" target="_blank" class="btn-whatsapp">
+<a href="https://wa.me/2120661236088" target="_blank" class="btn-whatsapp">
 
   <svg width="28" height="28" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="white">
     <path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.474 2.031 7.775L0 32l8.468-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.773-1.854l-.487-.29-5.027 1.19 1.213-4.903-.317-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.198-2.347-1.158-2.711-1.289-.364-.132-.629-.198-.893.198-.265.397-1.026 1.289-1.257 1.554-.231.265-.463.298-.861.099-.397-.198-1.676-.617-3.192-1.97-1.18-1.052-1.977-2.35-2.208-2.747-.231-.397-.025-.611.174-.809.178-.177.397-.463.595-.694.198-.231.265-.397.397-.662.132-.265.066-.497-.033-.695-.099-.198-.893-2.152-1.224-2.946-.322-.774-.65-.669-.893-.681l-.762-.013c-.264 0-.694.099-1.058.497-.364.397-1.39 1.358-1.39 3.312 0 1.953 1.423 3.84 1.621 4.105.198.265 2.8 4.276 6.784 5.995.948.41 1.688.655 2.265.838.952.302 1.818.26 2.503.158.764-.114 2.347-.959 2.678-1.885.33-.926.33-1.72.231-1.885-.099-.165-.364-.264-.762-.463z"/>
@@ -339,5 +346,5 @@
   <main><strong>Mecafric <br> water</strong></main>
 </a>
 </body>
- <script src="./script.js"></script>
+<script src="./script.js"></script>
 </html>

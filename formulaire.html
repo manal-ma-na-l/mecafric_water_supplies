@@ -267,14 +267,14 @@
 </style>
 </head>
 <body>
-
-
-
 <!-- ===== NAVIGATION ===== -->
   <nav class="header-gradient">
     <div class="logo">
       <img id="logo" src="./visuel/mecafric_.png" alt="logo">
     </div>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="./index.html">Accueil</a></li>
       <li><a href="#services">Services</a></li>
@@ -284,70 +284,63 @@
       <li><a href="./formulaire.html">Demander votre devis</a></li>
     </ul>
   </nav>
-</head>
-<body>
 <div class="carte">
 <div class="card">
   <div class="card-header">
     <h1>FORMU<span>LAIRE</span></h1>
     <p class="required-note"><em>*</em> Champs obligatoires</p>
   </div>
+<form action="send_email.php" method="POST" class="card-form">
+  <div class="field">
+    <label>Nom <span class="req">*</span></label>
+    <input type="text" name="nom" placeholder="Votre nom" required>
+  </div>
 
-  <div class="form-grid">
+  <div class="field">
+    <label>Prénom <span class="req">*</span></label>
+    <input type="text" name="prenom" placeholder="Votre prénom" required>
+  </div>
 
-    <div class="field">
-      <label>Nom <span class="req">*</span></label>
-      <input type="text" placeholder="Votre nom">
-    </div>
+  <div class="field">
+    <label>Société</label>
+    <input type="text" name="societe" placeholder="Votre société">
+  </div>
 
-    <div class="field">
-      <label>Prénom <span class="req">*</span></label>
-      <input type="text" placeholder="Votre prénom">
-    </div>
+  <div class="field">
+    <label>Téléphone <span class="req">*</span></label>
+    <input type="tel" name="telephone" placeholder="+212 00 00 00 00" required>
+  </div>
 
-    <div class="field">
-      <label>Société</label>
-      <input type="text" placeholder="Votre société">
-    </div>
+  <div class="field full">
+    <label>Email <span class="req">*</span></label>
+    <input type="email" name="email" placeholder="email@exemple.com" required>
+  </div>
 
-    <div class="field">
-      <label>Téléphone <span class="req">*</span></label>
-      <input type="tel" placeholder=" +212 00 00 00 00 00">
-    </div>
+  <div class="field full">
+    <label>Pays <span class="req">*</span></label>
+    <select name="pays" required>
+      <option value="" disabled selected>— Pays —</option>
+      <option>France</option>
+      <option>Belgique</option>
+      <option>Suisse</option>
+      <option>Canada</option>
+      <option>Maroc</option>
+      <option>Autre</option>
+    </select>
+  </div>
 
-    <div class="field full">
-      <label>Email <span class="req">*</span></label>
-      <input type="email" placeholder="email@exemple.com">
-    </div>
-
-    <div class="field full">
-      <label>Pays <span class="req">*</span></label>
-      <select>
-        <option value="" disabled selected>— Pays —</option>
-        <option>France</option>
-        <option>Belgique</option>
-        <option>Suisse</option>
-        <option>Canada</option>
-        <option>Maroc</option>
-        <option>Autre</option>
-      </select>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="field full">
-      <label>Votre message <span class="req">*</span></label>
-      <textarea placeholder="Décrivez votre demande…"></textarea>
-    </div>
-
+  <div class="field full">
+    <label>Votre message <span class="req">*</span></label>
+    <textarea name="message" placeholder="Décrivez votre demande…" required></textarea>
   </div>
 
   <div class="submit-row">
-    <button class="btn-submit">Envoyer ma demande</button>
+    <button type="submit" class="btn-submit">Envoyer ma demande</button>
   </div>
-</div>
+</form>
 
 </div>
 
+<script src="./script.js"></script>
 </body>
 </html>
