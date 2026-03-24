@@ -232,8 +232,11 @@ const selectedCat = params.get("cat");
         </div>
       `;
 
-      card.querySelector('.savoir-plus-btn')
-          .addEventListener('click', () => openModal(p, cat.nom));
+      card.addEventListener('click', (event) => {
+        if (event.target.closest('.savoir-plus-btn') || event.target.closest('.card-img-wrap') || event.target.closest('.card-body') || event.target.closest('.product-card')) {
+          openModal(p, cat.nom);
+        }
+      });
 
       grid.appendChild(card);
 
