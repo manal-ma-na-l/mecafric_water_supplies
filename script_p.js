@@ -338,6 +338,7 @@ const selectedCat = params.get("cat");
             : `<div class="img-placeholder">${iconSvg}</div>`}
         </div>
         <div class="card-body">
+          <span class="card-info-badge" aria-hidden="true">i</span>
           <button class="savoir-plus-btn" type="button" aria-label="Voir les details de ${p.nom}">
             <div class="card-name">${p.nom}</div>
           </button>

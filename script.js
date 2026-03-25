@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const servicesSection = document.querySelector('.services-section');
   const serviceCards = servicesSection?.querySelectorAll('.service-card');
-  if (!servicesSection || !serviceCards?.length) return;
+  if (!servicesSection || !serviceCards?.length || servicesSection.dataset.servicesStatic === 'true') return;
 
   let currentIndex = 1;
   let sliderTimer = null;
@@ -267,6 +267,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { threshold: 0.3 });
+
+  observer.observe(servicesSection);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const servicesSection = document.querySelector('.services-section[data-services-static="true"]');
+  if (!servicesSection) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        servicesSection.classList.add('is-revealed');
+      }
+    });
+  }, { threshold: 0.25 });
 
   observer.observe(servicesSection);
 });
