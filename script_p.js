@@ -1,97 +1,3 @@
-const legacyCatalogue = {
-  categories: [
-    {
-      id:"robinetterie", nom:"Robinetterie",
-      produits:[
-        { nom:"Vanne à Opercule F4-F5 (DN40–300)", image:"produit_image/Robinetterie/vanne_a_opercule.jpg", specs:{ Dimensions:"DN40 à DN300", Raccordement:"À brides PN10/16", "Temp. min":"-10°C", "Temp. max":"+70°C", "Pression max":"16 bars", Matière:"Fonte ductile EN GJS-500-7" }, icon:"valve" },
-        { nom:"Vanne à Opercule F4-F5 (DN40–600)", image:"produit_image/Robinetterie/vanne_oca_tête_carré-2.jpg", specs:{ Dimensions:"DN40 à DN600", Raccordement:"À brides PN10/16", "Temp. min":"-10°C", "Temp. max":"+70°C", "Pression max":"16 bars / 10 bars >DN400", Matière:"Fonte ductile EN GJS-500-7" }, icon:"valve" },
-        { nom:"Vanne à Papillon Sandwich — Levier & Réducteur", image:"produit_image/Robinetterie/vanne_ pappilon_levier.jpg", specs:{ Dimensions:"DN40 à DN400", Raccordement:"Entre brides ISO 7005-1", "Temp. min":"-10°C", "Temp. max":"+100°C", "Pression max":"PN10/16 — Class 150", Matière:"Fonte ductile époxy" }, icon:"butterfly" },
-        { nom:"Vanne à Papillon — Oreilles Taraudées", image:"produit_image/Robinetterie/vanne_a_papillion_oreilles_tar.jpg", specs:{ Dimensions:"DN32 à DN1400", Raccordement:"Entre brides PN10/16", "Temp. min":"-20°C", "Temp. max":"+110°C", "Pression max":"16 bars ≤ DN300", Matière:"Fonte EN GJS-500-7, EPDM ACS" }, icon:"butterfly" },
-        { nom:"Vanne à Papillon — Actionneur Élec./Pneumatique", image:"produit_image/Robinetterie/Vanne_a_papillon_sandwiche_avec_actionneur_électrique.jpg", specs:{ Dimensions:"DN25 à DN300", Raccordement:"Entre brides PN10", "Temp. min":"-10°C", "Temp. max":"+110°C", "Pression max":"Variable / modèle", Matière:"Fonte EN GJL-250" }, icon:"actuator" },
-        { nom:"Vanne à Papillon — Double Bride & Double Excentration", image:"produit_image/Robinetterie/vanne_a_papillion_double_bride_double_excentration.jpg", specs:{ "Fonctionnement":"-10°C à +90°C", Étanchéité:"100%", Siège:"AISI 316 soudé", Joint:"Torique remplaçable" }, icon:"butterfly" },
-        { nom:"Vanne à Papillon — Bride Motorisée DN350", image:"produit_image/Robinetterie/vanne_a_papillion_abride_motorise.jpg", specs:{ Dimensions:"DN350", Raccordement:"Brides standard", "Temp. min":"-10°C", "Temp. max":"+50°C", "Pression max":"16 bars" }, icon:"motor" },
-        { nom:"Vanne à Guillotine", image:"produit_image/Robinetterie/vanne_guooltine.png", specs:{ Dimensions:"DN50 à DN800", Raccordement:"Entre brides PN10", "Temp. min":"-15°C", "Temp. max":"+130°C", "Pression max":"10 bars ≤ DN200", Matière:"Fonte EN GJL-250" }, icon:"gate" },
-        { nom:"Robinet à Soupape à Brides", image:"produit_image/Robinetterie/roubinet_a_soupape.jpg", specs:{ Dimensions:"DN15 à DN200", Raccordement:"À brides RF PN40", "Temp. min":"-29°C", "Temp. max":"+400°C", "Pression max":"40 bars", Matière:"Acier" }, icon:"globe" },
-        { nom:"Robinet à Flotteur à Brides", image:"produit_image/Robinetterie/robinet_flotteur_abride.jpg", specs:{ Dimensions:"DN40 à DN400", Raccordement:"À brides", "Temp. min":"-10°C", "Temp. max":"+90°C", "Pression max":"16 bars", Matière:"Fonte ductile / acier forgé" }, icon:"float" },
-      ]
-    },
-    {
-      id:"equipements", nom:"Équipements de Robinetterie",
-      produits:[
-        { nom:"Filtre à Tamis à Bride", image:"produit_image/Equipements de robinetterie/filtre_a_tamis_a_bride.jpg", specs:{ Dimensions:"DN15 à DN300", Raccordement:"À brides RF PN10/16", "Temp. max":"+120°C", "Pression max":"16 bars", Matière:"Fonte EN GJL-250 ou GJS-500-7" }, icon:"filter" },
-        { nom:"Ventouse Triple Fonction", image:"produit_image/Equipements de robinetterie/ventouze_triple-fonctions.jpg", specs:{ Dimensions:"DN50 – DN200", Raccordement:"Par bride", "Temp. max":"+80°C", "Pression max":"PN10 ou PN16", Matière:"Fonte ductile GGG50" }, icon:"air" },
-        { nom:"Ventouse Simple Fonction", image:"produit_image/Equipements de robinetterie/ventouse_simple_fonction.jpg", specs:{ Dimensions:"Ø1\" — DN40/50/65", Raccordement:"Femelle BSP", "Temp. max":"+60°C", "Pression max":"40 bars", Matière:"Fonte EN GJS 450-10" }, icon:"air" },
-        { nom:"Clapet Anti-Retour à Battant — Bride", image:"produit_image/Equipements de robinetterie/clapet_anti_retour_battant_abride.jpg", specs:{ Dimensions:"DN40 à DN300", Raccordement:"À brides RF PN10/16", "Temp. max":"+120°C", "Pression max":"16 bars", Matière:"Fonte EN GJL-250" }, icon:"check" },
-        { nom:"Clapet Anti-Retour à Boule Taraudé", image:"produit_image/Equipements de robinetterie/clapet_anti_retour_boule_traude.jpg", specs:{ Dimensions:"DN1\" à DN3\"", Raccordement:"Taraudé femelle BSP", "Temp. max":"+70°C", "Pression max":"10 bars", Matière:"Corps fonte EN GJS-400-15" }, icon:"check" },
-        { nom:"Clapet Anti-Retour à Battant Sandwich", image:"produit_image/Equipements de robinetterie/clapet_anti_retour_battant_sandwich.jpg", specs:{ Dimensions:"DN40 à DN600", Raccordement:"Entre brides PN10/16", "Temp. max":"+180°C", "Pression max":"16 bars ≤ DN300", Matière:"Inox ASTM A351 CF8M" }, icon:"check" },
-        { nom:"Clapet Anti-Retour — Bride Axial", image:"produit_image/Equipements de robinetterie/clapet_axial.png", specs:{ Dimensions:"DN50 à DN300", Raccordement:"À brides PN16 RF", "Temp. max":"+110°C", "Pression max":"16 bars", Matière:"Fonte EN GJL-250" }, icon:"check" },
-        { nom:"Clapet Anti-Retour à Pied / Crépine", image:"produit_image/Equipements de robinetterie/clapets_anti_retour_a_pied_abride.jpg", specs:{ Dimensions:"DN50 à DN300", Raccordement:"À brides PN10/16 RF", "Temp. max":"+120°C", "Pression max":"16 bars", Matière:"Fonte EN GJL-250 ou GJS-400-15" }, icon:"check" },
-        { nom:"Clapet Anti-Retour Double Battant", image:"produit_image/Equipements de robinetterie/clapet_anti_retour_double_battant.jpg", specs:{ Dimensions:"DN50 à DN600", Raccordement:"Entre brides PN10/16", "Temp. max":"+110°C", "Pression max":"16 bars ≤ DN300", Matière:"Fonte EN GJL-250" }, icon:"check" },
-        { nom:"Réducteur de Pression", image:"produit_image/Equipements de robinetterie/reducteure_de_pression.jpg", specs:{ Dimensions:"DN50 – DN150", Raccordement:"À brides PN10/16", "Temp. max":"+60°C", "Pression max":"16 bars", Matière:"Fonte EN GJS-450-10" }, icon:"reducer" },
-        { nom:"Compensateur de Dilatation — Caoutchouc", image:"produit_image/Equipements de robinetterie/compensateur-dilatation-epdm-2.jpg", specs:{ Dimensions:"DN32 à DN600", Raccordement:"À brides & BSP PN10/16", "Temp. max":"+100°C", "Pression max":"16 bars ≤ DN300" }, icon:"flex" },
-        { nom:"Compteur à Bride — Eau Froide", image:"produit_image/Equipements de robinetterie/compteur_a_bride_pour_eau.jpg", specs:{ Dimensions:"DN50 à DN200", Raccordement:"À brides PN10/16 RF", "Temp. max":"+50°C", "Pression max":"16 bars" }, icon:"meter" },
-        { nom:"Poteau d'Incendie", image:"produit_image/Equipements de robinetterie/poteau_incendie.jpg", specs:{ Usage:"Réseau eau sous pression", Prises:"Au-dessus du sol", Application:"Services incendie" }, icon:"fire" },
-      ]
-    },
-    {
-      id:"raccordements", nom:"Raccordements",
-      produits:[
-        { nom:"Adaptateur à Bride Universel", image:"produit_image/Raccordements/adaptateur_a_bride_universel.jpg", specs:{ Dimensions:"DN50 à DN400", "Temp. max":"+60°C", "Pression max":"16 bars ≤ DN200 / 10 bars >", Matière:"Fonte EN GJS-500-7" }, icon:"adapter" },
-        { nom:"Bride Majeure Fonte Ductile — PVC/PEHD/Fonte", image:"produit_image/Raccordements/BRIDE MAJOUR EN FD POUR T-PVC ET PEHD ET FD.jpg", specs:{ Dimensions:"DN50 à DN400", Raccordement:"À brides PN10/16", "Pression max":"16 bars ≤ DN200", Matière:"Fonte EN GJS-500-7" }, icon:"flange" },
-        { nom:"Bride Pleine Fonte PN10/16", image:"produit_image/Raccordements/Bride-pleine-fonte-pn1016.jpg", specs:{ Dimensions:"DN40 à DN350", Raccordement:"PN10/16 RF", "Pression max":"16 bars", Matière:"Fonte EN GJS-500-7" }, icon:"flange" },
-        { nom:"Coude à Emboîtement Fonte — Tubes PVC", image:"produit_image/Raccordements/COUDE A EMBOITEMENT EN FD POUR T-PVC.jpg", specs:{ Dimensions:"90-2E063 à 90-2E400", "Pression service":"16 bars", "Pression épreuve":"24 bars", Température:"0°C à +50°C" }, icon:"elbow" },
-        { nom:"Coude à Bride en Fonte Ductile", image:"produit_image/Raccordements/COUDE BRIDE EN FTE DUCTILE.jpg", specs:{ Raccordement:"Par brides PN10/16", "Temp. max":"+60°C", "Pression max":"10 ou 16 bars", Matière:"Fonte EN GJS-450-10" }, icon:"elbow" },
-        { nom:"Esse de Réglage", image:"produit_image/Raccordements/ESSE DE RÉGLAGE.jpg", specs:{ Raccordement:"Par brides mobiles", "Temp. min":"-30°C", "Temp. max":"+70°C", "Pression max":"16 bars", Matière:"Fonte ductile" }, icon:"offset" },
-        { nom:"Joint de Démontage Automatique", image:"produit_image/Raccordements/JOINT DE DEMONTAGE AUTOUBUTE EN FTE DUCTILE.jpg", specs:{ Dimensions:"DN50 à DN2000", Raccordement:"Par brides boulonnées", "Temp. max":"+70°C", "Pression max":"PN10 ou PN16", Matière:"Fonte ductile" }, icon:"dismount" },
-        { nom:"Joint Gibault", image:"produit_image/Raccordements/joint gibault.jpg", specs:{ Dimensions:"DN50 à DN2000", "Temp. max":"+70°C", "Pression max":"Variable", Matière:"Fonte ductile" }, icon:"coupling" },
-        { nom:"Joint Universel à Large Tolérance", image:"produit_image/Raccordements/JOINT UNIVERSEL LARGE TOLERANCE.jpg", specs:{ Dimensions:"DN100, DN200", "Temp. max":"+90°C", "Pression max":"PN10 ou PN16", Matière:"Fonte ductile" }, icon:"coupling" },
-        { nom:"Réduction à Brides en Fonte Ductile", image:"produit_image/Raccordements/REDUCTION BRIDE EN FTE DUCTILE.jpg", specs:{ Dimensions:"DN50 à DN2000", Raccordement:"À brides", "Pression max":"PN10/16/25", Matière:"Fonte ductile" }, icon:"reducer" },
-        { nom:"Stabilisateur d'Écoulement S-3D", image:"produit_image/Raccordements/STABILISATEUR D'ECOULEMENT S-3D.jpg", specs:{ Fonction:"Optimisation profil hydraulique", Application:"Amont équipements mesure" }, icon:"flow" },
-        { nom:"Tee à 3 Emboîtements — Fonte Ductile PVC", image:"produit_image/Raccordements/TEE A 3 EMBOITEMENT EN FD POUR T-PVC.jpg", specs:{ Dimensions:"DN50 à DN400", "Temp. max":"+45°C", "Pression max":"16 bars ≤ DN63", Matière:"PVC" }, icon:"tee" },
-        { nom:"Tee à Brides en Fonte Ductile", image:"produit_image/Raccordements/TEE BRIDE EN FTE DUCTILE.jpg", specs:{ Dimensions:"DN50 à DN400", Raccordement:"À brides PN10/16", "Temp. max":"+60°C", Matière:"Fonte ductile" }, icon:"tee" },
-      ]
-    },
-    {
-      id:"branchements", nom:"Branchements",
-      produits:[
-        { nom:"Clapet en Laiton", image:"produit_image/Branchements/clapet_en_laiton.jpg", specs:{ Dimensions:"DN3/8\" à DN4\"", Raccordement:"Femelle BSP", "Temp. max":"+100°C", "Pression max":"25 bars ≤ DN1\"", Matière:"Laiton CW617N-4MS EN 12165" }, icon:"valve" },
-        { nom:"Collier PEC — Fonte Ductile PVC/PEHD/Fonte", image:"produit_image/Branchements/collier_pec_en_fonte.jpg", specs:{ Dimensions:"DN1/2\"-25 à DN1\"1/2-63", Raccordement:"Taraudé femelle BSP", "Temp. max":"+45°C", "Pression max":"12,5 bars" }, icon:"collar" },
-        { nom:"Robinet d'Arrêt", image:"produit_image/Branchements/robinet_arret.jpg", specs:{ Dimensions:"DN15 à DN50", Raccordement:"À visser, MM", "Temp. max":"+90°C à +100°C", Matière:"Corps en laiton" }, icon:"stopcock" },
-        { nom:"Robinet de Compteur Équerre", image:"produit_image/Branchements/robinet_de_compteure_equere.jpg", specs:{ Dimensions:"DN15 à DN40", Raccordement:"Mâle, écrou prisonnier BSP", "Temp. max":"+90°C / +110°C pointe", "Pression max":"20 bars ≤ DN1\"", Matière:"Laiton sans plomb CW510L" }, icon:"meter" },
-        { nom:"Robinet de Compteur à Tournant", image:"produit_image/Branchements/robinet_de_compteure_tp_et_tce.jpg", specs:{ Dimensions:"DN15 à DN40", Raccordement:"Mâle, écrou prisonnier BSP", "Temp. max":"+90°C / +110°C pointe", "Pression max":"20 bars ≤ DN25" }, icon:"meter" },
-        { nom:"Robinet PEC Vertical à Tige Pleine", image:"produit_image/Branchements/robinet_pec_verticale_tige_plein.jpg", specs:{ Dimensions:"DN40", Raccordement:"Angle", "Temp. max":"+90°C", "Pression max":"PN16", Matière:"Laiton DZR" }, icon:"stopcock" },
-        { nom:"Tabernacle PM et GM", image:"produit_image/Branchements/taparnacle_pm_rt_gm.jpg", specs:{ Dimensions:"DN - DN1", "Pression max":"PN16", Matière:"Polypropylène" }, icon:"box" },
-        { nom:"Vanne 3 Pièces Inox", image:"produit_image/Branchements/vanne_3_ pièces_Inox.jpg", specs:{ Dimensions:"DN1/4\" à DN4\"", Raccordement:"Femelle NPT", "Temp. min":"-20°C", "Temp. max":"+180°C", "Pression max":"63 bars ≤ DN3/4\"", Matière:"Inox ASTM A351 CF8M" }, icon:"valve" },
-        { nom:"Vanne à Bille en Laiton", image:"produit_image/Branchements/vanne a bille en laiton.jpg", specs:{ Dimensions:"DN1/4\" à DN4\"", Raccordement:"Mâle/Femelle BSP", "Temp. max":"+120°C", "Pression max":"30 bars ≤ DN1\"", Matière:"Laiton CW617N-4MS EN 12165" }, icon:"ball" },
-        { nom:"Vanne à Volant en Laiton", image:"produit_image/Branchements/vanne_a_volant_en_laiton.jpg", specs:{ Dimensions:"DN15, DN20, DN25", Raccordement:"Femelle/Femelle BSP", "Temp. max":"+110°C", "Pression max":"20 bars", Matière:"Laiton, joint EPDM" }, icon:"wheel" },
-      ]
-    },
-    {
-      id:"tuyauterie", nom:"Tuyauterie & Accessoires",
-      produits:[
-        { nom:"Tubes Noirs et Galvanisés", image:"produit_image/Tuyauterie et accessoires/TUBE S-S NOIR ET GALVANISE ET SH40 ET SH80.jpg", specs:{ Séries:"T3 / T10 / SCH40 / SCH80", Application:"Tuyauterie industrielle" }, icon:"pipe" },
-        { nom:"Brides Plates, à Collerette et Pleines", image:"produit_image/Tuyauterie et accessoires/bride plat et accolorette et plein.jpg", specs:{ Dimensions:"DN15 à DN200", Raccordement:"PN10 à PN40", "Temp. max":"+450°C", "Pression max":"10 à 40 bars selon DN" }, icon:"flange" },
-        { nom:"Manchette à Brides — Acier Galvanisé", image:"produit_image/Tuyauterie et accessoires/MANCHETTE BRIDE EN ACIER GALVANISE.jpg", specs:{ Dimensions:"DN40 à DN200", Raccordement:"À brides PN10/16 RF", "Temp. max":"+150°C", "Pression max":"16 bars", Matière:"Fonte EN GJL-250" }, icon:"sleeve" },
-        { nom:"Raccord en Acier", image:"produit_image/Tuyauterie et accessoires/raccords de tuyaux en acier.jpg", specs:{ Raccordement:"À souder (BW)", "Temp. min":"-20°C", "Temp. max":"+300°C", Matière:"Acier carbone S235" }, icon:"fitting" },
-        { nom:"Raccord en Fonte Malléable", image:"produit_image/Tuyauterie et accessoires/Raccordement.jpg", specs:{ Raccordement:"Filetage BSP", "Temp. max":"+300°C", "Pression max":"25 bars", Matière:"Fonte malléable EN-GJMB-350-10" }, icon:"fitting" },
-        { nom:"Boulons Cadmiés", image:"produit_image/Tuyauterie et accessoires/boulon cadmie.jpg", specs:{ Traitement:"Cadmiage anti-corrosion", Conformité:"Normes industrielles" }, icon:"bolt" },
-        { nom:"Raccord en PEHD", image:"produit_image/Tuyauterie et accessoires/Raccord en PEHD.jpg", specs:{ Raccordement:"Femelle/Mâle BSP ou tube PE", "Temp. max":"+45°C", "Pression max":"16 bars ≤ DN63", Matière:"Polypropylène" }, icon:"fitting" },
-        { nom:"Raccord en PVC Pression", image:"produit_image/Tuyauterie et accessoires/Raccord en pcv de pression.jpg", specs:{ Raccordement:"Soudure à froid (solvant)", "Temp. max":"+20°C", "Pression max":"16 bars", Matière:"PVC rigide" }, icon:"fitting" },
-      ]
-    },
-    {
-      id:"voiries", nom:"Voiries",
-      produits:[
-        { nom:"Tampon D400 – C250", image:"produit_image/Voiries/TAMPON BMX .jpg", specs:{ Classe:"D400 - C250", Matière:"Fonte ductile GGG 500-7 / GJS 450-10", Norme:"EN 124", Fabrication:"Moulage sur plaques modèles" }, icon:"manhole" },
-        { nom:"Tampon B125", image:"produit_image/Voiries/tompon B125.jpg", specs:{ Classe:"B125", Matière:"Fonte ductile GGG 500-7 / GJS 450-10", Norme:"EN 124", Fabrication:"Moulage sur plaques modèles" }, icon:"manhole" },
-        { nom:"Grille de Caniveau", image:"produit_image/Voiries/GRILLE DE CANIVEAU.jpg", specs:{ Matière:"Fonte ductile ou fonte grise", Norme:"EN 124", Forme:"Rectangulaire ou carrée" }, icon:"grate" },
-        { nom:"Capot Anti-Vandalisme", image:"produit_image/Voiries/capot anti-vandal.jpg", specs:{ Matière:"Fonte ductile ou acier galvanisé", Fonction:"Protection équipements enterrés" }, icon:"cap" },
-        { nom:"Porte de Niche en Acier", image:"produit_image/Voiries/porte niche.jpg", specs:{ Matière:"Acier galvanisé à chaud", Usage:"Protection compteurs & équipements réseau" }, icon:"door" },
-      ]
-    }
-  ]
-};
-
 const catalogue = {
   categories: [
     {
@@ -106,7 +12,7 @@ const catalogue = {
         { nom: "Vanne à papillon sandwich à réducteur", image: "produit_image/Robinetterie/VANNE À PAPILLON SANDWICH A REDUCTEUR.png", specs: { Commande: "À réducteur", Dimensions: "DN40 à DN400", Raccordement: "Entre brides PN10/16/#150", "Température Mini": "-10°C", "Température Maxi": "+110°C", "Pression Maxi": "16BAR", Matière: "Corps en GJS-500-7, papillon en 316/FONTE, manchette EPDM ACS" }, icon: "butterfly" },
         { nom: "Vanne à papillon à oreilles taraudées", image: "produit_image/Robinetterie/vanne_a_papillon_a_oreilles_traudees.jpeg", specs: { Dimensions: "DN32 à DN1400", Raccordement: "Entre brides PN10/16", "Température Mini": "-20°C", "Température Maxi": "+110°C", "Pression Maxi": "16 bars jusqu’au DN300", Matière: "Corps en GJS-500-7, papillon en 316/FONTE, manchette EPDM ACS" }, icon: "butterfly" },
         { nom: "Vanne à papillon sandwich motorisée électrique", image: "produit_image/Robinetterie/vanne_a_papillion_sandwich_motorisee_electrique.jpeg", specs: { Commande: "Électrique", Dimensions: "Généralement de DN25 à DN300", Raccordement: "Entre brides PN10/16#150", "Température Mini": "-10°C", "Température Maxi": "+110°C", "Pression Maxi": "Variable selon le modèle", Matière: "Corps en GJS-500-7, papillon en 316/FONTE, manchette EPDM ACS" }, icon: "actuator" },
-        { nom: "Vanne à papillon sandwich motorisée pneumatique", image: "produit_image/Robinetterie/vanne_a_papillion_sandwich_motorisee_pnematique_simple_effet_double_effet.png", specs: { Commande: "Pneumatique simple effet / double effet", Dimensions: "Généralement de DN25 à DN300", Raccordement: "Entre brides PN10/16#150", "Température Mini": "-10°C", "Température Maxi": "+110°C" }, icon: "actuator" },
+        { nom: "Vanne à papillon sandwich motorisée pneumatique", image: "produit_image/Robinetterie/vanne_a_papillon_sanwich_motorise_pneumatique.jpeg", specs: { Commande: "Pneumatique simple effet / double effet", Dimensions: "Généralement de DN25 à DN300", Raccordement: "Entre brides PN10/16#150", "Température Mini": "-10°C", "Température Maxi": "+110°C" }, icon: "actuator" },
         { nom: "Vanne à papillon double bride et double excentration", image: "produit_image/Robinetterie/vanne_a_papillon_double_bride_et_double_excentration.jpeg", specs: { "Grande durabilité": "Du joint torique d’étanchéité", Siège: "Soudé en AISI 316", Étanchéité: "À 100 %", Joint: "Torique remplaçable sans démontage de la vanne", "Température de fonctionnement": "-10°C à +90°C" }, icon: "butterfly" },
         { nom: "Vanne à papillon à bride motorisée", image: "produit_image/Robinetterie/vanne_a_papillon_a_bride_motorisee.jpeg", specs: { Dimensions: "DN350", Raccordement: "Avec brides standard", "Température Mini": "-10°C", "Température Maxi": "+50°C", "Pression Maxi": "16 bars" }, icon: "motor" },
         { nom: "Vanne à guillotin manuelle", image: "produit_image/Robinetterie/vanne_a_guillotin_manuelle.jpeg", specs: { Dimensions: "DN50 à DN800", Raccordement: "Entre brides PN10", "Température Mini": "-15°C", "Température Maxi": "+130°C", "Pression Maxi": "10 bars jusqu’au DN200", Matière: "Fonte EN GJL-250" }, icon: "gate" },
@@ -115,7 +21,7 @@ const catalogue = {
         { nom: "Robinet à flotteur à brides", image: "produit_image/Robinetterie/robinet_a_flotteur_a_brids.jpeg", specs: { Dimensions: "DN40 à DN400", Raccordement: "À brides", "Température Mini": "-10°C", "Température Maxi": "+90°C", "Pression Maxi": "16 bars", Matière: "Fonte ductile, acier moulé ou acier forgé" }, icon: "float" },
         { nom: "Vanne à boisseau sphérique 3 pièces inox", image: "produit_image/Robinetterie/vanne_a_boisseau_spherique_3pieces_inox.png", specs: { Dimensions: "Ø 1/4” à Ø 4”", Raccordement: "Femelle NPT (filetage conique américain)", "Température Mini": "-20°C", "Température Maxi": "+180°C", "Pression Maxi": "63 Bars (jusqu’au DN3/4”)", Matière: "Inox ASTM A351 CF8M" }, icon: "valve" },
         { nom: "Vanne à boisseau sphérique monobloc inox", image: "produit_image/Robinetterie/vanne_a_boisseau_spherique_monoblic_inox.png", specs: { Dimensions: "Ø 1/4” à Ø 4”", Raccordement: "Femelle NPT (filetage conique américain)", "Température Mini": "-20°C", "Température Maxi": "+180°C", "Pression Maxi": "63 Bars (jusqu’au DN3/4”)", Matière: "Inox ASTM A351 CF8M" }, icon: "valve" },
-        { nom: "Vanne à boisseau sphérique à bride inox", image: "produit_image/Robinetterie/vanne_a_bisseau_spherique_a_bride_inox.png", specs: { Dimensions: "DN40 à DN200", Raccordement: "À bride RF", "Température Mini": "-20°C", "Température Maxi": "+180°C", "Pression Maxi": "40 Bars (jusqu’au DN50)", Matière: "Inox ASTM A351 CF8M" }, icon: "valve" },
+        { nom: "Vanne à boisseau sphérique à bride inox", image: "produit_image/Robinetterie/vanne boisseau sphérique inox(1).jpeg", specs: { Dimensions: "DN40 à DN200", Raccordement: "À bride RF", "Température Mini": "-20°C", "Température Maxi": "+180°C", "Pression Maxi": "40 Bars (jusqu’au DN50)", Matière: "Inox ASTM A351 CF8M" }, icon: "valve" },
         { nom: "Vanne à boisseau sphérique monobloc en laiton", image: "produit_image/Robinetterie/vanne_a_boisseau_spherique_monobloc_en_laiton.png", specs: { Dimensions: "Ø 1/4” à Ø 4”", Raccordement: "Mâle/Femelle BSP", "Température Mini": "-10°C", "Température Maxi": "+120°C", "Pression Maxi": "30 Bars (jusqu’au DN1”)", Matière: "Laiton CW617N-4MS, conforme à la norme EN 12165" }, icon: "ball" },
       ]
     },
@@ -171,9 +77,6 @@ const catalogue = {
         { nom: "Robinet de compteur à tournant", image: "produit_image/Branchements/robinet_de_compteure_tp_et_tce.jpg", specs: { Dimensions: "Ø ½\" à Ø 1”1/2", Raccordement: "Mâle, écrou prisonnier BSP", "Température Mini": "-5°C", "Température Maxi": "+90°C (+110°C en pointe)", "Pression Maxi": "20 Bars jusqu’au DN25, 16 Bars au-delà" }, icon: "meter" },
         { nom: "Robinet PEC vertical à tige pleine", image: "produit_image/Branchements/robinet_pec_verticale_tige_plein.jpg", specs: { Dimensions: "Ø 1”1/2", Raccordement: "Angle (vanne d’arrêt à angle)", "Température Mini": "0°C", "Température Maxi": "+90°C", "Pression Maxi": "PN16", Matière: "Laiton DZR (résistant à la dézincification)" }, icon: "stopcock" },
         { nom: "Tabernacle PM et GM", image: "produit_image/Branchements/taparnacle_pm_rt_gm.jpg", specs: { Dimensions: "Ø 1”", "Pression Maxi": "PN16", Matière: "Polypropylène" }, icon: "box" },
-        { nom: "Vanne 3 pièces inox", image: "produit_image/Branchements/vanne_3_ pièces_Inox.jpg", specs: { Dimensions: "Ø 1/4” à Ø 4”", Raccordement: "Femelle NPT (filetage conique américain)", "Température Mini": "-20°C", "Température Maxi": "+180°C", "Pression Maxi": "63 Bars (jusqu’au DN3/4”)", Matière: "Inox ASTM A351 CF8M" }, icon: "valve" },
-        { nom: "Vanne à bille en laiton", image: "produit_image/Branchements/vanne a bille en laiton.jpg", specs: { Dimensions: "Ø 1/4” à Ø 4”", Raccordement: "Mâle/Femelle BSP", "Température Mini": "-10°C", "Température Maxi": "+120°C", "Pression Maxi": "30 Bars (jusqu’au DN1”)", Matière: "Laiton CW617N-4MS, conforme à la norme EN 12165" }, icon: "ball" },
-        { nom: "Vanne à volant en laiton", image: "produit_image/Branchements/vanne_a_volant_en_laiton.jpg", specs: { Dimensions: "Ø ½\" , Ø ¾\", Ø 1”", Raccordement: "Type femelle/femelle (FF) avec filetage BSP", "Température Mini": "0°C", "Température Maxi": "+110°C", "Pression Maxi": "20 Bars", Matière: "Corps en laiton, joint d’étanchéité en EPDM (éthylène-propylène-diène monomère)" }, icon: "wheel" },
       ]
     },
     {
@@ -338,7 +241,6 @@ const selectedCat = params.get("cat");
             : `<div class="img-placeholder">${iconSvg}</div>`}
         </div>
         <div class="card-body">
-          <span class="card-info-badge" aria-hidden="true">i</span>
           <button class="savoir-plus-btn" type="button" aria-label="Voir les details de ${p.nom}">
             <div class="card-name">${p.nom}</div>
           </button>

@@ -20,14 +20,28 @@ body.apropos-page {
 .apropos-hero {
   width: min(1180px, calc(100% - 32px));
   margin: 34px auto 28px;
-  padding: 46px 42px;
-  border-radius: 34px;
+  padding: 0;
+  border-radius: 24px;
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(115deg, rgba(7, 31, 62, 0.92) 0%, rgba(18, 80, 140, 0.88) 55%, rgba(65, 175, 226, 0.82) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 250, 253, 0.98)),
     url("./visuel/indu1.webp") center/cover no-repeat;
-  box-shadow: 0 28px 70px rgba(7, 37, 74, 0.18);
+  border: 1px solid rgba(18, 58, 92, 0.08);
+  box-shadow: 0 16px 38px rgba(7, 37, 74, 0.07);
+}
+
+.apropos-hero-content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  padding: 40px 42px;
+}
+
+.apropos-hero-copy {
+  max-width: 760px;
 }
 
 .apropos-hero::before,
@@ -39,63 +53,169 @@ body.apropos-page {
 }
 
 .apropos-hero::before {
-  width: 220px;
-  height: 220px;
-  top: -70px;
-  right: -40px;
-  background: rgba(255, 255, 255, 0.08);
+  width: 180px;
+  height: 180px;
+  top: -80px;
+  right: -50px;
+  background: rgba(41, 182, 232, 0.06);
 }
 
 .apropos-hero::after {
-  width: 160px;
-  height: 160px;
-  bottom: -45px;
-  left: -30px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  width: 140px;
+  height: 140px;
+  bottom: -50px;
+  left: -40px;
+  border: 1px solid rgba(26, 95, 180, 0.08);
 }
 
 .apropos-kicker {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 14px;
-  margin-bottom: 18px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.14);
-  color: #e9f7ff;
+  padding: 0;
+  margin-bottom: 12px;
+  border-radius: 0;
+  background: transparent;
+  color: #1a5fb4;
   font: 700 0.84rem 'Barlow Condensed', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.18em;
 }
 
 .apropos-kicker::before {
   content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #7bd9ff;
-  box-shadow: 0 0 0 6px rgba(123, 217, 255, 0.14);
+  width: 28px;
+  height: 1px;
+  border-radius: 999px;
+  background: rgba(26, 95, 180, 0.36);
+  box-shadow: none;
 }
 
 .apropos-hero h1 {
-  max-width: 700px;
-  margin: 0 0 14px;
-  font-family: 'Oswald', sans-serif;
-  font-size: 2.1em;
-    line-height: 1.05;
-  color: #ffffff;
-  animation: aproposFadeUp 0.9s ease both;
+  max-width: 14ch;
+  margin: 0 0 18px;
+  font-family: 'Gelasio', serif;
+  font-weight: 700;
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: #123a5c;
+  animation: none;
 }
 
 .apropos-hero p {
-  max-width: 540px;
+  max-width: 620px;
   margin: 0;
-  color: rgba(241, 249, 255, 0.9);
-  font-size: 1rem;
-  line-height: 1.8;
-  animation: aproposFadeUp 1s 0.12s ease both;
+  color: #557086;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  animation: none;
 }
 
+.apropos-hero-lead {
+  margin-bottom: 10px;
+  color: #2c5677;
+  font: 600 0.95rem 'Outfit', sans-serif;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+.apropos-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+  animation: none;
+}
+
+.apropos-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(18, 58, 92, 0.1);
+  color: #35546e;
+  font: 500 0.9rem 'Outfit', sans-serif;
+  backdrop-filter: none;
+}
+
+.apropos-pill strong {
+  color: #1a5fb4;
+  font-weight: 700;
+}
+
+.apropos-hero-panel {
+  display: none;
+}
+
+.apropos-hero-panel::before {
+  display: none;
+}
+
+.apropos-panel-badge {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(123, 217, 255, 0.14);
+  color: #dff7ff;
+  font: 700 0.78rem 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.apropos-panel-text {
+  margin: 18px 0 0;
+  color: #ffffff;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.05;
+}
+
+.apropos-panel-list {
+  margin: 22px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.apropos-panel-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(243, 250, 255, 0.92);
+  font: 500 0.92rem 'Outfit', sans-serif;
+}
+
+.apropos-panel-item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #7bd9ff;
+  box-shadow: 0 0 0 6px rgba(123, 217, 255, 0.12);
+  flex-shrink: 0;
+}
+#hero-apropos{
+   background:linear-gradient(160deg, rgba(5,20,50,0.82) 0%, rgba(10,40,80,0.65) 50%, rgba(5,15,35,0.88) 100%),
+      url("./visuel/slideapropos.jpeg")center/cover no-repeat fixed;
+  padding: 150px 5%;
+  position:relative;
+  overflow: hidden;
+}
+#hero-apropos h1{
+  font-family:'Bebas Neue', sans-serif;
+  font-size: 42pt;
+  font-weight: 500;
+  color:#ffffff;
+  line-height: 1.05;
+  margin-bottom: 0;
+  margin-top: 20px;
+  width: 61ch;
+}
 .temoignage-title {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto 26px;
@@ -114,8 +234,9 @@ body.apropos-page {
 }
 
 .equipe {
+ 
   width: min(1180px, calc(100% - 32px));
-  margin: 0 auto 70px;
+  margin: 30px auto 70px;
   padding: 0;
 }
 
@@ -125,8 +246,14 @@ body.apropos-page {
 }
 
 .card-employe {
-  height: 100%;
-  padding: 18px 18px 24px;
+   width: 250px;
+  height:auto;
+  padding: 18px 18px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* center vertical */
+  align-items: center;     /* center horizontal */
+  text-align: center;      /* النص يتوسط */
   border-radius: 30px;
   background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
   border: 1px solid rgba(39, 104, 168, 0.1);
@@ -138,7 +265,6 @@ body.apropos-page {
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   animation: aproposCardIn 0.75s ease both;
 }
-
 .card-employe::before {
   content: "";
   position: absolute;
@@ -195,7 +321,7 @@ body.apropos-page {
 .card-employe h3 {
   margin: 18px 0 8px;
   font-family: 'Oswald', sans-serif;
-  font-size: 1.45rem;
+  font-size: 1.1rem;
   color: #123a5c;
 }
 
@@ -208,7 +334,7 @@ body.apropos-page {
   border-radius: 999px;
   background: rgba(29, 111, 181, 0.08);
   color: #45627d;
-  font-size: 0.92rem;
+  font-size: 0.75rem;
   line-height: 1.5;
 }
 
@@ -257,8 +383,11 @@ body.apropos-page {
 
 @media (max-width: 991px) {
   .apropos-hero {
-    padding: 34px 24px;
     border-radius: 28px;
+  }
+
+  .apropos-hero-content {
+    padding: 34px 24px;
   }
 
   .card-employe {
@@ -284,12 +413,33 @@ body.apropos-page {
 
   .apropos-hero {
     margin-top: 18px;
+  }
+
+  .apropos-hero-content {
     padding: 28px 18px;
+    gap: 18px;
   }
 
   .apropos-kicker {
     font-size: 0.74rem;
     letter-spacing: 0.18em;
+  }
+
+  .apropos-hero h1 {
+    max-width: 100%;
+  }
+
+  .apropos-hero-actions {
+    margin-top: 20px;
+  }
+
+  .apropos-pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .apropos-hero-panel {
+    display: none;
   }
 
 
@@ -298,7 +448,7 @@ body.apropos-page {
   }
 
   .card-employe {
-    padding: 14px 14px 20px;
+    padding: 10px 10px 20px;
     border-radius: 22px;
   }
 
@@ -475,62 +625,6 @@ body.apropos-page {
 .piece:nth-child(5){ animation-delay: 1.2s;}
 .piece:nth-child(6){ animation-delay: 1.5s;}
 
-/* === WhatsApp Floating Button === */
-.btn-whatsapp {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 9999;
-
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  background-color: #25D366;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 20px;
-  padding: 10px 18px 10px 12px;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
-
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.btn-whatsapp:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.6);
-}
-
-/* Icône WhatsApp en blanc */
-.btn-whatsapp img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0) invert(1); /* force l'icône en blanc */
-  flex-shrink: 0;
-}
-
-/* Texte */
-.btn-whatsapp main {
-  line-height: 1.2;
-  font-size: 13px;
-  font-family: sans-serif;
-}
-
-.btn-whatsapp main strong {
-  font-weight: 700;
-  font-size: 14px;
-}
-
-/* Animation d'entrée */
-@keyframes waBounceIn {
-  0%   { opacity: 0; transform: scale(0.5) translateY(40px); }
-  70%  { transform: scale(1.08) translateY(-4px); }
-  100% { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-.btn-whatsapp {
-  animation: waBounceIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-}
 </style>
 </head>
 <body class="apropos-page">
@@ -552,70 +646,73 @@ body.apropos-page {
     <li><a href="./formulaire.html">Demander votre devis</a></li>
   </ul>
 </nav>
+<div id="hero-apropos" > <h1>Notre équipe</h1></div>
+<section class="equipe">
+  <div class="container">
 
-<section class="apropos-hero">
-  <h1>Une équipe engagée au service de vos projets hydrauliques.</h1>
-</section>
-      <div class="gammes-title">NOTRE EQUIPE</div>
-<section class="equipe container col-md-12">
-    <div class="row g-6"> <!-- g-4 ajoute un espace entre les colonnes -->
+    <div class="row justify-content-center g-4">
 
-    <div class="col-md-4">
-      <div class="card-employe text-center">
-        <img src="./Photos/Hicham Toumir.jpg" class="img-fluid  mb-3" alt="Hicham Toumir">
-        <h3>Hicham Toumir</h3>
-        <span>Prèsident</span>
+      <div class="col-md-4 d-flex justify-content-center">
+        <div class="card-employe text-center">
+          <img src="./Photos/Hicham Toumir.jpg" class="img-fluid mb-3" alt="Hicham Toumir">
+          <h3>Hicham Toumir</h3>
+          <span>Directeur Général</span>
+        </div>
       </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card-employe text-center">
-        <img src="./Photos/Abdelhadi Miftah.png" class="img-fluid  mb-3" alt="Abdelhadi Miftah">
-        <h3>Abdelhadi Miftah</h3>
-        <span>Responsable des services généraux</span>
+      
+      <div class="col-md-4 d-flex justify-content-center">
+        <div class="card-employe text-center">
+          <img src="./Photos/Hicham Ait nacer.png" class="img-fluid mb-3" alt="Hicham Aitnacer">
+          <h3>Hicham Aitnacer</h3>
+          <span>Responsable Commercial</span>
+        </div>
       </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="card-employe text-center">
-        <img src="./Photos/Hicham Maatous.png" class="img-fluid  mb-3" alt="Hicham Maatous">
-        <h3>Hicham Maatous</h3>
-        <span>Magasinier</span>
+      <div class="col-md-4 d-flex justify-content-center">
+        <div class="card-employe text-center">
+          <img src="./Photos/Nezha Ahyani-flou4.png" class="img-fluid mb-3" alt="Nezha Ahyani">
+          <h3>Nezha Ahyani</h3>
+          <span>Assistante Commerciale</span>
+        </div>
       </div>
-    </div>
-        <div class="col-md-4">
-      <div class="card-employe text-center">
-                <img src="./Photos/Amine .png" class="img-fluid  mb-3" alt="AMINE ABOULKHIR">
-
-        <h3>Amine Aboulkhir</h3>
-        <span>Agent Logistique</span>
+      <div class="col-md-3 d-flex justify-content-center">
+        <div class="card-employe text-center">
+          <img src="./Photos/Samira Elharras-2.png" class="img-fluid mb-3" alt="Samira Elharras">
+          <h3>Samira Elharras</h3>
+          <span>Responsable administrative</span>
+        </div>
       </div>
-    </div>
-   
-    <div class="col-md-4">
-      <div class="card-employe text-center">
-        <img src="./Photos/Hicham Ait nacer.png" class="img-fluid  mb-3" alt="Hicham Aitnacer">
-        <h3>Hicham Aitnacer</h3>
-        <span>Responsable Commercial</span>
-      </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="card-employe text-center">
-        <img src="./Photos/Nezha Ahyani-flou4.png" class="img-fluid  mb-3" alt="Nezha Ahyani">
-        <h3>Nezha Ahyani</h3>
-        <span>Assistante Commerciale</span>
+      <div class="col-md-3 d-flex justify-content-center">
+        <div class="card-employe text-center">
+          <img src="./Photos/Abdelhadi Miftah.png" class="img-fluid mb-3" alt="Abdelhadi Miftah">
+          <h3>Abdelhadi Miftah</h3>
+          <span>Services généraux</span>
+        </div>
       </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="card-employe text-center">
-        <img src="./Photos/Samira Elharras-2.png" class="img-fluid mb-3" alt="Samira Elharras">
-        <h3>Samira Elharras</h3>
-        <span>Responsable Administrative</span>
+      <div class="col-md-3 d-flex justify-content-center">
+        <div class="card-employe text-center">
+          <img src="./Photos/Hicham Maatous.png" class="img-fluid mb-3" alt="Hicham Maatous">
+          <h3>Hicham Maatous</h3>
+          <span>Magasinier</span>
+        </div>
       </div>
-    </div>
 
+      <div class="col-md-3 d-flex justify-content-center">
+        <div class="card-employe text-center">
+          <img src="./Photos/Amine .png" class="img-fluid mb-3" alt="Amine Aboulkhir">
+          <h3>Amine Aboulkhir</h3>
+          <span>Agent Logistique</span>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    </div>
   </div>
 </section>
          <div class="gammes-title">NOS PARTENAIRES</div>
@@ -633,7 +730,6 @@ body.apropos-page {
 
   </div>
 </div>
-
 <div class="top-section">
   </div>
 
@@ -649,19 +745,19 @@ body.apropos-page {
       <p>Mecafric Water est une entreprise spécialisée dans la fourniture d’équipements et de solutions pour les réseaux d’eau,
          l’hydraulique et la robinetterie industrielle.</p>
       <div class="footer-socials">
-        <a href="https://www.facebook.com/MecafricGroup/"  target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.linkedin.com/company/108484529/admin/dashboard/"  target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/mecafric/"><i class="fab fa-instagram"  target="_blank"></i></a>
+        <a href="https://www.facebook.com/MecafricGroup/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/108484529/admin/dashboard/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/mecafric/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
       </div>
     </div> 
     <!-- Produits -->
      <div class="footer-col">
       <h4> Nos Produits</h4>
-      <a href="./produit.html?cat=robinetterie">Robinnetrie</a>
-      <a href="./produit.html?cat=equipements">Equipement</a>
+      <a href="./produit.html?cat=robinetterie">Robinetterie</a>
+      <a href="./produit.html?cat=equipements">Équipement</a>
       <a href="./produit.html?cat=raccordements">Raccordements</a>
       <a href="./produit.html?cat=branchements">Branchements</a>
-      <a href="./produit.html?cat=tuyauterie">Tyauterie</a>
+      <a href="./produit.html?cat=tuyauterie">Tuyauterie</a>
       <a href="./produit.html?cat=voiries">Voiries</a>
     </div> 
 
@@ -669,9 +765,9 @@ body.apropos-page {
     <div class="footer-col">
       <h4>Entreprise</h4>
       <a href="./apropos.html">À propos</a>
-      <a href="./produit.html">Produit</a>
-      <a href="./index.html">Services</a>
-      <a href="./formulaire.html">Contact</a>
+      <a href="./produit.html">Produits</a>
+      <a href="./index.html#services">Services</a>
+      <a href="./contact.html">Contact</a>
     </div>
         <div class="footer-col">
       <h4>Contact</h4>
@@ -689,7 +785,7 @@ body.apropos-page {
 
   <!-- Bottom bar -->
  <div class="footer-bottom">
-    <span>© 2026 Mecafric water supplies. à Casablanca</span>
+    <span>© 2026 Mecafric Water Supplies, à Casablanca</span>
   </div>
     </div>
 </footer>
@@ -705,8 +801,8 @@ body.apropos-page {
   </div>
 
   <div class="whatsapp-options">
-    <a href="https://wa.me/2120661236088" target="_blank">1</a>
-    <a href="https://wa.me/2120661197556" target="_blank">2</a>
+    <a href="https://wa.me/2120661236088" target="_blank" rel="noopener noreferrer">Back Office</a>
+    <a href="https://wa.me/2120661197556" target="_blank" rel="noopener noreferrer">Commercial</a>
   </div>
 
 </div>
@@ -718,7 +814,6 @@ body.apropos-page {
 
   <main><strong>Mecafric <br> water</strong></main>
 </a> -->
-
 <script src="./script.js"></script>
 </body>
 </html>

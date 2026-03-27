@@ -12,102 +12,67 @@ body.contact-page {
   background: linear-gradient(180deg, #f7fbff 0%, #ffffff 34%, #f2f7fb 100%);
 }
 
-.contact-hero {
-  position: relative;
+#hero-contact{
+   background:linear-gradient(160deg, rgba(5,20,50,0.82) 0%, rgba(10,40,80,0.65) 50%, rgba(5,15,35,0.88) 100%),
+      url("./visuel/bombb.jpeg")center/cover no-repeat fixed;
+  padding: 150px 5%;
+  position:relative;
   overflow: hidden;
-  padding: 96px 20px 150px;
-  text-align: center;
-  background:
-        linear-gradient(100deg, rgba(43, 64, 111, 0.82) 0%, rgba(61, 117, 191, 0.65) 50%, rgba(29, 59, 119, 0.88) 100%),
-    url("./visuel/indu1.webp") center 36%/cover no-repeat;
 }
-
-.contact-hero::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 82px;
-  background: linear-gradient(to bottom, rgba(247, 251, 255, 0), rgba(247, 251, 255, 1));
-}
-
-.contact-hero__inner {
-  position: relative;
-  z-index: 1;
-  width: min(760px, calc(100% - 32px));
-  margin: 0 auto;
-}
-
-.contact-hero__eyebrow {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 14px;
-  margin-bottom: 16px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.76);
-  color: #1a5fb4;
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  box-shadow: 0 12px 28px rgba(16, 53, 87, 0.08);
-}
-
-.contact-hero h1 {
-  margin: 0;
-  color: #010333;
-  font-size: clamp(2.5rem, 7vw, 4.4rem);
-  font-weight: 800;
-  line-height: 1.02;
-  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.contact-hero p {
-  margin: 18px auto 0;
-  max-width: 640px;
-  color: #456074;
-  font-size: 1.05rem;
-  line-height: 1.8;
+#hero-contact h1{
+  font-family:'Bebas Neue', sans-serif;
+  font-size: 42pt;
+  font-weight: 500;
+  color:#ffffff;
+  line-height: 1.05;
+  margin-bottom: 0;
+  margin-top: 20px;
+  width: 61ch;
 }
 
 .contact-shell {
   position: relative;
   z-index: 2;
-  width: min(980px, calc(100% - 2 * var(--page-gutter)));
-  margin: -82px auto 110px;
+  width: min(1120px, calc(100% - 2 * var(--page-gutter)));
+  margin: 12px auto 110px;
 }
 
 .contact-layout {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.86fr) minmax(360px, 0.96fr);
-  gap: 18px;
-  align-items: start;
+  align-items: stretch;
 }
 
 .contact-info-panel,
 .contact-form-panel {
   background: rgba(255, 255, 255, 0.95);
   border: 1px solid rgba(52, 98, 132, 0.1);
-  border-radius: 28px;
-  box-shadow: 0 24px 70px rgba(18, 56, 87, 0.08);
+  border-radius: 22px;
+  box-shadow: 0 16px 42px rgba(18, 56, 87, 0.07);
   backdrop-filter: blur(12px);
+  height: 100%;
 }
 .link{
   text-decoration: none;
 }
 .contact-info-panel {
-  padding: 18px;
+  padding: 12px;
 }
 
 .contact-info-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 8px;
+}
+
+.contact-info-grid > .link {
+  display: block;
+  height: 100%;
 }
 
 .contact-info-card {
-  min-height: 142px;
-  padding: 16px 12px;
-  border-radius: 22px;
+  min-height: 112px;
+  height: 100%;
+  padding: 12px 8px;
+  border-radius: 14px;
   background: linear-gradient(180deg, #ffffff 0%, #f4f8fb 100%);
   border: 1px solid rgba(46, 94, 130, 0.08);
   display: flex;
@@ -118,28 +83,32 @@ body.contact-page {
   transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
+.contact-info-card--wide {
+  grid-column: span 2;
+}
+
 .contact-info-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 18px 34px rgba(26, 95, 180, 0.12);
 }
 
 .contact-info-card__icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 10px;
-  border-radius: 18px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+  border-radius: 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, rgba(41, 182, 232, 0.16), rgba(26, 95, 180, 0.08));
   color: #1a5fb4;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .contact-info-card h3 {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: #0b1b27;
-  font-size: 0.98rem;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
@@ -147,8 +116,8 @@ body.contact-page {
 .contact-info-card a {
   margin: 0;
   color: #5b7386;
-  font-size: 0.88rem;
-  line-height: 1.55;
+  font-size: 0.8rem;
+  line-height: 1.45;
   text-decoration: none;
 }
 
@@ -156,10 +125,33 @@ body.contact-page {
   color: #1a5fb4;
 }
 
+.contact-social-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.contact-social-inline a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #1a5fb4;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-social-inline a:hover {
+  color: #103a70;
+}
+
 .contact-map-card {
-  margin-top: 14px;
+  margin-top: 8px;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 14px;
   border: 1px solid rgba(46, 94, 130, 0.08);
   background: #ffffff;
 }
@@ -167,38 +159,41 @@ body.contact-page {
 .contact-map-card iframe {
   display: block;
   width: 100%;
-  height: 220px;
+  height: 180px;
   border: 0;
 }
 
 .contact-form-panel {
-  padding: 24px 22px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-form-panel h2 {
   margin: 0;
   color: #0b1b27;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
   font-weight: 800;
 }
 
 .contact-form-panel p {
-  margin: 10px 0 22px;
+  margin: 6px 0 14px;
   color: #5f788b;
-  font-size: 0.92rem;
-  line-height: 1.7;
+  font-size: 0.84rem;
+  line-height: 1.55;
 }
 
 .contact-form {
   display: grid;
-  gap: 14px;
+  gap: 9px;
+  flex: 1;
 }
 
 .contact-form label {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   color: #0b1b27;
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 600;
 }
 
@@ -206,11 +201,11 @@ body.contact-page {
 .contact-form textarea {
   width: 100%;
   border: 1px solid rgba(43, 88, 120, 0.16);
-  border-radius: 16px;
+  border-radius: 12px;
   background: #fbfdff;
-  padding: 12px 14px;
+  padding: 10px 12px;
   color: #0b1b27;
-  font-size: 0.9rem;
+  font-size: 0.84rem;
   transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
@@ -223,17 +218,17 @@ body.contact-page {
 }
 
 .contact-form textarea {
-  min-height: 140px;
+  min-height: 100px;
   resize: vertical;
 }
 
 .contact-form button {
   border: 0;
   border-radius: 999px;
-  padding: 13px 20px;
+  padding: 11px 16px;
   background: linear-gradient(135deg, #1a5fb4 0%, #29b6e8 100%);
   color: #ffffff;
-  font-size: 0.92rem;
+  font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.01em;
   box-shadow: 0 16px 32px rgba(26, 95, 180, 0.24);
@@ -255,53 +250,6 @@ body.contact-page {
 
 .footer-socials a:hover {
   transform: scale(1.2);
-}
-
-.btn-whatsapp {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #25D366;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 20px;
-  padding: 10px 18px 10px 12px;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  animation: waBounceIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-}
-
-.btn-whatsapp:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.6);
-}
-
-.btn-whatsapp img {
-  width: 28px;
-  height: 28px;
-  filter: brightness(0) invert(1);
-  flex-shrink: 0;
-}
-
-.btn-whatsapp main {
-  line-height: 1.2;
-  font-size: 13px;
-  font-family: sans-serif;
-}
-
-.btn-whatsapp main strong {
-  font-weight: 700;
-  font-size: 14px;
-}
-
-@keyframes waBounceIn {
-  0% { opacity: 0; transform: scale(0.5) translateY(40px); }
-  70% { transform: scale(1.08) translateY(-4px); }
-  100% { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 @media (max-width: 992px) {
@@ -354,41 +302,51 @@ body.contact-page {
     </ul>
   </nav>
 
-  <section class="contact-hero">
-    <div class="contact-hero__inner">
-      <h1>Contactez-nous</h1>
-    </div>
-  </section>
+
+<div id="hero-contact"><h1>Contacez-nous</h1></div>
+
 
   <section class="contact-shell">
-    <div class="contact-layout">
+    <div class="contact-layout row justify-content-center g-3">
+      <div class="col-12 col-lg-5">
       <div class="contact-info-panel">
         <div class="contact-info-grid">
           <a href="tel:+212661236088" class="link">
           <article class="contact-info-card" >
             <span class="contact-info-card__icon"><i class="fas fa-phone" ></i></span>
             <h3>Téléphone</h3>
-            <p>+212 661 236 088</p>
+            <p>+212 522 67 34 55 </p>
           </article>
           </a>
-           <a href="https://wa.me/212661236088" target="_blank" class="link">
+           <a href="https://wa.me/212661236088" target="_blank" rel="noopener noreferrer" class="link">
           <article class="contact-info-card">
             <span class="contact-info-card__icon"><i class="fab fa-whatsapp"></i></span>
             <h3>Whatsapp</h3>
-            <p>Écrire sur WhatsApp</p>
+                        <p> +212 661 11 13 90   </p>   
+                        <p>+212 661 23 60 88</p>
           </article>
           </a>
-          <a href="mailto:mecafric.water@gmail.com" class="link">
+          <a href="mailto:water@mecafric.ma" class="link">
           <article class="contact-info-card">
             <span class="contact-info-card__icon"><i class="fas fa-envelope"></i></span>
             <h3>Email</h3>
-            <p>mecafric.water@gmail.com</p>
+            <p>mecafric.water@gmail.com </p>
+            <p>water@mecafric.ma  </p>
           </article>
            </a>
           <article class="contact-info-card">
             <span class="contact-info-card__icon"><i class="fas fa-location-dot"></i></span>
             <h3>Adresse</h3>
-            <p>Casablanca, Maroc</p>
+            <p> 135 lotissement Al Firdaous, Ain Sebaâ- Casablanca – Maroc </p>
+          </article>
+          <article class="contact-info-card contact-info-card--wide">
+            <span class="contact-info-card__icon"><i class="fas fa-share-nodes"></i></span>
+            <h3>Réseaux sociaux</h3>
+            <div class="contact-social-inline">
+              <a href="https://www.instagram.com/mecafric/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
+              <a href="https://www.facebook.com/MecafricGroup/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> Facebook</a>
+              <a href="https://www.linkedin.com/company/108484529/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
           </article>
         </div>
 
@@ -401,108 +359,125 @@ body.contact-page {
           </iframe>
         </div>
       </div>
+      </div>
 
+      <div class="col-12 col-lg-6">
       <div class="contact-form-panel">
-        <h2>Entrer en contact</h2>
+        <h2>On vous écoute</h2>
         <p>
-          Laissez-nous votre message et nous reviendrons vers vous dans les meilleurs délais.
+         Pour toute information, merci de nous appeler au numéro de téléphone, ou de nous contacter via le formulaire de contact. 
         </p>
+
+        <a class="catalog-download-link" href="./catalogue/mecafricwaterlogo.pdf" download="Catalogue-Mecafric-Water.pdf">Telecharger notre catalogue</a>
 
         <form class="contact-form" action="send_form.php" method="POST"  >
           <div>
             <label for="contact-name">Nom</label>
-            <input id="contact-name" type="text" placeholder="Votre nom" name="nom">
+            <input id="contact-name" type="text" placeholder="Votre nom" name="nom" required>
           </div>
 
           <div>
             <label for="contact-email">Email</label>
-            <input id="contact-email" type="email" placeholder="nom@exemple.com" name="email">
+            <input id="contact-email" type="email" placeholder="nom@exemple.com" name="email" required>
           </div>
 
           <div>
             <label for="contact-subject">Sujet</label>
-            <input id="contact-subject" type="text" placeholder="Objet de votre demande" name="sujet">
+            <input id="contact-subject" type="text" placeholder="Objet de votre demande" name="sujet" required>
           </div>
 
           <div>
             <label for="contact-message">Message</label>
-            <textarea id="contact-message" placeholder="Décrivez votre besoin..." name="message"></textarea>
+            <textarea id="contact-message" placeholder="Décrivez votre besoin..." name="message" required></textarea>
           </div>
 
           <button type="submit" >Envoyer maintenant</button>
         </form>
       </div>
+      </div>
     </div>
   </section>
-
-  <footer class="custom-footer" id="footer">
-    <div class="logo-container">
-      <div class="circle-border">
-        <img src="./visuel/rond.png" alt="Vannes industrielles">
-      </div>
+  
+<footer class="custom-footer" id="footer">
+  <div class="logo-container">
+    <div class="circle-border">
+      <img src="./visuel/rond.png" alt="Vannes industrielles">
     </div>
-    <div class="footer-content">
-      <div class="footer-brand">
-        <img src="./visuel/MECAFRIC WATER-BLANC.png" alt="" width="180" height="90">
-        <p>
-          Mecafric Water est une entreprise spécialisée dans la fourniture d'équipements et de
-          solutions pour les réseaux d'eau, l'hydraulique et la robinetterie industrielle.
-        </p>
-        <div class="footer-socials">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
+  </div>
+  <div class="footer-content">
+        <div class="footer-brand">
+        <img src="./visuel/MECAFRIC WATER-BLANC.png" alt="" width="180px" height="90px">
+      <p>Mecafric Water est une entreprise spécialisée dans la fourniture d’équipements et de solutions pour les réseaux d’eau,
+         l’hydraulique et la robinetterie industrielle.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/MecafricGroup/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/company/108484529/admin/dashboard/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/mecafric/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
       </div>
+    </div> 
+    <!-- Produits -->
+     <div class="footer-col">
+      <h4> Nos Produits</h4>
+      <a href="./produit.html?cat=robinetterie">Robinetterie</a>
+      <a href="./produit.html?cat=equipements">Équipement</a>
+      <a href="./produit.html?cat=raccordements">Raccordements</a>
+      <a href="./produit.html?cat=branchements">Branchements</a>
+      <a href="./produit.html?cat=tuyauterie">Tuyauterie</a>
+      <a href="./produit.html?cat=voiries">Voiries</a>
+    </div> 
 
-      <div class="footer-col">
-        <h4>Nos Produits</h4>
-        <a href="./produit.html?cat=robinetterie">Robinetterie</a>
-        <a href="./produit.html?cat=equipements">Equipement</a>
-        <a href="./produit.html?cat=raccordements">Raccordements</a>
-        <a href="./produit.html?cat=branchements">Branchements</a>
-        <a href="./produit.html?cat=tuyauterie">Tuyauterie</a>
-        <a href="./produit.html?cat=voiries">Voiries</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Entreprise</h4>
-        <a href="./apropos.html">À propos</a>
-        <a href="./produit.html">Produit</a>
-        <a href="./index.html">Services</a>
-        <a href="./formulaire.html">Contact</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="tel:+212661236088">+212 661-236088</a>
-        <a href="mailto:mecafric.water@gmail.com">mecafric.water@gmail.com</a>
-      </div>
-
-      <div class="footer-middle">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.1645097892206!2d-7.5105271!3d33.6010358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cb515b98c6dd%3A0x6d0f55e077c97ef4!2sMecafric%20water%20supplies!5e0!3m2!1sfr!2sma!4v1773153495017!5m2!1sfr!2sma"
-          width="400"
-          height="350"
-          style="border:0;"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© 2026 Mecafric Water Supplies, à Casablanca</span>
-      </div>
+    <!-- Entreprise -->
+    <div class="footer-col">
+      <h4>Entreprise</h4>
+      <a href="./apropos.html">À propos</a>
+      <a href="./produit.html">Produits</a>
+      <a href="./index.html#services">Services</a>
+      <a href="./contact.html">Contact</a>
     </div>
-  </footer>
+        <div class="footer-col">
+      <h4>Contact</h4>
+<a href="tel:+212661236088"> +212 661-236088</a>
+<a href="tel:+2120661197556"> +212 661197556</a>
 
-  <a href="https://wa.me/2120661236088" target="_blank" class="btn-whatsapp">
-    <svg width="28" height="28" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="white">
-      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.474 2.031 7.775L0 32l8.468-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.773-1.854l-.487-.29-5.027 1.19 1.213-4.903-.317-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.198-2.347-1.158-2.711-1.289-.364-.132-.629-.198-.893.198-.265.397-1.026 1.289-1.257 1.554-.231.265-.463.298-.861.099-.397-.198-1.676-.617-3.192-1.97-1.18-1.052-1.977-2.35-2.208-2.747-.231-.397-.025-.611.174-.809.178-.177.397-.463.595-.694.198-.231.265-.397.397-.662.132-.265.066-.497-.033-.695-.099-.198-.893-2.152-1.224-2.946-.322-.774-.65-.669-.893-.681l-.762-.013c-.264 0-.694.099-1.058.497-.364.397-1.39 1.358-1.39 3.312 0 1.953 1.423 3.84 1.621 4.105.198.265 2.8 4.276 6.784 5.995.948.41 1.688.655 2.265.838.952.302 1.818.26 2.503.158.764-.114 2.347-.959 2.678-1.885.33-.926.33-1.72.231-1.885-.099-.165-.364-.264-.762-.463z"/>
-    </svg>
+<a href="mailto:water@mecafric.ma"> water@mecafric.ma</a>
+<a class="catalog-download-link catalog-download-link--footer" href="./catalogue/mecafricwaterlogo.pdf" download="Catalogue-Mecafric-Water.pdf">Telecharger le catalogue</a>
+    </div> 
+  <!-- Badges + Newsletter -->
+  <div class="footer-middle">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.1645097892206!2d-7.5105271!3d33.6010358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cb515b98c6dd%3A0x6d0f55e077c97ef4!2sMecafric%20water%20supplies!5e0!3m2!1sfr!2sma!4v1773153495017!5m2!1sfr!2sma" 
+         width="400" height="350" style="border:0;" allowfullscreen="" loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"></iframe> 
+  </div> 
+
+  <!-- Bottom bar -->
+ <div class="footer-bottom">
+    <span>© 2026 Mecafric Water Supplies, à Casablanca</span>
+  </div>
+    </div>
+</footer>
+<div class="btn-whatsapp">
+  
+  <div class="whatsapp-main">
+  <svg width="28" height="28" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="white">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.474 2.031 7.775L0 32l8.468-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.773-1.854l-.487-.29-5.027 1.19 1.213-4.903-.317-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.198-2.347-1.158-2.711-1.289-.364-.132-.629-.198-.893.198-.265.397-1.026 1.289-1.257 1.554-.231.265-.463.298-.861.099-.397-.198-1.676-.617-3.192-1.97-1.18-1.052-1.977-2.35-2.208-2.747-.231-.397-.025-.611.174-.809.178-.177.397-.463.595-.694.198-.231.265-.397.397-.662.132-.265.066-.497-.033-.695-.099-.198-.893-2.152-1.224-2.946-.322-.774-.65-.669-.893-.681l-.762-.013c-.264 0-.694.099-1.058.497-.364.397-1.39 1.358-1.39 3.312 0 1.953 1.423 3.84 1.621 4.105.198.265 2.8 4.276 6.784 5.995.948.41 1.688.655 2.265.838.952.302 1.818.26 2.503.158.764-.114 2.347-.959 2.678-1.885.33-.926.33-1.72.231-1.885-.099-.165-.364-.264-.762-.463z"/>
+  </svg>
+
+
     <main><strong>Mecafric <br> water</strong></main>
-  </a>
+  </div>
 
+  <div class="whatsapp-options">
+    <a href="https://wa.me/2120661236088" target="_blank" rel="noopener noreferrer">Back Office</a>
+    <a href="https://wa.me/2120661197556" target="_blank" rel="noopener noreferrer">Commercial</a>
+  </div>
+
+</div>
+<!-- <a href="https://wa.me/2120661236088" target="_blank" class="btn-whatsapp">
+  <svg width="28" height="28" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="white">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.474 2.031 7.775L0 32l8.468-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.773-1.854l-.487-.29-5.027 1.19 1.213-4.903-.317-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.198-2.347-1.158-2.711-1.289-.364-.132-.629-.198-.893.198-.265.397-1.026 1.289-1.257 1.554-.231.265-.463.298-.861.099-.397-.198-1.676-.617-3.192-1.97-1.18-1.052-1.977-2.35-2.208-2.747-.231-.397-.025-.611.174-.809.178-.177.397-.463.595-.694.198-.231.265-.397.397-.662.132-.265.066-.497-.033-.695-.099-.198-.893-2.152-1.224-2.946-.322-.774-.65-.669-.893-.681l-.762-.013c-.264 0-.694.099-1.058.497-.364.397-1.39 1.358-1.39 3.312 0 1.953 1.423 3.84 1.621 4.105.198.265 2.8 4.276 6.784 5.995.948.41 1.688.655 2.265.838.952.302 1.818.26 2.503.158.764-.114 2.347-.959 2.678-1.885.33-.926.33-1.72.231-1.885-.099-.165-.364-.264-.762-.463z"/>
+  </svg>
+  <main><strong>Mecafric <br> water</strong></main>
+</a> -->
   <script src="./script.js"></script>
 </body>
 </html>

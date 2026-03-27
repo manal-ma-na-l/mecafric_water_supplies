@@ -35,21 +35,21 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const svgEl   = document.getElementById('waveSvg');
-  const pathEl  = document.getElementById('wavePath');
-  const nodesEl = document.getElementById('nodes');
-  const sceneEl = document.getElementById('scene');
+document.addEventListener("DOMContentLoaded", () => {
+  const svgEl = document.getElementById("waveSvg");
+  const pathEl = document.getElementById("wavePath");
+  const nodesEl = document.getElementById("nodes");
+  const sceneEl = document.getElementById("scene");
 
   if (!svgEl || !pathEl || !nodesEl || !sceneEl) return;
 
   const cats = [
-    {name:"Branchements", img:"./produit_image/Branchements/Icone Branchement-2.jpeg", href:"#"},
-    {name:"Equipement", img:"./produit_image/Equipements de robinetterie/Icone Clapets - Dégradé.png", href:"#"},
-    {name:"Raccordements", img:"./produit_image/Raccordements/Icone coude-2.png", href:"#"},
-    {name:"Robinetterie", img:"./produit_image/Robinetterie/Icone Vanne - Dégradé.png", href:"#"},
-    {name:"Tuyauterie", img:"./produit_image/Tuyauterie et accessoires/Icone boulon-2.jpg", href:"#"},
-    {name:"Voiries", img:"./produit_image/Voiries/icone voiries-2.png", href:"#"}
+    { name: "Branchements", img: "./produit_image/Branchements/Icone Branchement-2.jpeg", href: "./produit.html?cat=branchements" },
+    { name: "Equipement", img: "./produit_image/Equipements de robinetterie/Icone Clapets - Dégradé.png", href: "./produit.html?cat=equipements" },
+    { name: "Raccordements", img: "./produit_image/Raccordements/Icone coude-2.png", href: "./produit.html?cat=raccordements" },
+    { name: "Robinetterie", img: "./produit_image/Robinetterie/Icone Vanne - Dégradé.png", href: "./produit.html?cat=robinetterie" },
+    { name: "Tuyauterie", img: "./produit_image/Tuyauterie et accessoires/Icone boulon-2.jpg", href: "./produit.html?cat=tuyauterie" },
+    { name: "Voiries", img: "./produit_image/Voiries/icone voiries-2.png", href: "./produit.html?cat=voiries" }
   ];
 
   const TOTAL = cats.length;
@@ -59,10 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let hasAnimated = false;
 
   function buildPath(sw, sh) {
-    let d = `M0 ${sh/2}`;
-    for(let i=0;i<=100;i++){
-      const x = (i/100)*sw;
-      const y = sh/2 + Math.sin(i/100 * Math.PI*2) * AMP;
+    let d = `M0 ${sh / 2}`;
+    for (let i = 0; i <= 100; i++) {
+      const x = (i / 100) * sw;
+      const y = sh / 2 + Math.sin((i / 100) * Math.PI * 2) * AMP;
       d += ` L${x} ${y}`;
     }
     return d;
@@ -72,25 +72,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const len = pathEl.getTotalLength ? pathEl.getTotalLength() : 3000;
     pathEl.style.strokeDasharray = len;
     pathEl.style.strokeDashoffset = len;
-    pathEl.style.animation = 'none';
+    pathEl.style.animation = "none";
     pathEl.offsetHeight;
-    pathEl.style.animation = 'drawWave 1.8s cubic-bezier(.4,0,.2,1) .3s forwards';
+    pathEl.style.animation = "drawWave 1.8s cubic-bezier(.4,0,.2,1) .3s forwards";
   }
 
   function createNodes() {
-    nodesEl.innerHTML = '';
+    nodesEl.innerHTML = "";
     nodes = [];
     const len = pathEl.getTotalLength();
 
-    cats.forEach((cat, i)=>{
-      const t = (2*i+1)/(2*TOTAL);
+    cats.forEach((cat, i) => {
+      const t = (2 * i + 1) / (2 * TOTAL);
       const point = pathEl.getPointAtLength(t * len);
 
-      const node = document.createElement('div');
-      node.className = 'node bottom is-hidden';
-      node.style.position = 'absolute';
-      node.style.left = point.x + 'px';
-      node.style.top  = point.y + 'px';
+      const node = document.createElement("div");
+      node.className = "node bottom is-hidden";
+      node.style.position = "absolute";
+      node.style.left = `${point.x}px`;
+      node.style.top = `${point.y}px`;
       node.innerHTML = `
         <a class="node-circle" href="${cat.href}">
           <img src="${cat.img}" alt="${cat.name}" width="60" height="60">
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
 
       nodesEl.appendChild(node);
-      nodes.push({el: node, t});
+      nodes.push({ el: node, t });
     });
   }
 
@@ -110,16 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const sw = sceneEl.offsetWidth || window.innerWidth;
     const sh = sceneEl.offsetHeight || 380;
 
-    svgEl.setAttribute('viewBox', `0 0 ${sw} ${sh}`);
-    pathEl.setAttribute('d', buildPath(sw, sh));
+    svgEl.setAttribute("viewBox", `0 0 ${sw} ${sh}`);
+    pathEl.setAttribute("d", buildPath(sw, sh));
   }
 
   function positionNodes() {
     const len = pathEl.getTotalLength();
-    nodes.forEach(nodeObj => {
+    nodes.forEach((nodeObj) => {
       const point = pathEl.getPointAtLength(nodeObj.t * len);
-      nodeObj.el.style.left = point.x + 'px';
-      nodeObj.el.style.top  = point.y + 'px';
+      nodeObj.el.style.left = `${point.x}px`;
+      nodeObj.el.style.top = `${point.y}px`;
     });
   }
 
@@ -131,8 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function hideNodes() {
     clearRevealTimers();
     nodes.forEach((nodeObj) => {
-      nodeObj.el.classList.remove('is-visible');
-      nodeObj.el.classList.add('is-hidden');
+      nodeObj.el.classList.remove("is-visible");
+      nodeObj.el.classList.add("is-hidden");
     });
     hasAnimated = false;
   }
@@ -143,8 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     nodes.forEach((nodeObj, i) => {
       const timer = window.setTimeout(() => {
-        nodeObj.el.classList.remove('is-hidden');
-        nodeObj.el.classList.add('is-visible');
+        nodeObj.el.classList.remove("is-hidden");
+        nodeObj.el.classList.add("is-visible");
       }, 220 + i * 180);
       revealTimers.push(timer);
     });
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
   createNodes();
   positionNodes();
 
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     renderPath();
     positionNodes();
   });
@@ -173,27 +173,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sceneObserver.observe(sceneEl);
 });
-document.addEventListener('DOMContentLoaded', () => {
-  const counters = document.querySelectorAll('.counter');
-  const section = document.querySelector('.counters-section');
+
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+  const section = document.querySelector(".counters-section");
+  const statLabels = document.querySelectorAll(".stat-label");
+
+  if (statLabels.length >= 3) {
+    statLabels[0].textContent = "Projets realises par an";
+    statLabels[1].textContent = "Clients Mecafric Water";
+    statLabels[2].textContent = "Produits references";
+  }
 
   if (!counters.length || !section) return;
 
   let animationFrame;
   let startTime;
 
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function getCounterDuration(target) {
+    return Math.min(32000, 16000 + Math.log10(target + 1) * 7000);
+  }
+
   function animate(timestamp) {
     if (!startTime) startTime = timestamp;
 
-    const duration = 9000; // نفس الوقت للجميع
-    const progress = Math.min((timestamp - startTime) / duration, 1);
-
-    counters.forEach(counter => {
-      const target = +counter.getAttribute('data-target');
-      counter.innerText = Math.floor(progress * target);
+    counters.forEach((counter) => {
+      const target = +counter.getAttribute("data-target");
+      const duration = getCounterDuration(target);
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easedProgress = easeOutCubic(progress);
+      counter.innerText = Math.floor(easedProgress * target);
     });
 
-    if (progress < 1) {
+    const hasActiveCounter = Array.from(counters).some((counter) => {
+      const target = +counter.getAttribute("data-target");
+      return (timestamp - startTime) / getCounterDuration(target) < 1;
+    });
+
+    if (hasActiveCounter) {
       animationFrame = requestAnimationFrame(animate);
     }
   }
@@ -205,15 +226,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function resetCounters() {
-    counters.forEach(counter => counter.innerText = 0);
+    counters.forEach((counter) => {
+      counter.innerText = 0;
+    });
   }
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        startAnimation(); // 🔥 كاملين بنفس السرعة
+        startAnimation();
       } else {
-        resetCounters(); // 🔄 reset
+        resetCounters();
       }
     });
   }, { threshold: 0.5 });
@@ -221,10 +244,10 @@ document.addEventListener('DOMContentLoaded', () => {
   observer.observe(section);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const servicesSection = document.querySelector('.services-section');
-  const serviceCards = servicesSection?.querySelectorAll('.service-card');
-  if (!servicesSection || !serviceCards?.length || servicesSection.dataset.servicesStatic === 'true') return;
+document.addEventListener("DOMContentLoaded", () => {
+  const servicesSection = document.querySelector(".services-section");
+  const serviceCards = servicesSection?.querySelectorAll(".service-card");
+  if (!servicesSection || !serviceCards?.length || servicesSection.dataset.servicesStatic === "true") return;
 
   let currentIndex = 1;
   let sliderTimer = null;
@@ -232,14 +255,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function applyServicesState(activeIndex) {
     serviceCards.forEach((card, index) => {
-      card.classList.remove('is-front', 'is-left', 'is-right');
+      card.classList.remove("is-front", "is-left", "is-right");
 
       if (index === activeIndex) {
-        card.classList.add('is-front');
+        card.classList.add("is-front");
       } else if (index === (activeIndex + serviceCards.length - 1) % serviceCards.length) {
-        card.classList.add('is-left');
+        card.classList.add("is-left");
       } else {
-        card.classList.add('is-right');
+        card.classList.add("is-right");
       }
     });
   }
@@ -247,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function startServicesSlider() {
     if (hasStarted) return;
     hasStarted = true;
-    servicesSection.classList.add('is-active');
+    servicesSection.classList.add("is-active");
     applyServicesState(currentIndex);
 
     sliderTimer = window.setInterval(() => {
@@ -271,18 +294,25 @@ document.addEventListener('DOMContentLoaded', () => {
   observer.observe(servicesSection);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   const servicesSection = document.querySelector('.services-section[data-services-static="true"]');
-  if (!servicesSection) return;
+  const cards = servicesSection?.querySelectorAll(".service-card");
+  if (!servicesSection || !cards?.length) return;
+
+  function applySpotlight(index) {
+    cards.forEach((card, cardIndex) => {
+      card.classList.toggle("is-spotlight", cardIndex === index);
+    });
+  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        servicesSection.classList.add('is-revealed');
+        servicesSection.classList.add("is-revealed");
+        applySpotlight(1);
       }
     });
   }, { threshold: 0.25 });
 
   observer.observe(servicesSection);
 });
-

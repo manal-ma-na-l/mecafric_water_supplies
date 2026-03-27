@@ -1,32 +1,30 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Nettoyage des données pour la sécurité
-    $nom = htmlspecialchars(strip_tags($_POST['nom']));
-    $prenom = htmlspecialchars(strip_tags($_POST['prenom']));
-    $sujet = htmlspecialchars(strip_tags($_POST['sujet']));
-    $email = htmlspecialchars(strip_tags($_POST['email']));
-    $message = htmlspecialchars(strip_tags($_POST['message']));
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nom = htmlspecialchars(strip_tags($_POST['nom'] ?? ''));
+    $sujet = htmlspecialchars(strip_tags($_POST['sujet'] ?? ''));
+    $email = htmlspecialchars(strip_tags($_POST['email'] ?? ''));
+    $message = htmlspecialchars(strip_tags($_POST['message'] ?? ''));
 
-    // Destinataire
-    $to = "manalfarboussi44@gmail.com"; // <-- mets ton email ici
-    $subject = "Nouvelle demande de devis - $nom $prenom";
+    if ($nom === '' || $sujet === '' || $email === '' || $message === '') {
+        echo "<script>alert('Merci de remplir tous les champs obligatoires.'); window.location='contact.html';</script>";
+        exit;
+    }
 
-    // Corps de l'email
+    $to = "water@mecafric.ma";
+    $subject = "Nouveau message de contact - $nom";
+
     $body = "Nom: $nom\n";
-    $body .= "Prénom: $prenom\n";
-    $body .= "Société: $sujet\n";
-    $body .= "Email: $email\n";
+    $body .= "Sujet: $sujet\n";
+    $body .= "Email: $email\n\n";
     $body .= "Message:\n$message\n";
 
-    // Headers
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
+    $headers = "From:$email\r\n";
+    $headers .= "Reply-To: $to\r\n";
 
-    // Envoi de l'email
     if (mail($to, $subject, $body, $headers)) {
-        echo "<script>alert('Email envoyé avec succès !'); window.location='formulaire.html';</script>";
+        echo "<script>alert('Message envoye avec succes !'); window.location='contact.html';</script>";
     } else {
-        echo "<script>alert('Erreur lors de l\'envoi de l\'email.'); window.location='formulaire.html';</script>";
+        echo "<script>alert('Erreur lors de l\\'envoi du message.'); window.location='contact.html';</script>";
     }
 }
 ?>
