@@ -102,11 +102,11 @@ const catalogue = {
         { nom: "Grille de caniveau", image: "produit_image/Voiries/GRILLE DE CANIVEAU.jpg", specs: { Matériau: "Fonte ductile ou fonte grise", Norme: "EN 124", Forme: "Rectangulaire ou carrée" }, icon: "grate" },
         { nom: "Capot anti-vandalisme", image: "produit_image/Voiries/capot anti-vandal.jpg", specs: { Matériau: "Fonte ductile ou acier galvanisé" }, icon: "cap" },
         { nom: "Porte de niche en acier", image: "produit_image/Voiries/porte niche.jpg", specs: { Matériau: "Acier galvanisé à chaud" }, icon: "door" },
+        { nom: "Bouche à Clé", image: "produit_image/Voiries/bouchacleenfonte.jpeg", specs:{matiére:"Fonte EN-GJS-500/7 selon EN1563",revetement:"Peinture noire",conformité:" Ce dispositif n’entre pas dans le scope de la norme EN124/2015",lieux_Installation:"chaussée et trottoirs(vitesse urbaine)"}},  
       ]
     }
   ]
 };
-
 const icons = {
   valve:`<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="32" cy="32" r="14"/><line x1="32" y1="4" x2="32" y2="18"/><line x1="32" y1="46" x2="32" y2="60"/><line x1="4" y1="32" x2="18" y2="32"/><line x1="46" y1="32" x2="60" y2="32"/><path d="M22 22l20 20M22 42l20-20" stroke-width="2"/></svg>`,
   butterfly:`<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="14" width="10" height="36" rx="2"/><rect x="48" y="14" width="10" height="36" rx="2"/><ellipse cx="32" cy="32" rx="14" ry="14"/><line x1="32" y1="18" x2="32" y2="46" stroke-width="2.5"/></svg>`,

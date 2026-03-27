@@ -128,22 +128,79 @@ body.apropos-page {
   animation: none;
 }
 
-.apropos-pill {
+.apropos-hero-button {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   padding: 10px 16px;
   border-radius: 999px;
   background: #ffffff;
   border: 1px solid rgba(18, 58, 92, 0.1);
   color: #35546e;
   font: 500 0.9rem 'Outfit', sans-serif;
-  backdrop-filter: none;
+  text-decoration: none;
+  box-shadow: none;
+  transition: none;
 }
 
-.apropos-pill strong {
+.apropos-hero-button:hover {
+  color: #35546e;
+}
+
+.apropos-why {
+  width: min(1180px, calc(100% - 32px));
+  margin: 34px auto 40px;
+  display: grid;
+  grid-template-columns: minmax(300px, 420px) minmax(0, 1fr);
+  gap: 34px;
+  align-items: start;
+  padding: 34px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(18, 58, 92, 0.08);
+  box-shadow: 0 16px 40px rgba(7, 37, 74, 0.08);
+}
+
+.apropos-why__media img {
+  width: 100%;
+  height: 100%;
+  min-height: 550px;
+  object-fit: cover;
+  display: block;
+  border-radius: 24px;
+}
+
+.apropos-why__content h4 {
+  margin: 0 0 8px;
   color: #1a5fb4;
-  font-weight: 700;
+  font: 700 0.84rem 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.apropos-why__content h2 {
+  margin: 0 0 24px;
+  color: #123a5c;
+  font-family: 'Bebas Neue', serif;
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1.05;
+}
+
+.apropos-why__item + .apropos-why__item {
+  margin-top: 18px;
+}
+
+.apropos-why__item h3 {
+  margin: 0 0 6px;
+  color: #103a70;
+  font: 700 1.02rem 'Outfit', sans-serif;
+}
+
+.apropos-why__item p {
+  margin: 0;
+  color: #557086;
+  font-size: 0.81rem;
+  line-height: 1.7;
 }
 
 .apropos-hero-panel {
@@ -386,7 +443,13 @@ body.apropos-page {
     border-radius: 28px;
   }
 
+  .apropos-why {
+    grid-template-columns: 1fr;
+    padding: 26px;
+  }
+
   .apropos-hero-content {
+    grid-template-columns: 1fr;
     padding: 34px 24px;
   }
 
@@ -405,6 +468,7 @@ body.apropos-page {
 
 @media (max-width: 767px) {
   .apropos-hero,
+  .apropos-why,
   .temoignage-title,
   .equipe,
   .partners-section {
@@ -416,8 +480,18 @@ body.apropos-page {
   }
 
   .apropos-hero-content {
+    grid-template-columns: 1fr;
     padding: 28px 18px;
     gap: 18px;
+  }
+
+  .apropos-why {
+    padding: 18px;
+    gap: 18px;
+  }
+
+  .apropos-why__media img {
+    min-height: 280px;
   }
 
   .apropos-kicker {
@@ -646,7 +720,40 @@ body.apropos-page {
     <li><a href="./formulaire.html">Demander votre devis</a></li>
   </ul>
 </nav>
-<div id="hero-apropos" > <h1>Notre équipe</h1></div>
+<div id="hero-apropos" > <h1>À PROPOS</h1></div>
+<section class="apropos-why">
+  <div class="apropos-why__media">
+    <img src="./visuel/indu1.webp" alt="Pourquoi choisir Mecafric Water">
+  </div>
+  <div class="apropos-why__content">
+    <h4>Pourquoi choisir</h4>
+    <h2>Mecafric Water ?</h2>
+    <div class="apropos-why__item">
+      <h3>Réactivité</h3>
+      <p>Nous vous garantissons une réponse rapide à vos demandes. Notre équipe s’engage à vous fournir un chiffrage clair et précis dans les meilleurs délais.</p>
+    </div>
+    <div class="apropos-why__item">
+      <h3>Accompagnement & Service</h3>
+      <p>Nous vous accompagnons dans l’évaluation de vos projets, que ce soit à partir d’un simple listing ou d’un CCTP, avec efficacité et rigueur.</p>
+    </div>
+    <div class="apropos-why__item">
+      <h3>Expertise</h3>
+      <p>Grâce à notre expérience et notre maîtrise du secteur, nous vous conseillons dans le choix des solutions et produits les plus adaptés.</p>
+    </div>
+    <div class="apropos-why__item">
+      <h3>Délais maîtrisés</h3>
+      <p>Vos commandes sont traitées avec priorité, avec une expédition rapide, souvent le jour même.</p>
+    </div>
+    <div class="apropos-why__item">
+      <h3>Compétitivité</h3>
+      <p>Nous vous proposons des offres optimisées avec des prix compétitifs, adaptés à vos besoins.</p>
+    </div>
+    <div class="apropos-why__item">
+      <h3>Simplicité & Confort</h3>
+      <p>Une fois votre compte créé, vous bénéficiez de conditions personnalisées et d’un suivi facilité de vos commandes.</p>
+    </div>
+  </div>
+</section>
 <section class="equipe">
   <div class="container">
 
@@ -669,16 +776,16 @@ body.apropos-page {
       </div>
       <div class="col-md-4 d-flex justify-content-center">
         <div class="card-employe text-center">
-          <img src="./Photos/Nezha Ahyani-flou4.png" class="img-fluid mb-3" alt="Nezha Ahyani">
+          <img src="./Photos/nezha.jpeg" class="img-fluid mb-3" alt="Nezha Ahyani">
           <h3>Nezha Ahyani</h3>
-          <span>Assistante Commerciale</span>
+          <span>Commerce & Import</span>
         </div>
       </div>
       <div class="col-md-3 d-flex justify-content-center">
         <div class="card-employe text-center">
-          <img src="./Photos/Samira Elharras-2.png" class="img-fluid mb-3" alt="Samira Elharras">
+          <img src="./Photos/samira.jpeg" class="img-fluid mb-3" alt="Samira Elharras">
           <h3>Samira Elharras</h3>
-          <span>Responsable administrative</span>
+          <span>Responsable Administrative</span>
         </div>
       </div>
 
@@ -686,7 +793,7 @@ body.apropos-page {
         <div class="card-employe text-center">
           <img src="./Photos/Abdelhadi Miftah.png" class="img-fluid mb-3" alt="Abdelhadi Miftah">
           <h3>Abdelhadi Miftah</h3>
-          <span>Services généraux</span>
+          <span>Finance et Recouvrement</span>
         </div>
       </div>
 
@@ -720,25 +827,17 @@ body.apropos-page {
 <div class="partenaires-puzzle">
   
   <div class="puzzle">
-    <div class="piece top left"><img src="./Photos/bvalve.png"></div>
-    <div class="piece top"><img src="./Photos/cmo.png"></div>
-    <div class="piece top right"><img src="./Photos/lidering.png"></div>
+    <div class="piece top left"><img src="./Photos/bvalve.jpeg"></div>
+    <div class="piece top"><img src="./Photos/cmo.jpeg"></div>
+    <div class="piece top right"><img src="./Photos/sferaco.jpeg"></div>
 
-    <div class="piece left"><img src="./Photos/loctite.png"></div>
-    <div class="piece"><img src="./Photos/nivelco.png"></div>
-    <div class="piece right"><img src="./Photos/rotaseal.png"></div>
-
+    <div class="piece left"><img src="./Photos/proinval.jpeg"></div>
+    <div class="piece"><img src="./Photos/valveseal.jpeg"></div>
+    <div class="piece right"><img src="./Photos/tecflow.jpeg"></div>
   </div>
 </div>
-<div class="top-section">
-  </div>
 
 <footer class="custom-footer" id="footer">
-  <div class="logo-container">
-    <div class="circle-border">
-      <img src="./visuel/rond.png" alt="Vannes industrielles">
-    </div>
-  </div>
   <div class="footer-content">
         <div class="footer-brand">
         <img src="./visuel/MECAFRIC WATER-BLANC.png" alt="" width="180px" height="90px">
@@ -775,6 +874,7 @@ body.apropos-page {
 <a href="tel:+2120661197556"> +212 661197556</a>
 
 <a href="mailto:water@mecafric.ma"> water@mecafric.ma</a>
+<a class="catalog-download-link catalog-download-link--footer" href="./catalogue/Dépliant_Mecafric water.pdf" download="Catalogue-Mecafric-Water.pdf">Télécharger Notre Catalogue</a>
     </div> 
   <!-- Badges + Newsletter -->
   <div class="footer-middle">
@@ -785,7 +885,7 @@ body.apropos-page {
 
   <!-- Bottom bar -->
  <div class="footer-bottom">
-    <span>© 2026 Mecafric Water Supplies, à Casablanca</span>
+    <span>Mecafric Water © 2026. Tous les droits sont réservés.</span>
   </div>
     </div>
 </footer>
@@ -807,11 +907,9 @@ body.apropos-page {
 
 </div>
 <!-- <a href="https://wa.me/2120661236088" target="_blank" class="btn-whatsapp">
-
   <svg width="28" height="28" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="white">
     <path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.474 2.031 7.775L0 32l8.468-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.773-1.854l-.487-.29-5.027 1.19 1.213-4.903-.317-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.198-2.347-1.158-2.711-1.289-.364-.132-.629-.198-.893.198-.265.397-1.026 1.289-1.257 1.554-.231.265-.463.298-.861.099-.397-.198-1.676-.617-3.192-1.97-1.18-1.052-1.977-2.35-2.208-2.747-.231-.397-.025-.611.174-.809.178-.177.397-.463.595-.694.198-.231.265-.397.397-.662.132-.265.066-.497-.033-.695-.099-.198-.893-2.152-1.224-2.946-.322-.774-.65-.669-.893-.681l-.762-.013c-.264 0-.694.099-1.058.497-.364.397-1.39 1.358-1.39 3.312 0 1.953 1.423 3.84 1.621 4.105.198.265 2.8 4.276 6.784 5.995.948.41 1.688.655 2.265.838.952.302 1.818.26 2.503.158.764-.114 2.347-.959 2.678-1.885.33-.926.33-1.72.231-1.885-.099-.165-.364-.264-.762-.463z"/>
   </svg>
-
   <main><strong>Mecafric <br> water</strong></main>
 </a> -->
 <script src="./script.js"></script>

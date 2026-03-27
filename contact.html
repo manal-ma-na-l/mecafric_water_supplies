@@ -12,9 +12,49 @@ body.contact-page {
   background: linear-gradient(180deg, #f7fbff 0%, #ffffff 34%, #f2f7fb 100%);
 }
 
+.catalog-download-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1a5fb4 0%, #29b6e8 100%);
+  color: #ffffff !important;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 14px 28px rgba(26, 95, 180, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.catalog-download-link:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(26, 95, 180, 0.28);
+}
+
+.catalog-download-link--footer {
+  margin-top: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.catalog-download-strip {
+  width: min(1180px, calc(100% - 32px));
+  margin: 22px auto 34px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form-panel .catalog-download-link {
+  margin: 4px 0 14px;
+  width: fit-content;
+}
+
 #hero-contact{
    background:linear-gradient(160deg, rgba(5,20,50,0.82) 0%, rgba(10,40,80,0.65) 50%, rgba(5,15,35,0.88) 100%),
-      url("./visuel/bombb.jpeg")center/cover no-repeat fixed;
+      url("./visuel/hero_contact.jpeg")center/cover no-repeat fixed;
   padding: 150px 5%;
   position:relative;
   overflow: hidden;
@@ -129,7 +169,7 @@ body.contact-page {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 10px;
   flex-wrap: wrap;
   margin-top: 8px;
 }
@@ -170,10 +210,12 @@ body.contact-page {
 }
 
 .contact-form-panel h2 {
+    font-family:'Bebas Neue', sans-serif;
+
   margin: 0;
-  color: #0b1b27;
+  color: #468dc4;
   font-size: clamp(1.5rem, 3.2vw, 2.1rem);
-  font-weight: 800;
+  font-weight: 100;
 }
 
 .contact-form-panel p {
@@ -303,9 +345,7 @@ body.contact-page {
   </nav>
 
 
-<div id="hero-contact"><h1>Contacez-nous</h1></div>
-
-
+<div id="hero-contact"><h1>Contactez-nous</h1></div>
   <section class="contact-shell">
     <div class="contact-layout row justify-content-center g-3">
       <div class="col-12 col-lg-5">
@@ -340,8 +380,6 @@ body.contact-page {
             <p> 135 lotissement Al Firdaous, Ain Sebaâ- Casablanca – Maroc </p>
           </article>
           <article class="contact-info-card contact-info-card--wide">
-            <span class="contact-info-card__icon"><i class="fas fa-share-nodes"></i></span>
-            <h3>Réseaux sociaux</h3>
             <div class="contact-social-inline">
               <a href="https://www.instagram.com/mecafric/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
               <a href="https://www.facebook.com/MecafricGroup/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> Facebook</a>
@@ -368,7 +406,7 @@ body.contact-page {
          Pour toute information, merci de nous appeler au numéro de téléphone, ou de nous contacter via le formulaire de contact. 
         </p>
 
-        <a class="catalog-download-link" href="./catalogue/Dépliant_water supplies.pdf" download="Catalogue-Mecafric-Water.pdf">Telecharger notre catalogue</a>
+        <a class="catalog-download-link" href="./catalogue/Dépliant_Mecafric water.pdf" download="Catalogue-Mecafric-Water.pdf">Téléchargez notre catalogue</a>
 
         <form class="contact-form" action="send_form.php" method="POST"  >
           <div>
@@ -398,12 +436,8 @@ body.contact-page {
     </div>
   </section>
   
+
 <footer class="custom-footer" id="footer">
-  <div class="logo-container">
-    <div class="circle-border">
-      <img src="./visuel/rond.png" alt="Vannes industrielles">
-    </div>
-  </div>
   <div class="footer-content">
         <div class="footer-brand">
         <img src="./visuel/MECAFRIC WATER-BLANC.png" alt="" width="180px" height="90px">
@@ -437,10 +471,11 @@ body.contact-page {
         <div class="footer-col">
       <h4>Contact</h4>
 <a href="tel:+212661236088"> +212 661-236088</a>
-<a href="tel:+2120661197556"> +212 661197556</a>
+<a href="tel:+2120661197556"> +212 661-197556</a>
 
 <a href="mailto:water@mecafric.ma"> water@mecafric.ma</a>
-<a class="catalog-download-link catalog-download-link--footer" href="./catalogue/Dépliant_water supplies.pdf" download="Catalogue-Mecafric-Water.pdf">Telecharger le catalogue</a>
+<a href="mailto:mecafric.water@gmail.com">mecafric.water@gmail.com</a>
+<a class="catalog-download-link catalog-download-link--footer" href="./catalogue/Dépliant_Mecafric water.pdf" download="Catalogue-Mecafric-Water.pdf">Téléchargez notre catalogue</a>
     </div> 
   <!-- Badges + Newsletter -->
   <div class="footer-middle">
@@ -451,7 +486,7 @@ body.contact-page {
 
   <!-- Bottom bar -->
  <div class="footer-bottom">
-    <span>© 2026 Mecafric Water Supplies, à Casablanca</span>
+    <span>Mecafric Water © 2026. Tous les droits sont réservés.</span>
   </div>
     </div>
 </footer>
@@ -472,12 +507,9 @@ body.contact-page {
   </div>
 
 </div>
-<!-- <a href="https://wa.me/2120661236088" target="_blank" class="btn-whatsapp">
-  <svg width="28" height="28" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="white">
-    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.474 2.031 7.775L0 32l8.468-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.773-1.854l-.487-.29-5.027 1.19 1.213-4.903-.317-.503A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.198-2.347-1.158-2.711-1.289-.364-.132-.629-.198-.893.198-.265.397-1.026 1.289-1.257 1.554-.231.265-.463.298-.861.099-.397-.198-1.676-.617-3.192-1.97-1.18-1.052-1.977-2.35-2.208-2.747-.231-.397-.025-.611.174-.809.178-.177.397-.463.595-.694.198-.231.265-.397.397-.662.132-.265.066-.497-.033-.695-.099-.198-.893-2.152-1.224-2.946-.322-.774-.65-.669-.893-.681l-.762-.013c-.264 0-.694.099-1.058.497-.364.397-1.39 1.358-1.39 3.312 0 1.953 1.423 3.84 1.621 4.105.198.265 2.8 4.276 6.784 5.995.948.41 1.688.655 2.265.838.952.302 1.818.26 2.503.158.764-.114 2.347-.959 2.678-1.885.33-.926.33-1.72.231-1.885-.099-.165-.364-.264-.762-.463z"/>
-  </svg>
-  <main><strong>Mecafric <br> water</strong></main>
-</a> -->
+
+ 
+
   <script src="./script.js"></script>
 </body>
 </html>

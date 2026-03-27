@@ -44,11 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!svgEl || !pathEl || !nodesEl || !sceneEl) return;
 
   const cats = [
-    { name: "Branchements", img: "./produit_image/Branchements/Icone Branchement-2.jpeg", href: "./produit.html?cat=branchements" },
-    { name: "Equipement", img: "./produit_image/Equipements de robinetterie/Icone Clapets - Dégradé.png", href: "./produit.html?cat=equipements" },
-    { name: "Raccordements", img: "./produit_image/Raccordements/Icone coude-2.png", href: "./produit.html?cat=raccordements" },
     { name: "Robinetterie", img: "./produit_image/Robinetterie/Icone Vanne - Dégradé.png", href: "./produit.html?cat=robinetterie" },
-    { name: "Tuyauterie", img: "./produit_image/Tuyauterie et accessoires/Icone boulon-2.jpg", href: "./produit.html?cat=tuyauterie" },
+    { name: "Équipement", img: "./produit_image/Equipements de robinetterie/Icone Clapets - Dégradé.png", href: "./produit.html?cat=equipements" },
+    { name: "Raccordements", img: "./produit_image/Raccordements/Icone coude-2.png", href: "./produit.html?cat=raccordements" },
+    { name: "Branchements", img: "./produit_image/Branchements/vanneoca.jpeg", href: "./produit.html?cat=branchements" },
+    { name: "Tuyauterie", img: "produit_image/Branchements/tyauterie.jpeg", href: "./produit.html?cat=tuyauterie" },
     { name: "Voiries", img: "./produit_image/Voiries/icone voiries-2.png", href: "./produit.html?cat=voiries" }
   ];
 
@@ -180,9 +180,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const statLabels = document.querySelectorAll(".stat-label");
 
   if (statLabels.length >= 3) {
-    statLabels[0].textContent = "Projets realises par an";
+    statLabels[0].textContent = "Projets réalises par an";
     statLabels[1].textContent = "Clients Mecafric Water";
-    statLabels[2].textContent = "Produits references";
+    statLabels[2].textContent = "Produits références";
   }
 
   if (!counters.length || !section) return;
