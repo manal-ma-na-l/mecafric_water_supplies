@@ -302,11 +302,21 @@ body.contact-page {
   .contact-shell {
     margin-top: -64px;
   }
+
+  #hero-contact {
+    padding: 120px 24px 110px;
+    background-attachment: scroll;
+  }
+
+  #hero-contact h1 {
+    width: min(100%, 12ch);
+    font-size: clamp(2.4rem, 7vw, 3.6rem);
+  }
 }
 
 @media (max-width: 640px) {
-  .contact-hero {
-    padding: 82px 16px 118px;
+  #hero-contact {
+    padding: 96px 16px 88px;
   }
 
   .contact-info-grid {
@@ -321,6 +331,25 @@ body.contact-page {
 
   .contact-form-panel h2 {
     font-size: 2rem;
+  }
+
+  .contact-shell {
+    width: calc(100% - 16px);
+    margin: -42px auto 72px;
+  }
+
+  .contact-info-card,
+  .contact-info-card--wide {
+    min-height: auto;
+    grid-column: auto;
+  }
+
+  .contact-map-card iframe {
+    height: 220px;
+  }
+
+  .contact-social-inline {
+    justify-content: flex-start;
   }
 }
   </style>

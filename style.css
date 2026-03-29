@@ -440,24 +440,24 @@ nav.header-gradient ul li:last-child a:hover {
 }
 .hero-text h1 {
   font-family:'Bebas Neue', sans-serif;
-    font-size: 92pt;
+    font-size: clamp(2.4rem, 7vw, 5.75rem);
   font-weight: 500;
   color:#4e7bd0;
-  line-height: 1.05;
+  line-height: 1;
   margin-bottom: 0;
-  width: 11ch;
+  width: min(11ch, 100%);
 
   letter-spacing: 0.02em;
   -webkit-text-stroke: 1px rgba(12, 64, 108, 0.22);
 }
 .hero-text h2{
     font-family:'Bebas Neue', sans-serif;
-    font-size: 46px;
+    font-size: clamp(1.1rem, 3.2vw, 2.875rem);
   font-weight: 400;
   color:#4e7bd0;
-  line-height: 1.01;
+  line-height: 1.02;
   margin-bottom: 0;
-  width: 29ch;
+  width: min(29ch, 100%);
 
   letter-spacing: 0.05em;
   -webkit-text-stroke: 1px rgba(12, 64, 108, 0.22);
@@ -879,15 +879,48 @@ nav.header-gradient ul li:last-child a:hover {
 
 /* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 900px) {
+    .temoignage-section {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        padding: 0 16px;
+    }
+
     .temoignage-container {
         flex-direction: column;
         padding: 30px 25px;
         gap: 25px;
         text-align: center;
+        width: 100%;
+        max-width: 760px;
+        margin: 20px auto;
     }
 
     .left-panel {
         flex: none;
+        padding-right: 0;
+        width: 100%;
+        align-items: center;
+    }
+
+    .left-panel::after {
+        margin-inline: auto;
+    }
+
+    .left-panel .avatar {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .left-panel .avatar img {
+        width: min(260px, 78vw);
+        height: min(260px, 78vw);
+        margin-top: 0;
+        max-height: none;
+        border-radius: 999px;
+        object-fit: cover;
+        object-position: center;
     }
 
     .image-droite {
@@ -897,6 +930,7 @@ nav.header-gradient ul li:last-child a:hover {
     .sig {
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 }
   /*statistiques*/
@@ -2256,7 +2290,6 @@ height:100px;
   transform: scale(1.1) rotate(5deg); /* Grossit et tourne lÃ©gÃ¨rement */
   box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Ombre plus forte */
 }
-/* CODEx RESPONSIVE NAV */
 html, body { overflow-x: hidden; }
 img, iframe { max-width: 100%; height: auto; }
 
@@ -3226,12 +3259,39 @@ nav.header-gradient ul {
   .btn-whatsapp {
     right: 12px;
     bottom: 12px;
-    padding: 10px 12px;
+    padding: 10px 12px 8px;
     border-radius: 16px;
+    width: auto;
+    max-width: min(180px, calc(100vw - 20px));
+    gap: 6px;
   }
 
   .btn-whatsapp main {
-    display: none;
+    display: block;
+  }
+
+  .whatsapp-main {
+    gap: 8px;
+    align-items: center;
+  }
+
+  .whatsapp-main svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .btn-whatsapp main strong {
+    font-size: 0.76rem;
+    line-height: 1.15;
+  }
+
+  .whatsapp-options {
+    width: 100%;
+  }
+
+  .whatsapp-options a {
+    font-size: 0.72rem;
+    padding: 7px 10px;
   }
 
   .contact h2 {
@@ -3282,6 +3342,41 @@ nav.header-gradient ul {
 
   nav.header-gradient ul li:last-child a {
     padding: 8px 18px;
+  }
+}
+
+/* Hero slider images */
+.hero-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hero-slider {
+    height: clamp(320px, 56vw, 560px);
+    min-height: 320px;
+  }
+
+  .hero-slide img {
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-slider {
+    height: clamp(240px, 52vw, 360px);
+    min-height: 240px;
   }
 }
 
