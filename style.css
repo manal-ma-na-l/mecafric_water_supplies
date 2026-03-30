@@ -4743,3 +4743,131 @@ nav.header-gradient,
     text-align: left;
   }
 }
+
+/* Testimonial stability */
+.temoignage-section {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0 clamp(12px, 3vw, 28px);
+}
+
+.temoignage-container {
+  width: min(1180px, 100%);
+  max-width: 1180px;
+  margin: 24px auto 20px;
+  padding: clamp(24px, 4vw, 48px);
+  gap: clamp(20px, 3vw, 36px);
+  border-radius: 29px;
+}
+
+.left-panel {
+  flex: 0 0 clamp(180px, 20vw, 220px);
+  padding-right: 0;
+}
+
+.left-panel .avatar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.left-panel .avatar img {
+  width: clamp(180px, 18vw, 230px);
+  height: clamp(180px, 18vw, 230px);
+  margin-top: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.right-panel {
+  flex: 1 1 0;
+}
+
+.right-panel .section-label {
+  white-space: normal;
+  margin: 0 0 18px;
+  line-height: 1.3;
+}
+
+.quote-block {
+  width: 100%;
+}
+
+.quote-text {
+  margin: 0 0 12px;
+}
+
+.sig {
+  margin-top: 10px;
+}
+
+.image-droite {
+  flex: 0 0 clamp(220px, 24vw, 290px);
+}
+
+.image-droite img {
+  width: min(100%, 300px);
+  height: auto;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .temoignage-section {
+    padding-inline: 12px;
+  }
+
+  .temoignage-container {
+    max-width: 760px;
+    margin: 18px auto;
+    text-align: center;
+  }
+
+  .left-panel,
+  .right-panel,
+  .quote-block,
+  .sig {
+    width: 100%;
+  }
+
+  .sig {
+    align-items: center;
+  }
+
+  .image-droite {
+    display: flex;
+    flex: none;
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+  }
+
+  .image-droite img {
+    width: min(260px, 70vw);
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 560px) {
+  .temoignage-container {
+    padding: 20px 16px;
+    gap: 18px;
+  }
+
+  .left-panel .avatar img {
+    width: min(220px, 70vw);
+    height: min(220px, 70vw);
+  }
+
+  .quote-text {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .image-droite img {
+    width: min(220px, 68vw);
+    max-height: 260px;
+  }
+}
