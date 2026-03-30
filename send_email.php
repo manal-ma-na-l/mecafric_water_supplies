@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-    $to = "water@mecafric.ma";
+    $to = "manalfarboussi44@gmail.com";
     $subject = "Nouvelle demande de devis - $nom $prenom";
 
     $body = "Nom: $nom\n";

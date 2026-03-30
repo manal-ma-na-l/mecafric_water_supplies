@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-    $to = "water@mecafric.ma";
+    $to = "manalfarboussi44@gmail.com";
     $subject = "Nouveau message de contact - $nom";
 
     $body = "Nom: $nom\n";

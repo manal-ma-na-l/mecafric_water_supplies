@@ -4268,3 +4268,245 @@ nav.header-gradient ul {
     font-size: 0.72rem;
   }
 }
+
+/* Responsive alignment overrides */
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+nav.header-gradient,
+.hero-slider,
+.scene,
+.temoignage-container,
+.gammes-section,
+.services-showcase-single,
+.custom-footer,
+.footer-content,
+.footer-bottom,
+.tab-wrapper,
+#sections {
+  width: min(100%, 100vw);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-text,
+.gammes-title,
+.services-showcase-single__content,
+.services-block,
+.stat-card,
+.footer-brand,
+.footer-col,
+.footer-middle,
+.footer-bottom {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gammes-grid,
+.stats-inner,
+.footer-content {
+  justify-items: center;
+}
+
+.services-showcase-single,
+.temoignage-container,
+.footer-content {
+  align-items: center;
+}
+
+.services-showcase-single__content,
+.footer-content,
+.footer-bottom,
+.cat-header,
+.cat-title {
+  text-align: center;
+}
+
+.service-panel__list div,
+.footer-col a,
+.footer-brand p {
+  width: 100%;
+}
+
+.footer-middle iframe,
+.contact iframe,
+.hero-slide img,
+.services-showcase-single__image img,
+.left-panel .avatar img,
+.image-droite img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.btn-whatsapp {
+  right: clamp(10px, 2vw, 18px);
+  left: auto;
+}
+
+@media (min-width: 901px) {
+  nav.header-gradient {
+    width: min(100%, 1400px);
+    padding-inline: clamp(20px, 3vw, 34px);
+  }
+
+  nav.header-gradient .nav-links {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .hero-text {
+    left: clamp(24px, 6vw, 96px);
+    right: auto;
+  }
+
+  .footer-content {
+    grid-template-columns: minmax(220px, 1.2fr) repeat(2, minmax(160px, 0.8fr)) minmax(260px, 1fr);
+    justify-items: center;
+  }
+}
+
+@media (max-width: 900px) {
+  nav.header-gradient {
+    width: calc(100% - 20px);
+    padding-inline: 14px;
+    justify-content: space-between;
+  }
+
+  nav.header-gradient .logo,
+  .nav-toggle,
+  nav.header-gradient .nav-links {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  nav.header-gradient .nav-links {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav.header-gradient ul li,
+  nav.header-gradient ul li a {
+    width: 100%;
+  }
+
+  .hero-slider,
+  .scene,
+  .gammes-section,
+  .services-showcase-single,
+  .custom-footer,
+  .tab-wrapper,
+  #sections {
+    width: calc(100% - 20px);
+  }
+
+  .hero-text {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    width: min(92%, 520px);
+    text-align: center;
+  }
+
+  .temoignage-container,
+  .services-showcase-single,
+  .footer-content {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .stats-inner,
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    gap: 24px;
+  }
+
+  .footer-middle,
+  .footer-middle iframe {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .gammes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .gamme-item {
+    width: 100%;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .stats-inner {
+    gap: 18px;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .services-showcase-single__content {
+    align-items: center;
+  }
+}
+
+@media (max-width: 560px) {
+  nav.header-gradient,
+  .hero-slider,
+  .scene,
+  .gammes-section,
+  .services-showcase-single,
+  .custom-footer,
+  .tab-wrapper,
+  #sections {
+    width: calc(100% - 12px);
+  }
+
+  .temoignage-container {
+    width: calc(100% - 12px);
+    padding-inline: 10px;
+  }
+
+  .gammes-grid,
+  .stats-inner,
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .gamme-item,
+  .services-block,
+  .footer-brand,
+  .footer-col,
+  .footer-middle {
+    max-width: 100%;
+  }
+
+  .hero-text {
+    width: min(94%, 340px);
+  }
+
+  .btn-whatsapp {
+    right: 8px;
+    bottom: 12px;
+  }
+}
