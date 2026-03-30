@@ -36,6 +36,59 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  const whatsappButton = document.querySelector(".btn-whatsapp");
+  const whatsappMain = whatsappButton?.querySelector(".whatsapp-main");
+  const whatsappLinks = whatsappButton?.querySelectorAll(".whatsapp-options a");
+
+  if (!whatsappButton || !whatsappMain || !whatsappLinks?.length) return;
+
+  const mobileQuery = window.matchMedia("(hover: none), (pointer: coarse), (max-width: 900px)");
+
+  const closeWhatsappMenu = () => {
+    whatsappButton.classList.remove("is-open");
+  };
+
+  const syncWhatsappMode = () => {
+    if (!mobileQuery.matches) {
+      closeWhatsappMenu();
+    }
+  };
+
+  whatsappMain.addEventListener("click", (event) => {
+    if (!mobileQuery.matches) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    whatsappButton.classList.toggle("is-open");
+  });
+
+  whatsappLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeWhatsappMenu();
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!mobileQuery.matches) return;
+
+    if (!whatsappButton.contains(event.target)) {
+      closeWhatsappMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!mobileQuery.matches) return;
+
+    if (event.key === "Escape") {
+      closeWhatsappMenu();
+    }
+  });
+
+  syncWhatsappMode();
+  mobileQuery.addEventListener("change", syncWhatsappMode);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   const svgEl = document.getElementById("waveSvg");
   const pathEl = document.getElementById("wavePath");
   const nodesEl = document.getElementById("nodes");

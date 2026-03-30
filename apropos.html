@@ -684,6 +684,9 @@ body.apropos-page {
 /* LOGO */
 .piece img {
   width: 65%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -698,6 +701,53 @@ body.apropos-page {
 .piece:nth-child(4){ animation-delay: 0.9s;}
 .piece:nth-child(5){ animation-delay: 1.2s;}
 .piece:nth-child(6){ animation-delay: 1.5s;}
+
+@media (max-width: 900px) {
+  .partenaires-puzzle {
+    padding: 44px 18px;
+    margin-bottom: 72px;
+  }
+
+  .puzzle {
+    grid-template-columns: repeat(3, minmax(92px, 120px));
+    gap: 14px;
+    width: 100%;
+  }
+
+  .piece {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .piece img {
+    width: 72%;
+    height: 72%;
+  }
+}
+
+@media (max-width: 560px) {
+  .partenaires-puzzle {
+    padding: 32px 12px;
+    margin-bottom: 56px;
+  }
+
+  .puzzle {
+    grid-template-columns: repeat(2, minmax(110px, 1fr));
+    gap: 12px;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .piece {
+    border-radius: 10px;
+  }
+
+  .piece img {
+    width: 70%;
+    height: 70%;
+  }
+}
 
 </style>
 </head>

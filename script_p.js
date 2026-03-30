@@ -107,6 +107,79 @@ const catalogue = {
     }
   ]
 };
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".nav-toggle");
+  const menu = document.querySelector(".nav-links");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const opened = menu.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", opened ? "true" : "false");
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const whatsappButton = document.querySelector(".btn-whatsapp");
+  const whatsappMain = whatsappButton?.querySelector(".whatsapp-main");
+  const whatsappLinks = whatsappButton?.querySelectorAll(".whatsapp-options a");
+
+  if (!whatsappButton || !whatsappMain || !whatsappLinks?.length) return;
+
+  const mobileQuery = window.matchMedia("(hover: none), (pointer: coarse), (max-width: 900px)");
+
+  const closeWhatsappMenu = () => {
+    whatsappButton.classList.remove("is-open");
+  };
+
+  const syncWhatsappMode = () => {
+    if (!mobileQuery.matches) {
+      closeWhatsappMenu();
+    }
+  };
+
+  whatsappMain.addEventListener("click", (event) => {
+    if (!mobileQuery.matches) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    whatsappButton.classList.toggle("is-open");
+  });
+
+  whatsappLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeWhatsappMenu();
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!mobileQuery.matches) return;
+
+    if (!whatsappButton.contains(event.target)) {
+      closeWhatsappMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!mobileQuery.matches) return;
+
+    if (event.key === "Escape") {
+      closeWhatsappMenu();
+    }
+  });
+
+  syncWhatsappMode();
+  mobileQuery.addEventListener("change", syncWhatsappMode);
+});
+
 const icons = {
   valve:`<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="32" cy="32" r="14"/><line x1="32" y1="4" x2="32" y2="18"/><line x1="32" y1="46" x2="32" y2="60"/><line x1="4" y1="32" x2="18" y2="32"/><line x1="46" y1="32" x2="60" y2="32"/><path d="M22 22l20 20M22 42l20-20" stroke-width="2"/></svg>`,
   butterfly:`<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="14" width="10" height="36" rx="2"/><rect x="48" y="14" width="10" height="36" rx="2"/><ellipse cx="32" cy="32" rx="14" ry="14"/><line x1="32" y1="18" x2="32" y2="46" stroke-width="2.5"/></svg>`,
@@ -277,22 +350,3 @@ const selectedCat = params.get("cat");
   
 }
 document.addEventListener("DOMContentLoaded", buildUI);
-
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".nav-toggle");
-  const menu = document.querySelector(".nav-links");
-
-  if (toggle && menu) {
-    toggle.addEventListener("click", () => {
-      const opened = menu.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", opened ? "true" : "false");
-    });
-
-    menu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        menu.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
-});
